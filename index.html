@@ -10,52 +10,6 @@
   <link rel="stylesheet" href="./css/styles.css">
   <script type="text/javascript" src="./js/site.js"></script>
 
-	<script>
-	// Fonction pour remonter en haut de la page
-	function UpPage() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-	}
-	
-	  // Affiche le bouton lorsque l'utilisateur descend dans la page
-	  window.addEventListener('scroll', function () {
-		const backToTopButton = document.getElementById('backToTop');
-		if (window.scrollY > 300) {
-		  backToTopButton.style.display = 'block';
-		} else {
-		  backToTopButton.style.display = 'none';
-		}
-	  });
-
-	</script>
-
-  <style>
-    /* Styles CSS pour enrichir l'apparence */
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-    .logo {
-      font-size: 2.5rem;
-      color: white;
-    }
-    .tile {
-      border-radius: 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .tile:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-    }
-    footer a {
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-	
-		
-  </style>
 </head>
 <body>
   <!-- Header -->
@@ -107,7 +61,7 @@
     </section>
 
     <!-- Nos Services (Tuiles) -->
-    <section id="tiles" class="py-5 bg-light">
+    <section id="tiles" class="py-5 bg-light ancres">
       <div class="container">
         <h2 class="text-center mb-4"><i class="bi bi-caret-right" style="font-size: 2rem;"></i>&nbsp;NOS SERVICES</h2>
         <div class="row"><div class="row g-4">
@@ -140,7 +94,7 @@
 
 	
     <!-- Nos Compétences (Tuiles) -->
-    <section id="skills" class="py-5 bg-light">
+    <section id="skills" class="py-5 bg-light ancres">
       <div class="container">
         <h2 class="text-center mb-4"><i class="bi bi-card-checklist" style="font-size: 2rem;"></i>&nbsp;NOS DOMAINES ET COMP&Eacute;TENCES</h2>
         <div class="row"><div class="row g-4">
@@ -247,7 +201,7 @@
 
 
     <!-- Nos réalisations -->
-    <section id="skills" class="py-5 bg-light">
+    <section id="projects" class="py-5 bg-light ancres">
       <div class="container">
         <h2 class="text-center mb-4"><i class="bi bi-card-checklist" style="font-size: 2rem;"></i>&nbsp;NOS R&Eacute;ALISATIONS</h2>
         <div class="row"><div class="row g-4">
@@ -349,7 +303,7 @@
  --> 
 
     <!-- Contact -->
-    <section id="contact" class="py-5 text-center">
+    <section id="contact" class="py-5 text-center ancres">
       <div class="container">
         <h2 class="text-center mb-4"><i class="bi bi-envelope" style="font-size: 2rem;"></i>&nbsp;CONTACTEZ-NOUS</h2>
         <p class="mb-4">Envoyez-nous un message, et notre équipe vous répondra rapidement.</p>
