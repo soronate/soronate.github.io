@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soronate - Développement et Conseil Informatique</title>
+  <link href="./img/favicon.ico" rel="shortcut icon" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script type="text/javascript" src="./js/site.js"></script>
+
+	<script>
+	// Fonction pour remonter en haut de la page
+	function UpPage() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+	}
+	
+	  // Affiche le bouton lorsque l'utilisateur descend dans la page
+	  window.addEventListener('scroll', function () {
+		const backToTopButton = document.getElementById('backToTop');
+		if (window.scrollY > 300) {
+		  backToTopButton.style.display = 'block';
+		} else {
+		  backToTopButton.style.display = 'none';
+		}
+	  });
+
+	</script>
+
+  <style>
+    /* Styles CSS pour enrichir l'apparence */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .logo {
+      font-size: 2.5rem;
+      color: white;
+    }
+    .tile {
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .tile:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    footer a {
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+	
+		
+  </style>
+</head>
+<body>
+  <!-- Header -->
+ <header class="sticky-top bg-dark text-white shadow">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a href="#home" class="navbar-brand d-flex align-items-center">
+        <img src="./img/Logoheader.gif" class="logo me-2" width="50" height="40" alt="Logo Soronate">
+        <h1 class="fs-4 mb-0">Soronate</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="#home" class="nav-link">Accueil</a></li>
+          <li class="nav-item"><a href="#tiles" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Domaines et compétences</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Réalisations</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="https://www.linkedin.com/in/ericmornay/?originalSubdomain=fr" target="_blank" class="text-white ms-lg-3">
+          <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+  <!-- Main Sections -->
+  <main>
+    <!-- Accueil -->
+    <section id="home" class="vh-100 text-center d-flex justify-content-center align-items-center bg-dark text-white" style="background-image: url('img/dream-pulse-header1.jpg');height: 100vh; background-repeat: no-repeat;background-attachment: fixed;background-position: center;">
+
+      <div>
+        <h1 class="display-4">Bienvenue chez Soronate</h1>
+		<img src="./img/Logoheader.gif" border=0 >
+        <p>Vos solutions numériques sur mesure.</p>
+		<br>
+		 <div class="container">
+        <h2 class="mb-4">À propos de nous</h2>
+        <p>Soronate est une entreprise spécialisée dans le développement de logiciels, le conseil informatique et la mise en place de solutions numériques adaptées aux besoins de ses clients. Notre équipe allie expertise technique et innovation pour accompagner les entreprises dans leur transformation digitale.</p>
+      </div>
+		
+		
+        <a href="#tiles" class="btn btn-outline-light mt-3">En savoir plus</a>
+      </div>
+    </section>
+
+    <!-- Nos Services (Tuiles) -->
+    <section id="tiles" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4"><i class="bi bi-caret-right" style="font-size: 2rem;"></i>&nbsp;NOS SERVICES</h2>
+        <div class="row"><div class="row g-4">
+
+         <div class="col-md-4">
+            <div class="tile p-4 bg-dark text-white rounded shadow text-center">
+              <i class="bi bi-code-slash" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">Développement sur mesure</h4>
+              <p>Applications ou sites adaptées à vos besoins spécifiques.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tile p-4 bg-secondary text-white rounded shadow text-center">
+              <i class="bi bi-lightbulb" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">Conseil IT</h4>
+              <p>Accompagnement stratégique et opérationnel.<br>&nbsp;</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tile p-4 bg-dark text-white rounded shadow text-center">
+              <i class="bi bi-terminal" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">Intelligence Artificielle</h4>
+              <p>Solutions innovantes basées sur l'IA pour automatiser et optimiser vos processus.</p>
+            </div>
+          </div>
+
+		</div>		 
+      </div>
+    </section>
+
+	
+    <!-- Nos Compétences (Tuiles) -->
+    <section id="skills" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4"><i class="bi bi-card-checklist" style="font-size: 2rem;"></i>&nbsp;NOS DOMAINES ET COMP&Eacute;TENCES</h2>
+        <div class="row"><div class="row g-4">
+		
+          <div class="col-md-4">
+            <div class="tile p-4 bg-dark text-white rounded shadow text-center">
+              <i class="bi bi-braces" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">Programmation</h4>
+              <p>Html, Css, JS, JQuery, XML, JSON, Bootstrap, Angular, Ajax, LotusScript, WebService, ...</p>
+            </div>
+          </div>
+	  
+          <div class="col-md-4">
+            <div class="tile p-4 bg-secondary text-white rounded shadow text-center">
+              <i class="bi bi-window-stack" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">Environnement</h4>
+              <p>Windows, Apache, Tomcat, Domino, Aloha, ...<br>&nbsp;</p>
+            </div>
+          </div>		  
+		  
+          <div class="col-md-4">
+            <div class="tile p-4 bg-dark text-white rounded shadow text-center">
+              <i class="bi bi-server" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">CMS & BDD</h4>
+              <p>Drupal, Magnolia, Jalios, SQL, PostGrés, ...<br>&nbsp;</p>
+            </div>
+          </div>
+		  
+          <div class="col-md-4">
+            <div class="tile p-4 bg-dark text-white rounded shadow text-center">
+              <i class="bi bi-braces" style="font-size: 3rem;"></i><i class="bi bi-server" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">Domino</h4>
+              <p>Mise en œuvre et gestion des prestations Domino (développement et administration).</p>
+            </div>
+          </div>
+		  
+          <div class="col-md-4">
+            <div class="tile p-4 bg-secondary text-white rounded shadow text-center">
+              <i class="bi bi-infinity" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">CI/CD</h4>
+              <p>Git, Bitbucket, Jira, Jenkins, SonarQube, Leapwork, Mr Suricate (TNR), ...</p>
+            </div>
+          </div>		  
+		  
+          <div class="col-md-4">
+            <div class="tile p-4 bg-dark text-white rounded shadow text-center">
+              <i class="bi bi-cloud-upload" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">Cloud Computing</h4>
+              <p>Mise en œuvre et gestion des solutions cloud.<br>&nbsp;</p>
+            </div>
+          </div>
+		  
+          <div class="col-md-4">
+            <div class="tile p-4 bg-dark text-white rounded shadow text-center">
+              <i class="bi bi-card-list" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">Méthodologie et gestion de projets</h4>
+              <p>Agile, Prince2, Scrum, adaptatif en fonction du contexte.</p>
+            </div>
+          </div>
+		  
+         <div class="col-md-4">
+            <div class="tile p-4 bg-secondary text-white rounded shadow text-center">
+              <i class="bi bi-lock-fill" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">Sécurité</h4>
+              <p>Etude et correctifs de failles informatiques (Jmeter / Acunetix).<br>&nbsp;</p>
+            </div>
+          </div>	
+		  
+         <div class="col-md-4">
+            <div class="tile p-4 bg-dark text-white rounded shadow text-center">
+              <i class="bi bi-diagram-3" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">SEO et plan de taggauage</h4>
+              <p>Etude et mise en place de plan de taggauage sur vos sites.<br>&nbsp;</p>
+            </div>
+          </div>	
+		  
+         <div class="col-md-4">
+            <div class="tile p-4 bg-dark text-white rounded shadow text-center">
+              <i class="bi bi-shield-shaded" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">RGPD & CMP</h4>
+              <p>Anonymisation, Implémentation de différentes solutions (OneTrust, ATInternet, ...)</p>
+            </div>
+          </div>		  
+		 
+         <div class="col-md-4">
+            <div class="tile p-4 bg-secondary text-white rounded shadow text-center">
+              <i class="bi bi-person-workspace" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">Formation</h4>
+              <p>Développement, bureautique, Sécurité, ...<br>&nbsp;</p>
+            </div>
+          </div>		  
+
+         <div class="col-md-4">
+            <div class="tile p-4 bg-dark text-white rounded shadow text-center">
+              <i class="bi bi-cpu" style="font-size: 3rem;"></i>
+              <h4 class="mt-3">IA</h4>
+              <p>Etude, développement, accompagnement, ...<br>&nbsp;</p>
+            </div>
+          </div>
+		 
+		 </div>		 
+      </div>
+    </section>
+
+
+    <!-- Nos réalisations -->
+    <section id="skills" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4"><i class="bi bi-card-checklist" style="font-size: 2rem;"></i>&nbsp;NOS R&Eacute;ALISATIONS</h2>
+        <div class="row"><div class="row g-4">
+		
+          <div class="col-md-4">
+            <div class="tile p-4 bg-white text-black rounded shadow text-center">
+              <i class="bi bi-person-raised-hand img-fluid mb-3 rounded shadow" style="font-size: 4rem; color: #6c757d;"></i>
+            <h5>Outil de tracking</h5>
+            <p>Une application intuitive pour la gestion des assistances.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="tile p-4 bg-white text-black rounded shadow text-center">
+            <i class="bi bi-kanban img-fluid mb-3 rounded shadow" style="font-size: 4rem; color: #6c757d;"></i>
+            <h5>Gestion de tâches</h5>
+            <p>Une application intuitive pour organiser vos projets.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tile p-4 bg-white text-black rounded shadow text-center">
+            <i class="bi bi-cart-fill img-fluid mb-3 rounded shadow" style="font-size: 4rem; color: #6c757d;"></i>
+            <h5>E-commerce</h5>
+            <p>Une plateforme performante et facile à utiliser.<br>&nbsp;</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="tile p-4 bg-white text-black rounded shadow text-center">
+            <i class="bi bi-bar-chart-fill img-fluid mb-3 rounded shadow" style="font-size: 4rem; color: #6c757d;"></i>
+            <h5>Dashboard</h5>
+            <p>Visualisez vos données en temps réel avec un tableau de bord.</p>
+            </div>
+          </div>
+		  
+          <div class="col-md-4">
+            <div class="tile p-4 bg-white text-black rounded shadow text-center">
+            <i class="bi bi-journal-text img-fluid mb-3 rounded shadow" style="font-size: 4rem; color: #6c757d;"></i>
+            <h5>Gestion des log</h5>
+            <p>Un outil paramétrable pour analyser vos log.<br>&nbsp;</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="tile p-4 bg-white text-black rounded shadow text-center">
+            <i class="bi bi-file-earmark-code img-fluid mb-3 rounded shadow" style="font-size: 4rem; color: #6c757d;"></i>
+            <h5>Des centaines d'applications internet/intranet</h5>
+            <p>Différents outils pour des besoins métiers.</p>
+            </div>
+          </div>
+		  
+		</div>		 
+      </div>
+    </section>	
+ 
+<!-- 
+    <section id="projects" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4"><i class="bi bi-gear" style="font-size: 2rem;"></i>&nbsp;NOS R&Eacute;ALISATIONS</h2>
+        <div class="row">
+		
+          <div class="col-md-4 text-center">
+            <i class="bi bi-person-raised-hand img-fluid mb-3 rounded shadow" style="font-size: 4rem; color: #6c757d;"></i>
+            <h5>Outil de tracking</h5>
+            <p>Une application intuitive pour la gestion des assistances.</p>
+          </div>
+		
+          <div class="col-md-4 text-center">
+            <i class="bi bi-kanban img-fluid mb-3 rounded shadow" style="font-size: 4rem; color: #6c757d;"></i>
+            <h5>Gestion de tâches</h5>
+            <p>Une application intuitive pour organiser vos projets.</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <i class="bi bi-cart-fill img-fluid mb-3 rounded shadow" style="font-size: 4rem; color: #6c757d;"></i>
+            <h5>E-commerce</h5>
+            <p>Une plateforme performante et facile à utiliser.</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <i class="bi bi-bar-chart-fill img-fluid mb-3 rounded shadow" style="font-size: 4rem; color: #6c757d;"></i>
+            <h5>Dashboard</h5>
+            <p>Visualisez vos données en temps réel avec un tableau de bord.</p>
+          </div>
+		  
+         <div class="col-md-4 text-center">
+            <i class="bi bi-journal-text img-fluid mb-3 rounded shadow" style="font-size: 4rem; color: #6c757d;"></i>
+            <h5>Gestion des log</h5>
+            <p>Un outil paramétrable pour analyser vos log.</p>
+          </div>
+
+         <div class="col-md-4 text-center">
+            <i class="bi bi-file-earmark-code img-fluid mb-3 rounded shadow" style="font-size: 4rem; color: #6c757d;"></i>
+            <h5>Des centaines d'applications internet/intranet</h5>
+            <p>Différents outils pour des besoins métiers/utilisateurs.</p>
+          </div>
+
+		  
+        </div>
+      </div>
+    </section>
+ --> 
+
+    <!-- Contact -->
+    <section id="contact" class="py-5 text-center">
+      <div class="container">
+        <h2 class="text-center mb-4"><i class="bi bi-envelope" style="font-size: 2rem;"></i>&nbsp;CONTACTEZ-NOUS</h2>
+        <p class="mb-4">Envoyez-nous un message, et notre équipe vous répondra rapidement.</p>
+        <form action="https://formspree.io/f/xovvrqyp" method="POST" class="w-50 mx-auto">
+          <input type="text" name="name" class="form-control my-2" placeholder="Nom" required>
+          <input type="email" name="email" class="form-control my-2" placeholder="Email" required>
+          <textarea name="message" class="form-control my-2" rows="5" placeholder="Message" required></textarea>
+          <button type="submit" class="btn btn-dark">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+<footer class="bg-dark text-white py-2">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Colonne pour le texte des droits -->
+      <div class="col-md-6 text-center text-md-start mb-1 mb-md-0">
+        <p class="mb-0" style="line-height: 1.2;">&copy; 2025 Soronate. Tous droits réservés.</p>
+      </div>
+      <!-- Colonne pour les contacts -->
+      <div class="col-md-6 text-center text-md-end">
+        <p class="mb-0" style="line-height: 1.2;">
+          <i class="bi bi-geo-alt" style="font-size: 1.1rem;"></i> 5, Place de Rungis. 75013 Paris
+          <br>
+          <i class="bi bi-envelope" style="font-size: 1.1rem;"></i> 
+          <a href="mailto:soronate@free.fr" class="text-white">soronate@free.fr</a> &nbsp; 
+          <a href="https://www.linkedin.com/in/ericmornay/?originalSubdomain=fr" target="_blank" class="text-white">
+            <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bouton pour remonter en haut -->
+<button id="backToTop" class="btn btn-dark rounded-circle position-fixed" style="bottom: 20px; right: 20px; display: none;" onclick="UpPage()">
+  <i class="bi bi-arrow-up"></i>
+</button>
+</body>
+</html>
