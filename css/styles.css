@@ -24,3 +24,18 @@
     .ancres{
       scroll-margin: 25px;
     }
+	
+	.dropdown-menu {
+	  font-size: 0.85rem; /* Réduction de la taille du texte */
+	  line-height: 1.2; /* Réduction de l'interligne */
+	}
+
+	.dropdown-item {
+	  padding-top: 0.25rem;
+	  padding-bottom: 0.25rem;
+	}
+	
+	.dropdown-item:hover {
+	  background-color: #e9ecef; /* Couleur de fond légèrement plus foncée */
+	  color: #212529; /* Texte plus visible si nécessaire */
+	}
