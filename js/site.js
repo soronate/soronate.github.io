@@ -13,3 +13,18 @@
 		  backToTopButton.style.display = 'none';
 		}
 	  });
+	  
+	// Fermer le menu burger après un clic sur un élément du menu
+	const menuItems = document.querySelectorAll('.navbar-nav .nav-link');
+
+	menuItems.forEach(item => {
+	  item.addEventListener('click', () => {
+		const navbarCollapse = document.getElementById('navbarNav');
+		const navbarToggler = document.querySelector('.navbar-toggler');
+		
+		// Fermer le menu burger
+		if (navbarCollapse.classList.contains('show')) {
+		  navbarToggler.click();
+		}
+	  });
+	});	  
