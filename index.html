@@ -401,17 +401,21 @@
   });
 
 
-
   document.addEventListener('DOMContentLoaded', function () {
     const toggler = document.querySelector('.navbar-toggler');
     const menuText = toggler.querySelector('.menu-text');
     const navbar = document.querySelector('#navbarNav');
 
     toggler.addEventListener('click', function () {
-      if (navbar.classList.contains('show')) {
-        menuText.textContent = 'Menu'; // Texte par défaut quand le menu est fermé
-      } else {
-        menuText.textContent = 'Fermer'; // Texte quand le menu est ouvert
+      // Utiliser le bouton pour détecter l'état (ouvert/fermé)
+      const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
+      menuText.textContent = isExpanded ? 'Menu' : 'Fermer';
+    });
+
+    // Fermer le menu si un lien du menu est cliqué
+    navbar.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && navbar.classList.contains('show')) {
+        toggler.click(); // Simule un clic pour fermer le menu
       }
     });
   });
