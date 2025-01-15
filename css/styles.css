@@ -34,13 +34,5 @@
 			
 		}
 	
-		#contact form {
-        width: 90%; /* Augmente la largeur du formulaire */
-		}
-			#contact .form-control, 
-			#contact .input-group-text {
-				width: 100%; /* Les champs prennent toute la largeur disponible */
-		}
-
 				
 	}
