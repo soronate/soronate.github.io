@@ -14,3 +14,30 @@
 		}
 	  });
 
+
+	<script>
+	  document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+		link.addEventListener('click', function () {
+		  const navbarCollapse = document.getElementById('navbarResponsive');
+		  const navbarToggler = document.querySelector('.navbar-toggler');
+
+		  if (navbarCollapse.classList.contains('show')) {
+			navbarCollapse.classList.remove('show');
+			navbarToggler.setAttribute('aria-expanded', 'false');
+		  }
+		});
+	  });
+
+	</script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const closeMenuButton = document.getElementById('closeMenuButton');
+			const menuToggler = document.getElementById('menuToggler');
+			const navbarResponsive = document.getElementById('navbarResponsive');
+
+			closeMenuButton.addEventListener('click', () => {
+				menuToggler.click(); // Simule un clic sur le toggler pour fermer le menu
+			});
+		});
+	</script>
