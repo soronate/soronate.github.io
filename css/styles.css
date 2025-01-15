@@ -33,6 +33,13 @@
 
 		}
 		
+      */
+    #tiles .container {
+    max-width: 100%; /* Étend le conteneur à 100% */
+    padding: 0; /* Retire les marges internes */
+    }
+      
+      
 		#closeMenuButton {
 		width: 100%; /* Prend toute la largeur dans le menu */
 		text-align: center;
