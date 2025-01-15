@@ -27,9 +27,12 @@
         <img src="./img/Logoheader.png" class="logo me-2" width="50" height="50" alt="Soronate">
         <h1 class="fs-4 mb-0">Soronate</h1>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  <span class="close-icon d-none">✖</span>
+</button>
+      
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a href="./index.html" class="nav-link">Accueil</a></li>
@@ -395,6 +398,26 @@
       }
     });
   });
+  
+  
+  
+  document.addEventListener('DOMContentLoaded', function () {
+  const toggler = document.querySelector('.navbar-toggler');
+  const navbar = document.querySelector('#navbarNav');
+  const togglerIcon = toggler.querySelector('.navbar-toggler-icon');
+  const closeIcon = toggler.querySelector('.close-icon');
+
+  toggler.addEventListener('click', function () {
+    if (navbar.classList.contains('show')) {
+      togglerIcon.classList.remove('d-none');
+      closeIcon.classList.add('d-none');
+    } else {
+      togglerIcon.classList.add('d-none');
+      closeIcon.classList.remove('d-none');
+    }
+  });
+});
+  
 </script>
 
 
