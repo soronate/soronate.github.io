@@ -33,9 +33,10 @@
 
 		}
 		
-       #projects .row {
-       gap: 0 !important; /* Supprime l'espacement entre les colonnes */
-      }
+         #projects .gap-mobile {
+    gap: 0 !important; /* Supprime tout espacement */
+  }
+
 
       
 		#closeMenuButton {
