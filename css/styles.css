@@ -33,6 +33,19 @@
 			background-position: 50% 70%;
 			
 		}
-	
-				
+
+		#mainNav .navbar-nav .nav-item:nth-last-child(-n+5) {
+			display: inline-block; /* Affiche les 5 derniers éléments en ligne */
+		}
+
+		#mainNav .navbar-nav .nav-item:nth-last-child(-n+5) .nav-link {
+			padding-left: 5px; /* Ajuste les espaces entre les liens */
+			padding-right: 5px;
+		}
+
+		#mainNav .navbar-nav {
+			flex-wrap: wrap; /* Permet de regrouper les autres items sur plusieurs lignes si nécessaire */
+			justify-content: center; /* Centre les 5 derniers items */
+		}
+		
 	}
