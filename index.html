@@ -31,7 +31,7 @@
 
 <button class="navbar-toggler d-flex align-items-center" type="button" data-bs-toggle="collapse" 
         data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="menu-text ms-2">Menu </span>
+    <span class="menu-text ms-2">Menu</span>
     <span class="navbar-toggler-icon"></span>
 </button>
 
@@ -409,28 +409,25 @@
   document.addEventListener('DOMContentLoaded', function () {
     const toggler = document.querySelector('.navbar-toggler');
     const menuText = toggler.querySelector('.menu-text');
-    const navbar = document.querySelector('#navbarNav');
+    const navbarCollapse = document.querySelector('#navbarNav');
 
-    // Gère le changement de texte pour le bouton burger
+    // Gère le changement de texte du bouton burger
     toggler.addEventListener('click', function () {
-      const isExpanded = toggler.getAttribute('aria-expanded') === 'true'; // Vérifie l'état actuel
-      menuText.textContent = isExpanded ? 'Fermer' : 'Menu'; // Adapte le texte
+      const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
+      menuText.textContent = isExpanded ? 'Menu' : 'Fermer';
     });
 
-    // Ferme le menu si on clique sur un lien ou en dehors
-    document.addEventListener('click', function (e) {
-      const isClickInsideNavbar = navbar.contains(e.target);
-      const isClickOnToggler = toggler.contains(e.target);
-
-      if (!isClickInsideNavbar && !isClickOnToggler && navbar.classList.contains('show')) {
+    // Ferme le menu lorsqu'un lien est cliqué
+    navbarCollapse.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && navbarCollapse.classList.contains('show')) {
         toggler.click(); // Simule un clic pour fermer le menu
       }
     });
 
-    // Ferme le menu au clic sur un lien du menu
-    navbar.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A' && navbar.classList.contains('show')) {
-        toggler.click(); // Simule un clic pour fermer le menu
+    // Ferme le menu lorsqu'on clique à l'extérieur
+    document.addEventListener('click', function (e) {
+      if (!navbarCollapse.contains(e.target) && !toggler.contains(e.target) && navbarCollapse.classList.contains('show')) {
+        toggler.click();
       }
     });
   });
