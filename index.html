@@ -17,7 +17,7 @@
   <script type="text/javascript" src="./js/site.js"></script>
 
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70">
 
   <!-- Header -->
   
@@ -35,7 +35,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
 				  <ul class="navbar-nav ms-auto">
-				  <li class="nav-item"><a href="#" class="nav-link">Accueil</a></li>
+				  <li class="nav-item"><a href="#" class="nav-link active">Accueil</a></li>
 				  <li class="nav-item"><a href="#tiles" class="nav-link">Services</a></li>
 				  <li class="nav-item"><a href="#skills" class="nav-link">Domaines et compétences</a></li>
 				  <li class="nav-item"><a href="#projects" class="nav-link">Réalisations</a></li>
@@ -393,6 +393,22 @@
     });
   });
 
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Supprimer la classe active de tous les liens
+                navLinks.forEach(nav => nav.classList.remove('active'));
+
+                // Ajouter la classe active au lien cliqué
+                link.classList.add('active');
+            });
+        });
+    });
 </script>
 
 </body>
