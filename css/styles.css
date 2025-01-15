@@ -34,4 +34,10 @@
 			
 		}
 		
+		#closeMenuButton {
+		width: 100%; /* Prend toute la largeur dans le menu */
+		text-align: center;
+		}
+		
+		
 	}
