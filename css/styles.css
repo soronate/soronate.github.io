@@ -33,7 +33,10 @@
 
 		}
 		
-      
+       #projects .row {
+       gap: 0 !important; /* Supprime l'espacement entre les colonnes */
+      }
+
       
 		#closeMenuButton {
 		width: 100%; /* Prend toute la largeur dans le menu */
