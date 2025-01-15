@@ -400,28 +400,29 @@
     });
   });
 
+</script>
 
+
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     const toggler = document.querySelector('.navbar-toggler');
     const menuText = toggler.querySelector('.menu-text');
     const navbar = document.querySelector('#navbarNav');
 
+    // Met à jour le texte lorsque le menu s'ouvre ou se ferme
     toggler.addEventListener('click', function () {
-      // Utiliser le bouton pour détecter l'état (ouvert/fermé)
-      const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
-      menuText.textContent = isExpanded ? 'Menu' : 'Fermer';
+      const isExpanded = toggler.classList.contains('collapsed'); // Vérifie l'état actuel
+      menuText.textContent = isExpanded ? 'Fermer' : 'Menu';
     });
 
-    // Fermer le menu si un lien du menu est cliqué
+    // Ferme le menu si un lien est cliqué
     navbar.addEventListener('click', function (e) {
       if (e.target.tagName === 'A' && navbar.classList.contains('show')) {
         toggler.click(); // Simule un clic pour fermer le menu
       }
     });
   });
-
 </script>
-
 
 </body>
 </html>
