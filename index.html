@@ -28,11 +28,13 @@
         <h1 class="fs-4 mb-0">Soronate</h1>
       </a>
 
+
 <button class="navbar-toggler d-flex align-items-center" type="button" data-bs-toggle="collapse" 
         data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   <span class="menu-text ms-2">Menu</span>
 </button>
+
       
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
@@ -409,16 +411,16 @@
     const menuText = toggler.querySelector('.menu-text');
     const navbar = document.querySelector('#navbarNav');
 
-    // Met à jour le texte lorsque le menu s'ouvre ou se ferme
     toggler.addEventListener('click', function () {
-      const isExpanded = toggler.classList.contains('collapsed'); // Vérifie l'état actuel
-      menuText.textContent = isExpanded ? 'Fermer' : 'Menu';
+      // Vérifie l'état actuel (menu ouvert ou fermé)
+      const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
+      menuText.textContent = isExpanded ? 'Menu' : 'Fermer';
     });
 
     // Ferme le menu si un lien est cliqué
     navbar.addEventListener('click', function (e) {
       if (e.target.tagName === 'A' && navbar.classList.contains('show')) {
-        toggler.click(); // Simule un clic pour fermer le menu
+        toggler.click();
       }
     });
   });
