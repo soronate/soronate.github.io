@@ -28,8 +28,8 @@
 	
 	@media (max-width: 768px) {
 		#home {
-		background-size: cover; 
-		background-attachment: scroll;
+		/* background-size: cover; 
+		background-attachment: scroll; */
 
 		}
 		
