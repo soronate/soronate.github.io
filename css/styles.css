@@ -1,4 +1,4 @@
-    /* Styles CSS pour enrichir l'apparence */
+je    /* Styles CSS pour enrichir l'apparence */
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -43,10 +43,4 @@
     
     .navbar-toggler-icon {
   display: inline-block;
-}
-
-.close-icon {
-  font-size: 1.5rem;
-  color: white;
-  cursor: pointer;
 }
