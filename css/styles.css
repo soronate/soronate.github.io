@@ -25,12 +25,10 @@
     .ancres{
       scroll-margin: 35px;
     }
-
+	
 	@media (max-width: 768px) {
 		#home {
-        background-size: cover;
-        background-attachment: scroll
-	
+
 		}
 		
 		#closeMenuButton {
