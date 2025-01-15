@@ -24,3 +24,9 @@ je    /* Styles CSS pour enrichir l'apparence */
     .ancres{
       scroll-margin: 35px;
     }
+
+	@media (max-width: 768px) {
+		#home {
+			background-attachment: scroll; /* Fix pour mobile */
+		}
+	}
