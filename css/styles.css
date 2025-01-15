@@ -38,6 +38,15 @@
   max-width: 100% !important;
   padding: 0 !important;
 }
+
+html, body {
+  overflow-x: hidden; /* Empêche tout débordement horizontal */
+}
+
+#tiles .tile {
+    max-width: 100%; /* S'assure que les tuiles ne débordent pas */
+    overflow: hidden; /* Coupe tout contenu débordant */
+   }
       
       
 		#closeMenuButton {
