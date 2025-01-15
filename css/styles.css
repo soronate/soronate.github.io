@@ -33,11 +33,11 @@
 
 		}
 		
-      */
-    #tiles .container {
-    max-width: 100%; /* Étend le conteneur à 100% */
-    padding: 0; /* Retire les marges internes */
-    }
+#tiles .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+}
       
       
 		#closeMenuButton {
