@@ -39,4 +39,11 @@
 			background-position: 50% 70%;
 			
 		}
+		
+		.nav-link.active {
+			border-bottom: none; /* Bordure pour indiquer l'état actif */
+			padding-bottom: none; /* Ajustement pour équilibrer visuellement */
+		}
+		
+		
 	}
