@@ -404,5 +404,37 @@
 
 </script>
 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggler = document.querySelector('.navbar-toggler');
+    const menuText = toggler.querySelector('.menu-text');
+    const navbar = document.querySelector('#navbarNav');
+
+    // Gère le changement de texte pour le bouton burger
+    toggler.addEventListener('click', function () {
+      const isExpanded = toggler.getAttribute('aria-expanded') === 'true'; // Vérifie l'état actuel
+      menuText.textContent = isExpanded ? 'Fermer' : 'Menu'; // Adapte le texte
+    });
+
+    // Ferme le menu si on clique sur un lien ou en dehors
+    document.addEventListener('click', function (e) {
+      const isClickInsideNavbar = navbar.contains(e.target);
+      const isClickOnToggler = toggler.contains(e.target);
+
+      if (!isClickInsideNavbar && !isClickOnToggler && navbar.classList.contains('show')) {
+        toggler.click(); // Simule un clic pour fermer le menu
+      }
+    });
+
+    // Ferme le menu au clic sur un lien du menu
+    navbar.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && navbar.classList.contains('show')) {
+        toggler.click(); // Simule un clic pour fermer le menu
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
