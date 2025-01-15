@@ -30,7 +30,6 @@ je    /* Styles CSS pour enrichir l'apparence */
 			background-size: cover; /* S'applique uniquement sur mobile */
 			background-attachment: scroll; 
 			background-position: 50% 70%;
-			background-attachment: fixed;
 			
 		}
 	}
