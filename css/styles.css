@@ -33,11 +33,6 @@
 
 		}
 		
-#tiles .container {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding: 0 !important;
-}
 
 html, body {
   overflow-x: hidden; /* Empêche tout débordement horizontal */
