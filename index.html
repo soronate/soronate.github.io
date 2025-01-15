@@ -31,8 +31,8 @@
 
 <button class="navbar-toggler d-flex align-items-center" type="button" data-bs-toggle="collapse" 
         data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  <span class="menu-text ms-2">Menu</span>
+    <span class="menu-text ms-3">Menu</span>
+    <span class="navbar-toggler-icon"></span>
 </button>
 
       
@@ -402,28 +402,6 @@
     });
   });
 
-</script>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggler = document.querySelector('.navbar-toggler');
-    const menuText = toggler.querySelector('.menu-text');
-    const navbar = document.querySelector('#navbarNav');
-
-    toggler.addEventListener('click', function () {
-      // Vérifie l'état actuel (menu ouvert ou fermé)
-      const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
-      menuText.textContent = isExpanded ? 'Menu' : 'Fermer';
-    });
-
-    // Ferme le menu si un lien est cliqué
-    navbar.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A' && navbar.classList.contains('show')) {
-        toggler.click();
-      }
-    });
-  });
 </script>
 
 </body>
