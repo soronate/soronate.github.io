@@ -27,9 +27,15 @@
         <img src="./img/Logoheader.png" class="logo me-2" width="50" height="50" alt="Soronate">
         <h1 class="fs-4 mb-0">Soronate</h1>
       </a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+<button class="navbar-toggler d-flex align-items-center" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
+ 
+<button class="navbar-toggler d-flex align-items-center" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  <span class="menu-text ms-2">Menu</span>
 </button>
       
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -397,7 +403,23 @@
       }
     });
   });
-  
+
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggler = document.querySelector('.navbar-toggler');
+    const menuText = toggler.querySelector('.menu-text');
+    const navbar = document.querySelector('#navbarNav');
+
+    toggler.addEventListener('click', function () {
+      if (navbar.classList.contains('show')) {
+        menuText.textContent = 'Menu'; // Texte par défaut quand le menu est fermé
+      } else {
+        menuText.textContent = 'Fermer'; // Texte quand le menu est ouvert
+      }
+    });
+  });
+
 </script>
 
 
