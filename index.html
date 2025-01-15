@@ -390,7 +390,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+  document.querySelectorAll('.navbar-nav .nav-link .navbar-toggler-icon').forEach(function (link) {
     link.addEventListener('click', function () {
       const navbarCollapse = document.getElementById('navbarNav');
       const navbarToggler = document.querySelector('.navbar-toggler');
@@ -404,34 +404,6 @@
 
 </script>
 
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggler = document.querySelector('.navbar-toggler');
-    const menuText = toggler.querySelector('.menu-text');
-    const navbarCollapse = document.querySelector('#navbarNav');
-
-    // Gère le changement de texte du bouton burger
-    toggler.addEventListener('click', function () {
-      const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
-      menuText.textContent = isExpanded ? 'Menu' : 'Fermer';
-    });
-
-    // Ferme le menu lorsqu'un lien est cliqué
-    navbarCollapse.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A' && navbarCollapse.classList.contains('show')) {
-        toggler.click(); // Simule un clic pour fermer le menu
-      }
-    });
-
-    // Ferme le menu lorsqu'on clique à l'extérieur
-    document.addEventListener('click', function (e) {
-      if (!navbarCollapse.contains(e.target) && !toggler.contains(e.target) && navbarCollapse.classList.contains('show')) {
-        toggler.click();
-      }
-    });
-  });
-</script>
 
 </body>
 </html>
