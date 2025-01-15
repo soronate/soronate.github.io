@@ -28,8 +28,6 @@
 	
 	@media (max-width: 768px) {
 		#home {
-		/* background-image: url('./../img/image_dark_mob.jpg');  */
-		background-image: url('https://soronate.github.io/img/image_dark_mob.jpg'); 
 		background-size: cover; 
 		background-attachment: scroll;
 
