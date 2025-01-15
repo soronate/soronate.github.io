@@ -23,12 +23,12 @@
   
 <header class="sticky-top bg-dark text-white shadow">
 
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="#home"><img src="./img/LogoSoronate.png" class="logo me-2" width="50" height="50" alt="Soronate" />
 				<h1 class="fs-4 mb-0">Soronate</h1>
 				</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <button id="menuToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
 					<span class="navbar-toggler-icon"></span>
@@ -384,6 +384,25 @@
     });
   });
 
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggler = document.getElementById('menuToggler');
+        const togglerIcon = document.getElementById('togglerIcon');
+
+        menuToggler.addEventListener('click', () => {
+            if (menuToggler.getAttribute('aria-expanded') === 'true') {
+                // Le menu est ouvert, remplacez l'icône par un "X"
+                togglerIcon.classList.remove('fa-bars');
+                togglerIcon.classList.add('fa-times');
+            } else {
+                // Le menu est fermé, remettez l'icône du burger
+                togglerIcon.classList.remove('fa-times');
+                togglerIcon.classList.add('fa-bars');
+            }
+        });
+    });
 </script>
 
 </body>
