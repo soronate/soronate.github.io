@@ -28,7 +28,6 @@
 
 	@media (max-width: 768px) {
 		#home {
-        height: 50vh; /* Réduit la hauteur sur mobile */
         background-size: cover;
         background-attachment: scroll
 	
