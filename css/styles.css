@@ -28,6 +28,7 @@ je    /* Styles CSS pour enrichir l'apparence */
 	@media (max-width: 768px) {
 		#home {
 			background-size: cover; /* S'applique uniquement sur mobile */
-			background-attachment: scroll; /* Désactiver fixed sur mobile */
+			background-attachment: scroll; 
+			background-attachment: initial;
 		}
 	}
