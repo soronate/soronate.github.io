@@ -29,6 +29,8 @@ je    /* Styles CSS pour enrichir l'apparence */
 		#home {
 			background-size: cover; /* S'applique uniquement sur mobile */
 			background-attachment: scroll; 
-			background-attachment: initial;
+			background-position: 50% 70%;
+			background-attachment: fixed;
+			
 		}
 	}
