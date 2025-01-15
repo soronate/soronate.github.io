@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Mode Sombre/Clair</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bs-body-bg: #212529;
+      --bs-body-color: #f8f9fa;
+    }
 
+    [data-bs-theme="light"] {
+      --bs-body-bg: #f8f9fa;
+      --bs-body-color: #212529;
+    }
+  </style>
+</head>
+<body class="bg-dark text-white" data-bs-theme="dark">
+  <!-- Header -->
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Mon Site</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#content">Contenu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#footer">Contact</a></li>
+          <li class="nav-item">
+            <button class="btn btn-outline-light ms-2" id="themeToggle">Mode Clair</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container py-5" id="content">
+    <h1 class="text-center">Bienvenue sur mon site</h1>
+    <p class="lead text-center">Voici une page simple avec un mode sombre par défaut.</p>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <h3>Section 1</h3>
+        <p>Du contenu ici.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Section 2</h3>
+        <p>Encore plus de contenu.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Section 3</h3>
+        <p>Et encore du contenu.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-center py-3" id="footer">
+    <p class="mb-0">&copy; 2025 Mon Site. Tous droits réservés.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const body = document.body;
+    const themeToggle = document.getElementById('themeToggle');
+    let isDarkMode = true;
+
+    themeToggle.addEventListener('click', () => {
+      isDarkMode = !isDarkMode;
+      body.setAttribute('data-bs-theme', isDarkMode ? 'dark' : 'light');
+      themeToggle.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
+    });
+  </script>
+</body>
+</html>
