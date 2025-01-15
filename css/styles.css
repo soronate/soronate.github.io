@@ -39,3 +39,14 @@
 	  background-color: #e9ecef; /* Couleur de fond légèrement plus foncée */
 	  color: #212529; /* Texte plus visible si nécessaire */
 	}
+    
+    
+    .navbar-toggler-icon {
+  display: inline-block;
+}
+
+.close-icon {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
