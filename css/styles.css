@@ -28,15 +28,19 @@
 
 	@media (max-width: 768px) {
 		#home {
-			background-size: cover; /* S'applique uniquement sur mobile */
+			background-size: cover; 
 			background-attachment: scroll; 
 			background-position: 50% 70%;
 			
+			height: 100vh;
+			background-repeat: no-repeat;
+			background-position: center;
+	
 		}
 		
 		#closeMenuButton {
 		width: 100%; /* Prend toute la largeur dans le menu */
-		text-align: center;
+		text-align: right;
 		}
 		
 		
