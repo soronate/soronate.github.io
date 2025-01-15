@@ -25,6 +25,12 @@
     .ancres{
       scroll-margin: 35px;
     }
+	
+.nav-link.active {
+    color: #ffffff; /* Couleur du texte */
+    border-bottom: 3px solid #086976; /* Bordure pour indiquer l'état actif */
+    padding-bottom: 2px; /* Ajustement pour équilibrer visuellement */
+}
 
 	@media (max-width: 768px) {
 		#home {
