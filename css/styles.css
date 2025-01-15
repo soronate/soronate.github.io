@@ -29,8 +29,8 @@
 	@media (max-width: 768px) {
 		#home {
 
-		background-size: cover; 
-		background-attachment: none;
+		background-size: contain; 
+		background-attachment: scroll;
 
 		}
 		
