@@ -1,1 +1,0 @@
-# soronate.github.io
