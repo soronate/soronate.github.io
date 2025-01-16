@@ -994,7 +994,8 @@ a {
   padding: 0.5rem 1.8rem;
 }
 .cid-uA2iNNFw4o .navbar .navbar-logo img {
-  min-width: 6rem;
+  min-width: 0rem;
+ /*  min-width: 6rem; */
   object-fit: cover;
 }
 .cid-uA2iNNFw4o .navbar .navbar-collapse {
