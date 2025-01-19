@@ -19,4 +19,48 @@
 	
 	
 	
-   /* Styles CSS pour la baniiere */
+   /* Styles CSS pour la baniere */
+	.terme {
+      background-color: #ccc;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 10px;
+    }
+      .marquee {
+        margin: 0 auto;
+        width: 95%;
+        height: 50px;
+        white-space: nowrap;
+        overflow: hidden;
+        box-sizing: border-box;
+        position: relative;
+      }
+    
+      .marquee__content {
+        width: 300%;
+        display: flex;
+        line-height: 30px;
+        animation: marquee 15s linear infinite forwards;
+      }
+      .marquee__content:hover {
+        animation-play-state: paused;
+      }
+      .list-inline {
+        display: flex;
+        justify-content: space-around;
+        width: 33.33%;
+        /* reset list */
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+		
+		/* Metytre à 0% pour changer le sens */
+        100% {
+          transform: translateX(-66.6%);
+        }
+      }
