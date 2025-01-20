@@ -17,7 +17,7 @@
         }
         .marquee-content {
             display: flex;
-            animation: marquee-left 15s linear infinite;
+            animation: marquee 15s linear infinite;
         }
         .marquee-item {
             display: inline-block;
@@ -26,9 +26,12 @@
             border-radius: 10px;
             padding: 5px 10px;
         }
-        @keyframes marquee-left {
+        @keyframes marquee {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
+        }
+        .marquee-right .marquee-content {
+            animation: marquee-right 15s linear infinite;
         }
         @keyframes marquee-right {
             0% { transform: translateX(-100%); }
@@ -39,7 +42,7 @@
 <body>
     <div class="container mt-5">
         <div class="marquee">
-            <div id="marqueeContent" class="marquee-content marquee-left">
+            <div id="marqueeContent" class="marquee-content">
                 <span class="marquee-item">Terme 1</span>
                 <span class="marquee-item">Terme 2</span>
                 <span class="marquee-item">Terme 3</span>
