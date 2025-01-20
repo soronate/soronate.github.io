@@ -37,7 +37,7 @@
             margin-right: 50px;
             background-color: #FFFFFF;
             border-radius: 10px;
-            padding: 5px 10px;
+            padding: 5px 5px;
         }
         .marquee-left {
             animation: marquee-left 15s linear infinite;
