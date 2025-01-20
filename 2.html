@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeau Défilant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .marquee {
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .marquee-content {
+            display: flex;
+            white-space: nowrap;
+        }
+        .marquee-item {
+            display: inline-block;
+            margin-right: 50px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            padding: 5px 10px;
+        }
+        .marquee-left {
+            animation: marquee-left 15s linear infinite;
+        }
+        .marquee-right {
+            animation: marquee-right 15s linear infinite;
+        }
+        @keyframes marquee-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes marquee-right {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between mb-3">
+            <button id="directionLeft" class="btn btn-primary">Défiler à gauche</button>
+            <button id="directionRight" class="btn btn-secondary">Défiler à droite</button>
+        </div>
+        <div class="marquee">
+            <div id="marqueeContent" class="marquee-content marquee-left">
+                <span class="marquee-item">Terme 1</span>
+                <span class="marquee-item">Terme 2</span>
+                <span class="marquee-item">Terme 3</span>
+                <span class="marquee-item">Terme 4</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('directionLeft').addEventListener('click', function() {
+            document.getElementById('marqueeContent').classList.remove('marquee-right');
+            document.getElementById('marqueeContent').classList.add('marquee-left');
+        });
+
+        document.getElementById('directionRight').addEventListener('click', function() {
+            document.getElementById('marqueeContent').classList.remove('marquee-left');
+            document.getElementById('marqueeContent').classList.add('marquee-right');
+        });
+
+        // Duplication dynamique du contenu pour un défilement continu
+        window.addEventListener('load', function() {
+            const marqueeContent = document.getElementById('marqueeContent');
+            const marqueeItems = Array.from(marqueeContent.children);
+            const contentWidth = marqueeContent.scrollWidth;
+            let totalWidth = 0;
+
+            marqueeItems.forEach(item => {
+                totalWidth += item.offsetWidth;
+            });
+
+            // Dupliquer les éléments jusqu'à ce que la largeur totale soit suffisante
+            while (totalWidth < contentWidth * 2) {
+                marqueeItems.forEach(item => {
+                    const clone = item.cloneNode(true);
+                    marqueeContent.appendChild(clone);
+                    totalWidth += clone.offsetWidth;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
