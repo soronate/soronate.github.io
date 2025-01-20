@@ -19,6 +19,9 @@
             display: flex;
             animation: marquee 15s linear infinite;
         }
+        .marquee-content.marquee-right {
+            animation: marquee-right 15s linear infinite;
+        }
         .marquee-item {
             display: inline-block;
             margin-right: 50px;
@@ -30,19 +33,32 @@
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
-        .marquee-right .marquee-content {
-            animation: marquee-right 15s linear infinite;
-        }
         @keyframes marquee-right {
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
+        }
+        .marquee-duplicate {
+            position: absolute;
+            top: 0;
+            left: 100%;
         }
     </style>
 </head>
 <body>
     <div class="container mt-5">
         <div class="marquee">
-            <div id="marqueeContent" class="marquee-content">
+            <div id="marqueeContent" class="marquee-content marquee-left">
+                <span class="marquee-item">Terme 1</span>
+                <span class="marquee-item">Terme 2</span>
+                <span class="marquee-item">Terme 3</span>
+                <span class="marquee-item">Terme 4</span>
+                <!-- Duplication du contenu pour un défilement continu -->
+                <span class="marquee-item">Terme 1</span>
+                <span class="marquee-item">Terme 2</span>
+                <span class="marquee-item">Terme 3</span>
+                <span class="marquee-item">Terme 4</span>
+            </div>
+            <div class="marquee-content marquee-right marquee-duplicate">
                 <span class="marquee-item">Terme 1</span>
                 <span class="marquee-item">Terme 2</span>
                 <span class="marquee-item">Terme 3</span>
@@ -57,27 +73,5 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Duplication dynamique du contenu pour un défilement continu
-        window.addEventListener('load', function() {
-            const marqueeContent = document.getElementById('marqueeContent');
-            const marqueeItems = Array.from(marqueeContent.children);
-            const contentWidth = marqueeContent.scrollWidth;
-            let totalWidth = 0;
-
-            marqueeItems.forEach(item => {
-                totalWidth += item.offsetWidth;
-            });
-
-            // Dupliquer les éléments jusqu'à ce que la largeur totale soit suffisante
-            while (totalWidth < contentWidth * 2) {
-                marqueeItems.forEach(item => {
-                    const clone = item.cloneNode(true);
-                    marqueeContent.appendChild(clone);
-                    totalWidth += clone.offsetWidth;
-                });
-            }
-        });
-    </script>
 </body>
 </html>
