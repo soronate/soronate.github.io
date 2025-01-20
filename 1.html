@@ -32,12 +32,12 @@
             animation: marquee-right 15s linear infinite;
         }
         @keyframes marquee-left {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
         @keyframes marquee-right {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
         }
     </style>
 </head>
@@ -49,6 +49,11 @@
         </div>
         <div class="marquee">
             <div id="marqueeContent" class="marquee-content marquee-left">
+                <span class="marquee-item">Terme 1</span>
+                <span class="marquee-item">Terme 2</span>
+                <span class="marquee-item">Terme 3</span>
+                <span class="marquee-item">Terme 4</span>
+                <!-- Duplication du contenu pour un défilement continu -->
                 <span class="marquee-item">Terme 1</span>
                 <span class="marquee-item">Terme 2</span>
                 <span class="marquee-item">Terme 3</span>
