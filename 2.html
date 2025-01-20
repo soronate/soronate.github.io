@@ -24,20 +24,6 @@
             border-radius: 10px;
             padding: 5px 10px;
         }
-        .marquee-left {
-            animation: marquee-left 15s linear infinite;
-        }
-        .marquee-right {
-            animation: marquee-right 15s linear infinite;
-        }
-        @keyframes marquee-left {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        @keyframes marquee-right {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
     </style>
 </head>
 <body>
@@ -47,7 +33,7 @@
             <button id="directionRight" class="btn btn-secondary">Défiler à droite</button>
         </div>
         <div class="marquee">
-            <div id="marqueeContent" class="marquee-content marquee-left">
+            <div id="marqueeContent" class="marquee-content">
                 <span class="marquee-item">Terme 1</span>
                 <span class="marquee-item">Terme 2</span>
                 <span class="marquee-item">Terme 3</span>
@@ -58,19 +44,37 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        let direction = 'left';
+        let marqueeContent = document.getElementById('marqueeContent');
+        let speed = 2; // Vitesse de défilement
+        let posX = 0;
+
         document.getElementById('directionLeft').addEventListener('click', function() {
-            document.getElementById('marqueeContent').classList.remove('marquee-right');
-            document.getElementById('marqueeContent').classList.add('marquee-left');
+            direction = 'left';
         });
 
         document.getElementById('directionRight').addEventListener('click', function() {
-            document.getElementById('marqueeContent').classList.remove('marquee-left');
-            document.getElementById('marqueeContent').classList.add('marquee-right');
+            direction = 'right';
         });
+
+        function animateMarquee() {
+            if (direction === 'left') {
+                posX -= speed;
+                if (posX <= -marqueeContent.scrollWidth) {
+                    posX = 0;
+                }
+            } else {
+                posX += speed;
+                if (posX >= marqueeContent.scrollWidth) {
+                    posX = 0;
+                }
+            }
+            marqueeContent.style.transform = `translateX(${posX}px)`;
+            requestAnimationFrame(animateMarquee);
+        }
 
         // Duplication dynamique du contenu pour un défilement continu
         window.addEventListener('load', function() {
-            const marqueeContent = document.getElementById('marqueeContent');
             const marqueeItems = Array.from(marqueeContent.children);
             const contentWidth = marqueeContent.scrollWidth;
             let totalWidth = 0;
@@ -87,6 +91,9 @@
                     totalWidth += clone.offsetWidth;
                 });
             }
+
+            // Démarrer l'animation
+            requestAnimationFrame(animateMarquee);
         });
     </script>
 </body>
