@@ -12,10 +12,12 @@
             background-color: #f8f9fa;
             padding: 10px;
             border-radius: 10px;
+            white-space: nowrap;
+            display: flex;
         }
         .marquee-content {
             display: flex;
-            white-space: nowrap;
+            animation: marquee-left 15s linear infinite;
         }
         .marquee-item {
             display: inline-block;
@@ -24,77 +26,19 @@
             border-radius: 10px;
             padding: 5px 10px;
         }
+        @keyframes marquee-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes marquee-right {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
     </style>
 </head>
 <body>
     <div class="container mt-5">
-        <div class="d-flex justify-content-between mb-3">
-            <button id="directionLeft" class="btn btn-primary">Défiler à gauche</button>
-            <button id="directionRight" class="btn btn-secondary">Défiler à droite</button>
-        </div>
         <div class="marquee">
-            <div id="marqueeContent" class="marquee-content">
+            <div id="marqueeContent" class="marquee-content marquee-left">
                 <span class="marquee-item">Terme 1</span>
-                <span class="marquee-item">Terme 2</span>
-                <span class="marquee-item">Terme 3</span>
-                <span class="marquee-item">Terme 4</span>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        let direction = 'left';
-        let marqueeContent = document.getElementById('marqueeContent');
-        let speed = 2; // Vitesse de défilement
-        let posX = 0;
-
-        document.getElementById('directionLeft').addEventListener('click', function() {
-            direction = 'left';
-        });
-
-        document.getElementById('directionRight').addEventListener('click', function() {
-            direction = 'right';
-        });
-
-        function animateMarquee() {
-            if (direction === 'left') {
-                posX -= speed;
-                if (posX <= -marqueeContent.scrollWidth) {
-                    posX = 0;
-                }
-            } else {
-                posX += speed;
-                if (posX >= marqueeContent.scrollWidth) {
-                    posX = 0;
-                }
-            }
-            marqueeContent.style.transform = `translateX(${posX}px)`;
-            requestAnimationFrame(animateMarquee);
-        }
-
-        // Duplication dynamique du contenu pour un défilement continu
-        window.addEventListener('load', function() {
-            const marqueeItems = Array.from(marqueeContent.children);
-            const contentWidth = marqueeContent.scrollWidth;
-            let totalWidth = 0;
-
-            marqueeItems.forEach(item => {
-                totalWidth += item.offsetWidth;
-            });
-
-            // Dupliquer les éléments jusqu'à ce que la largeur totale soit suffisante
-            while (totalWidth < contentWidth * 2) {
-                marqueeItems.forEach(item => {
-                    const clone = item.cloneNode(true);
-                    marqueeContent.appendChild(clone);
-                    totalWidth += clone.offsetWidth;
-                });
-            }
-
-            // Démarrer l'animation
-            requestAnimationFrame(animateMarquee);
-        });
-    </script>
-</body>
-</html>
+                <span class="marquee-item">Terme
