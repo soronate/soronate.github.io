@@ -43,10 +43,6 @@
 </head>
 <body>
     <div class="container mt-5">
-        <div class="d-flex justify-content-between mb-3">
-            <button id="directionLeft" class="btn btn-primary">Défiler à gauche</button>
-            <button id="directionRight" class="btn btn-secondary">Défiler à droite</button>
-        </div>
         <div class="marquee">
             <div id="marqueeContent" class="marquee-content marquee-left">
                 <span class="marquee-item">Terme 1</span>
@@ -59,19 +55,22 @@
                 <span class="marquee-item">Terme 3</span>
                 <span class="marquee-item">Terme 4</span>
             </div>
+            <br>
+            <div id="marqueeContent" class="marquee-content marquee-right">
+                <span class="marquee-item">Terme 1</span>
+                <span class="marquee-item">Terme 2</span>
+                <span class="marquee-item">Terme 3</span>
+                <span class="marquee-item">Terme 4</span>
+                <!-- Duplication du contenu pour un défilement continu -->
+                <span class="marquee-item">Terme 1</span>
+                <span class="marquee-item">Terme 2</span>
+                <span class="marquee-item">Terme 3</span>
+                <span class="marquee-item">Terme 4</span>
+            </div>
+            
         </div>
     </div>
 
-    <script>
-        document.getElementById('directionLeft').addEventListener('click', function() {
-            document.getElementById('marqueeContent').classList.remove('marquee-right');
-            document.getElementById('marqueeContent').classList.add('marquee-left');
-        });
 
-        document.getElementById('directionRight').addEventListener('click', function() {
-            document.getElementById('marqueeContent').classList.remove('marquee-left');
-            document.getElementById('marqueeContent').classList.add('marquee-right');
-        });
-    </script>
 </body>
 </html>
