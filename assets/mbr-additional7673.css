@@ -839,7 +839,8 @@ a {
   transition: 0.3s all !important;
 }
 .cid-uA2iNNFw4o .navbar-nav .nav-item .nav-link {
-  padding: 16px !important;
+  padding: 10px !important;
+/*  padding: 16px !important; */
   margin: 0 !important;
   border-radius: 1rem !important;
   transition: 0.3s all !important;
