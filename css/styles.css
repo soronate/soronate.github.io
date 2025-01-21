@@ -60,7 +60,7 @@
     padding: 40px 20px;
     background-color: #E7F2F7;  /* Fond personnalisé */
     text-align: center;
-    font-family: 'Arial', sans-serif; /* Typographie propre et moderne */
+    font-family: 'Onest', sans-serif; /* Typographie propre et moderne */
   }
 
   #actualites h2 {
@@ -89,7 +89,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -114,7 +114,7 @@
 
   /* Date et extrait */
   .news-content p {
-    font-size: 14px;
+    font-size: 16px;
     color: #7f8c8d;
     line-height: 1.5;
     text-align: left;
@@ -125,7 +125,7 @@
   .news-content a {
     text-decoration: none;
     color: #fff;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     background-color: #076779;  /* Couleur du fond du bouton */
     border: none;
