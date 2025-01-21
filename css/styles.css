@@ -130,7 +130,7 @@
     background-color: #076779;  /* Couleur du fond du bouton */
     border: none;
     padding: 12px 20px;  /* Taille du bouton */
-    border-radius: 5px;  /* Coins arrondis */
+    border-radius: 20px;  /* Coins arrondis */
     display: inline-block;
     margin-top: 10px;
     transition: background-color 0.3s ease;

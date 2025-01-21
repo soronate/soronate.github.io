@@ -904,6 +904,27 @@
 </section>
 
 
+<!--  Actualités -->
+<section id="actualites">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Actualités</strong></h3>
+						<h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7 animate__animated animate__delay-1s animate__fadeIn"></h5> 
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+ 			<div id="news-container"></div>
+        </div>
+    </div>
+
+</section>
+
 <section data-bs-version="5.1" class="form5 cid-uA2iNNMYsA" id="contact-form-3-uA2iNNMYsA">
     
     
@@ -947,6 +968,7 @@
         </div>
     </div>
 </section>
+
 
 <section data-bs-version="5.1" class="contacts02 map1 cid-uA2iNNMrqr" id="contacts-2-uA2iNNMrqr">
 
@@ -993,31 +1015,6 @@
             </div>
         </div>
     </div>
-</section>
-
-
-<!--  Actualités -->
-<section id="actualites">
-
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 content-head">
-                <div class="mbr-section-head mb-5">
-                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                        <strong>Actualités</strong></h3>
-						<h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7 animate__animated animate__delay-1s animate__fadeIn">
-							Source : <a href="https://www.lemondeinformatique.fr" target="_blank" class="text-back">Le monde informatique</a>.
-						</h5> 
-                </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
- 			<div id="news-container"></div>
-        </div>
-    </div>
-
-
 </section>
 
 
@@ -1097,7 +1094,7 @@
           <div class="news-article">
             <div class="news-content">
               <h3><a href="${article.link}" target="_blank">${article.title}</a></h3>
-              <p><strong>${new Date(article.pubDate).toLocaleDateString()}</strong></p>
+              <p><strong>${new Date(article.pubDate).toLocaleDateString()}</strong> - Le monde informatique</p>
               <p>${article.description.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 180)}</p>
               <a href="${article.link}" target="_blank">Lire plus</a>
             </div>
