@@ -1091,7 +1091,7 @@
     .then(response => response.json())
     .then(data => {
       let newsContainer = document.getElementById("news-container");
-      data.items.slice(0, 12).forEach(article => { // Limite à 12 articles
+      data.items.slice(0, 8).forEach(article => { // Limite à 8 articles
 
         let articleHTML = `
           <div class="news-article">
