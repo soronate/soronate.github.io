@@ -154,8 +154,7 @@
     }
     
 	#actualites {
-    padding: 0px 0px; /* Pleine largeur sur mobile */
+    padding: 0px 0px; /* Pleine largeur sur mobile */ 
   }
   }
-  
- 
+   /* Fin Responsive : mobile/tablette */
