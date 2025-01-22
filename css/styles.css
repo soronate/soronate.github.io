@@ -149,7 +149,13 @@
     }
 
     .news-article {
-      width: 90%;
-      padding: 15px;
+      width: 100%;
+      padding: 10px;
     }
+    
+	#actualites {
+    padding: 0px 0px; /* Pleine largeur sur mobile */
   }
+  }
+  
+ 
