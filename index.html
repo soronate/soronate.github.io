@@ -1086,9 +1086,9 @@
   
   <!-- Actualités -->
 <script>
-fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.01net.com/actualites/feed/")
+    //fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.01net.com/actualites/feed/")
   
-    //fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.lemondeinformatique.fr/flux-rss/thematique/toutes-les-actualites/rss.xml")
+    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.lemondeinformatique.fr/flux-rss/thematique/toutes-les-actualites/rss.xml")
     .then(response => response.json())
     .then(data => {
       let newsContainer = document.getElementById("news-container");
