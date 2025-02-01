@@ -34,3 +34,4 @@
 	          document.getElementById("progress").style.width = barre+"px"
 	      })
 	  }
+	  
