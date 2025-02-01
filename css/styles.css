@@ -158,3 +158,17 @@
   }
   }
    /* Fin Responsive : mobile/tablette */
+   
+   
+   
+   /* Barre de progression haut du site */   
+  #progress{
+	background-color: #9FE870;
+	height: 4px;
+	width: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999; 
+} 
+   /* Fin Barre de progression haut du site */
