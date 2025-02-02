@@ -165,7 +165,7 @@
    /* Barre de progression haut du site */   
   #progress{
 	background-color: #9FE870;
-	height: 4px;
+	height: 6px;
 	width: 0;
 	position: fixed;
 	top: 0;
