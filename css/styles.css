@@ -12,6 +12,13 @@
 		
 	}
 	 */
+
+	.menu-text {
+	    font-size: 1rem;
+	    font-weight: bold;
+	    margin-right: 0px;
+	}	
+
  
 	.btn-dark {
 		opacity: 0.8 !important;
