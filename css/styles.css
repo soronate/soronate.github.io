@@ -185,3 +185,74 @@
 } 
    /* Fin Barre de progression haut du site */
    
+   
+   
+        /* Menu sticky */
+        .sticky-menu {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 999;
+        }
+
+        /* Conteneur du menu avec encadré */
+        .menu-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(200, 200, 200, 0.8); /* Fond gris clair semi-transparent */
+            padding: 5px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 5px;
+        }
+
+        .menu-container.show {
+            display: flex;
+        }
+
+        /* Bouton principal */
+        .menu-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background-color: #9FE870;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Élément du menu */
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            border-radius: 10px;
+            padding: 6px;
+            width: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: #f1f1f1;
+            transform: translateY(-3px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item i {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .menu-item span {
+            font-size: 12px;
+            text-align: center;
+        }

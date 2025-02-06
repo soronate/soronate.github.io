@@ -1137,10 +1137,11 @@
   <script src="./assets/script7673.js"></script>
   <script src="./assets/script7673-2.js"></script>
 
-  <!-- Bouton pour remonter en haut -->
+  <!-- Bouton pour remonter en haut 
   <button id="backToTop" class="btn btn-dark rounded-circle position-fixed" style="bottom: 5px; right: 5px; display: none; padding: 0.6rem 1rem;" onclick="UpPage()">
   <i class="bi bi-arrow-up"></i>
   </button>
+-->
 
   <!-- 100% privacy-first analytics -->
   <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
@@ -1170,6 +1171,48 @@
 </script>  
      
   <input name="animation" type="hidden">
+  
+  
+      <!-- Menu sticky --> 
+      <div class="sticky-menu">
+        <div class="menu-container" id="menuContainer">
+            <div class="menu-item">
+                <a href="./index.html#header17-6"><i class="bi bi-house-door"></i></a>
+           <!--     <span>Accueil</span> -->
+            </div>
+            <div class="menu-item">
+                <a href="./index.html#features05-5"><i class="bi bi-collection"></i></a>
+            </div>
+            <div class="menu-item">
+                <a href="./index.html#features05-9"><i class="bi bi-file-earmark-check"></i></a>
+            </div>
+            <div class="menu-item">
+                <a href="./index.html#features05-8"><i class="bi bi-journal-bookmark-fill"></i></a>
+            </div>
+             <div class="menu-item">
+                <a href="./index.html#contact-form-3-uA2iNNMYsA"><i class="bi bi-envelope"></i></a>
+            </div>           
+  
+        </div>
+        <button class="menu-btn" id="toggleMenu">
+            <i class="bi bi-three-dots-vertical"></i>
+        </button>
+    </div>
+
+    <script>
+        document.getElementById("toggleMenu").addEventListener("click", function() {
+            let menuContainer = document.getElementById("menuContainer");
+            let icon = this.querySelector("i");
+
+            menuContainer.classList.toggle("show");
+
+            if (menuContainer.classList.contains("show")) {
+                icon.classList.replace("bi-three-dots-vertical", "bi-x-lg");
+            } else {
+                icon.classList.replace("bi-x-lg", "bi-three-dots-vertical");
+            }
+        });
+    </script>
   
   
   </body>
