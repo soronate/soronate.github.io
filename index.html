@@ -1148,11 +1148,10 @@
   <!-- Actualités -->
 <script>
     //fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.01net.com/actualites/feed/")
-  
+    let newsContainer = document.getElementById("news-container");
     fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.lemondeinformatique.fr/flux-rss/thematique/toutes-les-actualites/rss.xml")
     .then(response => response.json())
     .then(data => {
-      let newsContainer = document.getElementById("news-container");
       data.items.slice(0, 8).forEach(article => { // Limite à 8 articles
 
         let articleHTML = `
@@ -1167,7 +1166,7 @@
         newsContainer.innerHTML += articleHTML;
       });
     })
-    .catch(error => console.log("Erreur chargement RSS : ", error));
+    .catch(error => newsContainer.innerHTML ='<div class="news-article"><div class="news-content"><h3><a href="#">Pas d\'actualité</a></h3><p>Il n\'y a pas de contenu en ce moment.</p></div></div>');
 </script>  
      
   <input name="animation" type="hidden">
