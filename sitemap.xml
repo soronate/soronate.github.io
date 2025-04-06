@@ -7,15 +7,20 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://soronate.github.io/html/mentions.html</loc>
+        <loc>https://soronate.github.io/mentions.html</loc>
         <lastmod>2025-01-25</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://soronate.github.io/html/politique.html</loc>
+        <loc>https://soronate.github.io/politique.html</loc>
         <lastmod>2025-01-25</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.5</priority>
     </url>
+    <url>
+    	<loc>https://soronate.github.io/accessibilite.html</loc>
+    	<lastmod>2025-01-25</lastmod>
+    	<changefreq>monthly</changefreq>
+    	<priority>0.5</priority></url>
 </urlset>
