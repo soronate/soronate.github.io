@@ -89,6 +89,23 @@
   top: auto;
 }
 </style>
+
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '26e91af0f7ac17ea5e751fa408ee6b49d8256f8a';
+_smartsupp.hideWidget = true; // use on specific pages
+_smartsupp.hideMobileWidget = true; // hide chat box on mobile devices
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
+
 </head>
 <body>
 
@@ -1192,6 +1209,11 @@
              <div class="menu-item">
                 <a href="./index.html#contact-form-3-uA2iNNMYsA"><i class="bi bi-envelope"></i></a>
             </div>  
+
+             <div class="menu-item">
+                <a href="#" onclick="smartsupp('chat:open');return false;"><i class="bi bi-chat-dots-fill"></i></a>
+            </div>              
+
              <div class="menu-item">
                  <a onclick="UpPage()"><i class="bi bi-arrow-up-short"></i></a>
             </div>  
