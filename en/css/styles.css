@@ -1,0 +1,258 @@
+   /* Styles CSS pour enrichir l'apparence
+    body {
+
+    }
+    .ancres{
+      scroll-margin: 35px;
+    }
+	
+	@media (max-width: 768px) {
+		#home {
+		}
+		
+	}
+	 */
+
+
+ 	.menu-text::after {
+	    font-size: 1rem;
+/* 	    font-weight: bold;    */
+	    margin-right: 0px;
+	    cursor: pointer;
+	    content: "Menu";
+	
+    }
+
+ 
+	.btn-dark {
+		opacity: 0.8 !important;
+	}	
+	
+	
+	
+   /* Styles CSS pour la baniere */
+        .marquee {
+            overflow: hidden;
+            position: relative;
+        
+            padding: 10px;
+            
+        }
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            white-space: nowrap;
+        }
+        .marquee-item {
+            display: inline-block;
+            margin-right: 50px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            padding: 5px 5px;
+        }
+        .marquee-left {
+            animation: marquee-left 15s linear infinite;
+        }
+        .marquee-right {
+            animation: marquee-right 15s linear infinite;
+        }
+        @keyframes marquee-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        
+        
+        /* Styles CSS pour la partie actualités  */
+  #actualites {
+    padding: 40px 20px;
+    background-color: #E7F2F7;  /* Fond personnalisé */
+    text-align: center;
+    font-family: 'Onest', sans-serif; /* Typographie propre et moderne */
+  }
+
+  #actualites h2 {
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Ajout d'un effet sur le titre */
+  }
+
+  /* Grille pour afficher les articles */
+  #news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  /* Chaque carte d'article */
+  .news-article {
+    width: 300px;
+    border: 1px solid #e1e1e1;
+/*     border-radius: 10px;  */
+    border-radius: 2rem !important;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .news-article:hover {
+    transform: translateY(-10px); /* Effet de survol fluide */
+  }
+
+  .news-content {
+    flex-grow: 1;
+  }
+
+  /* Titre de l'article */
+  .news-content h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  /* Date et extrait */
+  .news-content p {
+    font-size: 16px;
+    color: #7f8c8d;
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  /* Lien vers l'article (style bouton comme "Envoyer votre demande") */
+  .news-content a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #076779;  /* Couleur du fond du bouton */
+    border: none;
+    padding: 12px 20px;  /* Taille du bouton */
+    border-radius: 20px;  /* Coins arrondis */
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Effet de survol du bouton */
+  .news-content a:hover {
+    background-color: #0A90A9;  /* Couleur plus foncée au survol */
+  }
+
+  /* Responsive : mobile/tablette */
+  @media (max-width: 768px) {
+    #news-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .news-article {
+      width: 100%;
+      padding: 10px;
+    }
+    
+	#actualites {
+    padding: 0px 0px; /* Pleine largeur sur mobile */ 
+  }
+  }
+   /* Fin Responsive : mobile/tablette */
+   
+   
+   
+   /* Barre de progression haut du site */   
+  #progress{
+	background-color: #9FE870;
+	height: 6px;
+	width: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999; 
+} 
+   /* Fin Barre de progression haut du site */
+   
+   
+   
+        /* Menu sticky */
+        .sticky-menu {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 999;
+        }
+
+        /* Conteneur du menu avec encadré */
+        .menu-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(200, 200, 200, 0.8); /* Fond gris clair semi-transparent */
+            padding: 5px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 5px;
+        }
+
+        .menu-container.show {
+            display: flex;
+        }
+
+        /* Bouton principal */
+        .menu-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background-color: #9FE870;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Élément du menu */
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            border-radius: 10px;
+            padding: 6px;
+            width: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: #f1f1f1;
+            transform: translateY(-3px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item i {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .menu-item span {
+            font-size: 12px;
+            text-align: center;
+        }
