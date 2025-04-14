@@ -872,7 +872,7 @@ a {
 }
 @media (min-width: 992px) {
   .cid-uA2iNNFw4o .navbar-nav {
-    padding-left: 1.5rem;
+    padding-left: 0rem;
   }
 }
 .cid-uA2iNNFw4o .nav-link {
@@ -889,7 +889,7 @@ a {
 }
 .cid-uA2iNNFw4o .navbar-caption {
   padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-right: 0rem;
 }
 @media (max-width: 767px) {
   .cid-uA2iNNFw4o .nav-dropdown {
@@ -1203,8 +1203,8 @@ a {
   flex-wrap: nowrap;
   display: flex;
   justify-content: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   padding-top: 0.3rem;
   text-align: center;
 }
