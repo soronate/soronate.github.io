@@ -308,7 +308,35 @@
             }
         });
     </script>
-  
+    <script>
+    // Theme
+	  const link = document.getElementById('theme-link');
+	  const toggle = document.getElementById('theme-toggle');
+	  const html = document.documentElement;
+	
+	  // Appliquer le thème au chargement
+	  if (localStorage.getItem('theme') === 'dark') {
+	    link.href = './css/dark.css';
+	    html.setAttribute('data-theme', 'dark');
+	    toggle.textContent = '☀️';
+	  }
+	
+	  toggle.addEventListener('click', (e) => {
+	    e.preventDefault();
+	    const isDark = link.href.includes('dark.css');
+	    if (isDark) {
+	      link.href = './css/light.css';
+	      html.setAttribute('data-theme', 'light');
+	      localStorage.setItem('theme', 'light');
+	      toggle.textContent = '🌙';
+	    } else {
+	      link.href = './css/dark.css';
+	      html.setAttribute('data-theme', 'dark');
+	      localStorage.setItem('theme', 'dark');
+	      toggle.textContent = '☀️';
+	    }
+	  });
+	</script>  
   </body>
 
 </html>
