@@ -33,6 +33,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;700&amp;display=swap&amp;display=swap"></noscript>
   <link rel="stylesheet" href="https://soronate.github.io/assets/mbr-additional7673.css" type="text/css">
   <link rel="stylesheet" href="https://soronate.github.io/css/styles.css">
+  <link id="theme-link" rel="stylesheet" href="">  
   <script type="text/javascript" src="https://soronate.github.io/js/Soronate.js"></script>
 
 <style>
@@ -103,8 +104,13 @@
 					<a class="iconfont-wrapper" href="https://www.paypal.me/soronate" target="_blank">
 						<span class="p-2"><i class="bi bi-paypal text-black" style="font-size: 1.7rem;"></i></span>
 					</a>
+					<div style="display: flex;justify-content: center;align-items: center;"><a href="./en/index.html" target="_self" title="English version" lang="en"><img src="assets/icon/drapeau-en.png"></a>
+					<button id="theme-toggle" aria-label="Changer de thème">🌙</button>	
+					</div>						
 				</div>
 				<div class="navbar-buttons mbr-section-btn"><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><a class="btn btn-primary display-4" href="https://soronate.github.io/index.html#contact-form-3-uA2iNNMYsA">Contact<span class="socicon socicon-mail mbr-iconfont mbr-iconfont-btn"></span></a> <div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div></div>
+				<div style="text-align: right;" class="navbar-toggler" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">Fermer</div>
+
 			</div>
 		</div>
 	</nav>
@@ -201,6 +207,80 @@
   <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
   <input name="animation" type="hidden">
+
+  
+      <!-- Menu sticky --> 
+      <div class="sticky-menu">
+        <div class="menu-container" id="menuContainer">
+            <div class="menu-item">
+                <a href="./index.html#header17-6"><i class="bi bi-house-door"></i></a>
+           <!--     <span>Accueil</span> -->
+            </div>
+            <div class="menu-item">
+                <a href="./index.html#features05-5"><i class="bi bi-collection"></i></a>
+            </div>
+            <div class="menu-item">
+                <a href="./index.html#features05-9"><i class="bi bi-journal-bookmark-fill"></i></a>
+            </div>
+            <div class="menu-item">
+                <a href="./index.html#features05-8"><i class="bi bi-file-earmark-check"></i></a>
+            </div>
+             <div class="menu-item">
+                <a href="./index.html#contact-form-3-uA2iNNMYsA"><i class="bi bi-envelope"></i></a>
+            </div>           
+             <div class="menu-item">
+                 <a onclick="UpPage()"><i class="bi bi-arrow-up-short"></i></a>
+            </div>   
+        </div>
+        <button class="menu-btn" id="toggleMenu">
+            <i class="bi bi-three-dots-vertical"></i>
+        </button>
+    </div>
+
+    <script>
+        document.getElementById("toggleMenu").addEventListener("click", function() {
+            let menuContainer = document.getElementById("menuContainer");
+            let icon = this.querySelector("i");
+
+            menuContainer.classList.toggle("show");
+
+            if (menuContainer.classList.contains("show")) {
+                icon.classList.replace("bi-three-dots-vertical", "bi-x-lg");
+            } else {
+                icon.classList.replace("bi-x-lg", "bi-three-dots-vertical");
+            }
+        });
+    </script>
+    
+    <script>
+    // Theme
+	  const link = document.getElementById('theme-link');
+	  const toggle = document.getElementById('theme-toggle');
+	  const html = document.documentElement;
+	
+	  // Appliquer le thème au chargement
+	  if (localStorage.getItem('theme') === 'dark') {
+	    link.href = './css/dark.css';
+	    html.setAttribute('data-theme', 'dark');
+	    toggle.textContent = '☀️';
+	  }
+	
+	  toggle.addEventListener('click', (e) => {
+	    e.preventDefault();
+	    const isDark = link.href.includes('dark.css');
+	    if (isDark) {
+	      link.href = './css/light.css';
+	      html.setAttribute('data-theme', 'light');
+	      localStorage.setItem('theme', 'light');
+	      toggle.textContent = '🌙';
+	    } else {
+	      link.href = './css/dark.css';
+	      html.setAttribute('data-theme', 'dark');
+	      localStorage.setItem('theme', 'dark');
+	      toggle.textContent = '☀️';
+	    }
+	  });
+	</script>
   
   </body>
 
