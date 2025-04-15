@@ -5,6 +5,7 @@
   <!-- Start cookieyes banner -->
   <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/26af480f61a3226b1b290b1a/script.js"></script>
   <!-- End cookieyes banner -->
+
   <meta charset="UTF-8">
   <meta http-equiv="content-language" content="fr" />
   <meta name="language" content="fr" /> 
@@ -53,6 +54,7 @@
   
     <link rel="stylesheet" href="./assets/mbr-additional7673.css" type="text/css">
   <link rel="stylesheet" href="./css/styles.css">
+  <link id="theme-link" rel="stylesheet" href="">
   <script type="text/javascript" src="./js/Soronate.js"></script>
 
 <script type="application/ld+json">
@@ -150,9 +152,11 @@ window.smartsupp||(function(d) {
 				
 				        <a class="dropdown-item text-black display-4" href="./index.html#faq-3-uA2iNNGekP">Questions/Réponses<br></a>
 				        <a class="dropdown-item text-black display-4" href="./index.html#actualites">Actualités</a>
+
 				        <hr class="dropdown-divider">
-				        <a class="dropdown-item text-black display-4" href="https://drive.google.com/drive/folders/1Dvr7KVbU7dDxv1mxk4YKp28DLpUetEfz?usp=sharing" target="_blank"><i class="bi bi-file-lock2" style="font-size: 1.4rem;"></i> Cloud <i class="bi bi-cloud-check" style="font-size: 1.4rem;"></i></a>
-				        <a class="dropdown-item text-black display-4" href="https://calendar.google.com/calendar/u/1?cid=Y29udGFjdHNvcm9uYXRlQGdtYWlsLmNvbQ" target="_blank"><i class="bi bi-file-lock2" style="font-size: 1.4rem;"></i> Agenda <i class="bi bi-calendar-check text-black" style="font-size: 1.4rem;"></i></a>
+				        <a class="dropdown-item text-black display-4" href="#"><i class="bi bi-file-lock2" style="font-size: 1.4rem;"></i> Accès sécurisés :</a>
+				        <a class="dropdown-item text-black display-4" href="https://drive.google.com/drive/folders/1Dvr7KVbU7dDxv1mxk4YKp28DLpUetEfz?usp=sharing" target="_blank"> Cloud <i class="bi bi-cloud-check" style="font-size: 1.4rem;"></i></a>
+				        <a class="dropdown-item text-black display-4" href="https://calendar.google.com/calendar/u/1?cid=Y29udGFjdHNvcm9uYXRlQGdtYWlsLmNvbQ" target="_blank"> Agenda <i class="bi bi-calendar-check text-black" style="font-size: 1.4rem;"></i></a>
 				        <hr class="dropdown-divider">
 				    </div>   
 				    </li>
@@ -171,8 +175,8 @@ window.smartsupp||(function(d) {
 					<a class="iconfont-wrapper" href="https://www.paypal.me/soronate" target="_blank">
 						<span class="p-2"><i class="bi bi-paypal text-black" style="font-size: 1.7rem;"></i></span>
 					</a>
-					<a  href="./en/index.html" target="_self" title="English version" lang="en">
-						<img src="assets/icon/drapeau-en.png"></a>					
+					<div style="display: flex;justify-content: center;align-items: center;"><a href="./en/index.html" target="_self" title="English version" lang="en"><img src="assets/icon/drapeau-en.png"></a>
+					<button id="theme-toggle" aria-label="Changer de thème">🌙</button>	</div>		
 				</div>
 				<div class="navbar-buttons mbr-section-btn"><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><a class="btn btn-primary display-4" href="./index.html#contact-form-3-uA2iNNMYsA">Contact<span class="socicon socicon-mail mbr-iconfont mbr-iconfont-btn"></span></a> <div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div></div>
 				<div style="text-align: right;" class="navbar-toggler" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">Fermer</div>
@@ -1091,11 +1095,11 @@ window.smartsupp||(function(d) {
 							
                         </ul>
                     </div>
-                </div>
-            </div>
+                </div> 
+            </div> 
             <div class="map-wrapper col-md-12 col-lg-6">
-                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCagzeiZW1mNMvhkdXaZyfonKWqS9AJKYA&amp;q=Paris%20France" allowfullscreen=""></iframe></div>
-            </div>
+				<div class="google-map"><iframe style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCagzeiZW1mNMvhkdXaZyfonKWqS9AJKYA&amp;q=Paris%20France" allowfullscreen></iframe></div>
+             </div>
         </div>
     </div>
 </section>
@@ -1131,11 +1135,6 @@ window.smartsupp||(function(d) {
 						<a href="https://www.paypal.me/soronate" target="_blank" class="text-white"><i class="bi bi-paypal" style="font-size: 1.4rem;"></i></a>
 					</li>
 
-                    <li class="row-links-soc-item mbr-fonts-style display-7">
-						<a href="./en/index.html" target="_self"><img src="assets/icon/drapeau-en.png"></a>
-					</li>					
-			
-
 					<li class="row-links-soc-item mbr-fonts-style display-7">
                         <a href="./mentions.html" class="text-white">Mentions légales</a>
                     </li>
@@ -1147,7 +1146,10 @@ window.smartsupp||(function(d) {
 					<li class="row-links-soc-item mbr-fonts-style display-7">
                         <a href="./accessibilite.html" class="text-white">Accessibilité</a>
                     </li>
-
+                    
+					<li class="row-links-soc-item mbr-fonts-style display-7">
+                        <a href="./assets/icon/QRCode.jpg" class="text-white" target="_blank"><i class="bi bi-qr-code" style="font-size: 1.4rem;"></i></a>
+                    </li> 
                     </ul>
                 </div>
             </div>
@@ -1223,6 +1225,13 @@ window.smartsupp||(function(d) {
             </div>  
 
              <div class="menu-item">
+                <a href="./assets/icon/QRCode.jpg" target="_blank"><i class="bi bi-qr-code"></i></a>
+            </div>      
+             <div class="menu-item">
+                <a href="./en/index.html"><img src="assets/icon/drapeau-en.png"></a>
+            </div>                  
+                  
+             <div class="menu-item">
                 <a href="#" onclick="smartsupp('chat:open');return false;"><i class="bi bi-chat-fill"></i></a>
             </div>              
 
@@ -1249,7 +1258,35 @@ window.smartsupp||(function(d) {
             }
         });
     </script>
-  
+    <script>
+    // Theme
+	  const link = document.getElementById('theme-link');
+	  const toggle = document.getElementById('theme-toggle');
+	  const html = document.documentElement;
+	
+	  // Appliquer le thème au chargement
+	  if (localStorage.getItem('theme') === 'dark') {
+	    link.href = './css/dark.css';
+	    html.setAttribute('data-theme', 'dark');
+	    toggle.textContent = '☀️';
+	  }
+	
+	  toggle.addEventListener('click', (e) => {
+	    e.preventDefault();
+	    const isDark = link.href.includes('dark.css');
+	    if (isDark) {
+	      link.href = './css/light.css';
+	      html.setAttribute('data-theme', 'light');
+	      localStorage.setItem('theme', 'light');
+	      toggle.textContent = '🌙';
+	    } else {
+	      link.href = './css/dark.css';
+	      html.setAttribute('data-theme', 'dark');
+	      localStorage.setItem('theme', 'dark');
+	      toggle.textContent = '☀️';
+	    }
+	  });
+	</script>  
   
   </body>
 
