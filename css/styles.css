@@ -48,13 +48,13 @@ header video {
   left: 0;
 
   padding: 0px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 0px 0px rgba(0,0,0,0.2);
   z-index: 100;
 }
 .lang-menu a img {
   width: 24px;
   display: block;
-  margin-top: 8px;
+  margin-top: 9px;
 }
 
 /* 	    Fin style selecteur multilangue    */
