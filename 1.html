@@ -175,17 +175,8 @@ window.smartsupp||(function(d) {
 					<a class="iconfont-wrapper" href="https://www.paypal.me/soronate" target="_blank">
 						<span class="p-2"><i class="bi bi-paypal text-black" style="font-size: 1.7rem;"></i></span>
 					</a>
-					<div style="display: flex;justify-content: center;align-items: center;">
-						<div class="lang-selector" id="langToggle">
-						  <img src="assets/icon/drapeau-fr.png" alt="FR">
-						  <div class="lang-menu" id="langMenu">
-						    <a href="./en/index.html" title="English" lang="en"><img src="assets/icon/drapeau-en2.png" alt="EN"></a>
-						    <a href="./lv/index.html" title="Latvija" lang="lv"><img src="assets/icon/drapeau-lv.png" alt="LV"></a>
-						  </div>
-						</div>
-
-						<button id="theme-toggle" aria-label="Changer de thème">🌙</button>	
-					</div>		
+					<div style="display: flex;justify-content: center;align-items: center;"><a href="./en/index.html" target="_self" title="English version" lang="en"><img src="assets/icon/drapeau-en.png"></a>
+					<button id="theme-toggle" aria-label="Changer de thème">🌙</button>	</div>		
 				</div>
 				<div class="navbar-buttons mbr-section-btn"><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><a class="btn btn-primary display-4" href="./index.html#contact-form-3-uA2iNNMYsA">Contact<span class="socicon socicon-mail mbr-iconfont mbr-iconfont-btn"></span></a> <div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div><div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div></div>
 				<div style="text-align: right;" class="navbar-toggler" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">Fermer</div>
@@ -228,6 +219,9 @@ window.smartsupp||(function(d) {
 </section>
 
 <section data-bs-version="5.1" class="features5 cid-uA2p0o0S6C" id="features05-5">
+  
+
+  
   
   <div class="container">
     <div class="row mb-5 justify-content-center">
@@ -1249,11 +1243,9 @@ window.smartsupp||(function(d) {
                 <a href="./assets/icon/QRCode.jpg" target="_blank"><i class="bi bi-qr-code"></i></a>
             </div>      
              <div class="menu-item">
-                <a href="./en/index.html"><img src="assets/icon/drapeau-en2.png"></a>
+                <a href="./en/index.html"><img src="assets/icon/drapeau-en.png"></a>
             </div>                  
-             <div class="menu-item">
-                <a href="./lv/index.html"><img src="assets/icon/drapeau-lv.png"></a>
-            </div>                   
+                  
              <div class="menu-item">
                 <a href="#" onclick="smartsupp('chat:open');return false;"><i class="bi bi-chat-fill"></i></a>
             </div>              
@@ -1310,20 +1302,6 @@ window.smartsupp||(function(d) {
 	    }
 	  });
 	</script>  
-
-
-	<script>
-	document.getElementById('langToggle').addEventListener('click', function(event) {
-	  event.stopPropagation();
-	  const menu = document.getElementById('langMenu');
-	  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-	});
-	document.addEventListener('click', function() {
-	  document.getElementById('langMenu').style.display = 'none';
-	});
-	</script> 
- 
- 
   
   </body>
 
