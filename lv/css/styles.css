@@ -1,3 +1,25 @@
+/* Scrolling */
+/* Works on Firefox */
+* {
+  scrollbar-color: #9FE870 #2C2C2C;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #2C2C2C;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #9FE870;
+  border-radius: 20px;
+  border: 3px solid #2C2C2C;
+}
+
+
 /* 	    Debut video    */
 
 
