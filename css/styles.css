@@ -256,6 +256,21 @@ header video {
   
 }
      
+
+@media (min-width: 768px) and (max-width: 1024px),
+       (orientation: landscape) and (max-width: 1024px) {
+  /* cible précise : remplace l'attribut alt si besoin */
+  #header17-6 img[alt="Soronate"],
+  #header17-6 h1 {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+} 
+ 
   
   
   @media (max-width: 768px) {
