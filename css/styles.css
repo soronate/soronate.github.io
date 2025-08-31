@@ -265,8 +265,9 @@ header video {
     content: "Vos solutions informatiques."; /* nouveau texte */
     visibility: visible;
     position: absolute;
-    left: 0;
     top: 0;
+    left: 20%;
+    text-align: center;
     color: #fff; /* même couleur que l'original */
   }
 
