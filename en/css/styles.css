@@ -238,7 +238,8 @@ header video {
 
   /* Responsive : mobile/tablette */
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px),
+       (orientation: landscape) and (max-width: 1024px) {
   /* masque le paragraphe */
   #header17-6 p.mbr-text {
     visibility : hidden
@@ -246,7 +247,14 @@ header video {
 
   /* masque les contenus */
   
-  #header17-6 img[alt="Soronate"] { display: none !important; }
+  #header17-6 img[alt="Soronate"] {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
   /* masque le bouton */
   #header17-6 .mbr-section-btn {
@@ -254,6 +262,8 @@ header video {
   }
   
 }
+     
+
 
   @media (max-width: 768px) {
     #news-container {
