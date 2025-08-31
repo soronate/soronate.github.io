@@ -237,6 +237,20 @@ header video {
   }
 
   /* Responsive : mobile/tablette */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* masque le paragraphe */
+  #header17-6 p.mbr-text {
+    visibility : hidden
+  }
+
+  /* masque le bouton */
+  #header17-6 .mbr-section-btn {
+    display: none;
+  }
+  
+}
+
   @media (max-width: 768px) {
     #news-container {
       flex-direction: column;
