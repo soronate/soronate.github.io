@@ -245,6 +245,10 @@ header video {
     visibility : hidden
   }
 
+  /* masque les contenus */
+  
+  #header17-6 img[alt="Soronate"] { display: none !important; }
+
   /* masque le bouton */
   #header17-6 .mbr-section-btn {
     display: none;
