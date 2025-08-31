@@ -239,7 +239,8 @@ header video {
 
   /* Responsive : mobile/tablette */
   
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px),
+       (orientation: landscape) and (max-width: 1024px) {
   /* masque le paragraphe */
   #header17-6 p.mbr-text {
     visibility : hidden
@@ -247,19 +248,6 @@ header video {
 
   /* masque les contenus */
   
-  #header17-6 img[alt="Soronate"] { display: none !important; }
-
-  /* masque le bouton */
-  #header17-6 .mbr-section-btn {
-    display: none;
-  }
-  
-}
-     
-
-@media (min-width: 768px) and (max-width: 1024px),
-       (orientation: landscape) and (max-width: 1024px) {
-  /* cible précise : remplace l'attribut alt si besoin */
   #header17-6 img[alt="Soronate"],
   #header17-6 h1 {
     display: none !important;
@@ -269,7 +257,15 @@ header video {
     margin: 0 !important;
     padding: 0 !important;
   }
-} 
+
+  /* masque le bouton */
+  #header17-6 .mbr-section-btn {
+    display: none;
+  }
+  
+}
+     
+
  
   
   
