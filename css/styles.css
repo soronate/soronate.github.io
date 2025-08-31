@@ -248,8 +248,7 @@ header video {
 
   /* masque les contenus */
   
-  #header17-6 img[alt="Soronate"],
-  #header17-6 h1 {
+  #header17-6 img[alt="Soronate"] {
     display: none !important;
     visibility: hidden !important;
     width: 0 !important;
