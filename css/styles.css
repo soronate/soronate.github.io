@@ -257,6 +257,20 @@ header video {
     padding: 0 !important;
   }
 
+  #header17-6 h2.mbr-section-subtitle {
+    visibility: hidden;       /* masque le texte original */
+    position: relative;
+  }
+  #header17-6 h2.mbr-section-subtitle::after {
+    content: "Vos solutions informatiques."; /* nouveau texte */
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff; /* même couleur que l'original */
+  }
+
+
   /* masque le bouton */
   #header17-6 .mbr-section-btn {
     display: none;
