@@ -266,8 +266,10 @@ header video {
     visibility: visible;
     position: absolute;
     top: 0;
-    left: 20%;
-    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;              /* permet le centrage multi-lignes */
+    text-align: center;       /* centre le texte */
     color: #fff; /* même couleur que l'original */
   }
 
