@@ -245,6 +245,7 @@ header video {
   #header17-6 p.mbr-text {
     visibility : hidden
   }
+  
 
   /* masque les contenus */
   
@@ -299,6 +300,20 @@ header video {
 	#actualites {
     padding: 0px 0px; /* Pleine largeur sur mobile */ 
   }
+  
+  .mbr-fonts-style.mbr-text.mbr-white.mb-4.display-4 {
+    visibility: hidden;
+    position: relative;
+  }
+
+  .mbr-fonts-style.mbr-text.mbr-white.mb-4.display-4::after {
+    content: "Soronate est spécialisé dans le développement de logiciels, le conseil et la mise en place de solutions informatiques sur mesure, conçues pour répondre précisément aux besoins de ses clients. Nous intervenons aussi bien sur la création d'applications que sur l'optimisation d'outils existants, en mettant l'accent sur la performance, la sécurité et la simplicité d'utilisation et nous proposons un accompagnement complet, allant de l'analyse des besoins à la conception, au déploiement et au suivi des solutions.";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
   }
    /* Fin Responsive : mobile/tablette */
    
