@@ -107,6 +107,18 @@ header video {
 	
     }
 
+   /* Actualité New */
+	.cid-uA2iNNK7Ug .item-content {
+    padding: 1.25rem 1.25rem 0;
+    background: #ffffff;
+}
+
+.cid-uA2iNNK7Ug .item-head {
+    background: #076779;
+    padding: 1.25rem;
+}
+   /* Fin Actualité New */
+
  
 	.btn-dark {
 		opacity: 0.8 !important;
