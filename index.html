@@ -1020,13 +1020,13 @@ window.smartsupp||(function(d) {
 
 
 <!--  Actualités -->
-<section id="actualites">
-
-    <div class="container">
+<section  class="cid-uA2iNNK7Ug" id="actualites">
+    
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 content-head">
                 <div class="mbr-section-head mb-5">
-                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2 animate__animated animate__delay-1s animate__fadeIn">
                         <strong>Actualités</strong></h3>
 						<h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7 animate__animated animate__delay-1s animate__fadeIn"></h5> 
                 </div>
@@ -1039,6 +1039,9 @@ window.smartsupp||(function(d) {
     </div>
 
 </section>
+
+
+
 
 <section data-bs-version="5.1" class="form5 cid-uA2iNNMYsA" id="contact-form-3-uA2iNNMYsA">
     
@@ -1205,6 +1208,7 @@ window.smartsupp||(function(d) {
   <!-- 100% privacy-first analytics -->
   <script async src="https://scripts.simpleanalyticscdn.com/latest.js" rel="preload"></script>
   
+
   <!-- Actualités -->
 <script>
     //fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.01net.com/actualites/feed/")
@@ -1212,22 +1216,34 @@ window.smartsupp||(function(d) {
     fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.lemondeinformatique.fr/flux-rss/thematique/toutes-les-actualites/rss.xml")
     .then(response => response.json())
     .then(data => {
-      data.items.slice(0, 8).forEach(article => { // Limite à 8 articles
+      data.items.slice(0, 6).forEach(article => { // Limite à 6 articles
 
         let articleHTML = `
-          <div class="news-article">
-            <div class="news-content">
-              <h5><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></h3>
-              <p><strong>${new Date(article.pubDate).toLocaleDateString()}</strong> - Le monde informatique</p>
-              <p>${article.description.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 180)}</p>
-              <a href="${article.link}" target="_blank" rel="noopener noreferrer">Lire plus</a>
+        <div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb animate__animated animate__delay-1s animate__fadeIn">
+            <div class="item-wrapper">
+            <div class="item-head">
+            <h5 class="item-title mbr-fonts-style mb-0 display-6">
+            <strong>${article.title}</strong>
+        	</h5>
+            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"></h6>
             </div>
-          </div>`;
+            <div class="item-content">
+            	<p><strong>${new Date(article.pubDate).toLocaleDateString()}</strong> - Le monde informatique</p>
+                <p class="mbr-text mbr-fonts-style display-7">${article.description.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 180)}</p>
+            </div>
+            <div class="mbr-section-btn item-footer">
+                <a href="${article.link}" class="btn item-btn btn-primary display-7">Lire plus</a>
+            </div>
+        </div>
+    </div>    `;
         newsContainer.innerHTML += articleHTML;
       });
     })
     .catch(error => newsContainer.innerHTML ='<div class="news-article"><div class="news-content"><h3><a href="#">Pas d\'actualité</a></h3><p>Il n\'y a pas de contenu en ce moment.</p></div></div>');
-</script>  
+</script> 
+
+
+ 
      
   <input name="animation" type="hidden">
   
