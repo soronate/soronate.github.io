@@ -1213,7 +1213,7 @@ window.smartsupp||(function(d) {
 <script>
     //fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.01net.com/actualites/feed/")
     let newsContainer = document.getElementById("news-container");
-    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.11lemondeinformatique.fr/flux-rss/thematique/toutes-les-actualites/rss.xml")
+    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.lemondeinformatique.fr/flux-rss/thematique/toutes-les-actualites/rss.xml")
     .then(response => response.json())
     .then(data => {
       data.items.slice(0, 6).forEach(article => { // Limite à 6 articles
