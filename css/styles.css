@@ -106,19 +106,6 @@ header video {
 	    content: "Menu";
 	
     } 
-
-   /* Actualité New */
-	.cid-uA2iNNK7Ug .item-content {
-    padding: 1.0rem 1.0rem 0;
-    background: #ffffff;
-}
-
-.cid-uA2iNNK7Ug .item-head {
-    background: #076779;
-    padding: 1.0rem;
-}
-   /* Fin Actualité New */
-
  
 	.btn-dark {
 		opacity: 0.8 !important;
@@ -177,6 +164,23 @@ header video {
     margin-bottom: 20px;
     text-transform: uppercase; /* Ajout d'un effet sur le titre */
   }
+
+   /* Actualité New */
+	.cid-uA2iNNK7Ug .item-content {
+    padding: 1.0rem 1.0rem 0;
+    background: #ffffff;
+}
+
+   .cid-uA2iNNK7Ug .item-head {
+       background: #076779;
+       padding: 1.0rem;
+   }
+
+    .display-6 {
+        font-size: 2rem;
+    }
+   /* Fin Actualité New */  
+  
 
   /* Grille pour afficher les articles */
   #news-container {
