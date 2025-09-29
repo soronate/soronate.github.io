@@ -254,18 +254,21 @@ header video {
   }
 
   /* Responsive : mobile/tablette */
-  
-@media (min-width: 768px) and (max-width: 1024px),
+
+ 
+@media (max-width: 768px),
+		(min-width: 768px) and (max-width: 1024px),
        (orientation: landscape) and (max-width: 1024px) {
-  /* masque le paragraphe */
+ 
+  /* masque le paragraphe
   #header17-6 p.mbr-text {
     visibility : hidden
   }
-  
+  */ 
 
   /* masque les contenus */
-  
-  #header17-6 img[alt="Soronate"] {
+  /* masque le log  
+   #header17-6 img[alt="Soronate"] {
     display: none !important;
     visibility: hidden !important;
     width: 0 !important;
@@ -273,11 +276,13 @@ header video {
     margin: 0 !important;
     padding: 0 !important;
   }
+*/
 
   #header17-6 h2.mbr-section-subtitle {
     visibility: hidden;       /* masque le texte original */
     position: relative;
   }
+
   #header17-6 h2.mbr-section-subtitle::after {
     content: "Vos solutions informatiques."; /* nouveau texte */
     visibility: visible;
@@ -289,7 +294,6 @@ header video {
     text-align: center;       /* centre le texte */
     color: #fff; /* même couleur que l'original */
   }
-
 
   /* masque le bouton */
   #header17-6 .mbr-section-btn {
