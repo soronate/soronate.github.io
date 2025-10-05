@@ -288,7 +288,7 @@ h2.mbr-section-subtitle {
 h2.mbr-section-subtitle::after {
   font-family: 'Onest', sans-serif;
   font-size: 2.5rem;
-  line-height: 1.5;
+  line-height: 0;
   color: white; /* reprend le style existant */
 }
 
