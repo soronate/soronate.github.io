@@ -388,7 +388,7 @@ header video {
         }
 
 
-        /* Ombre au survol sur les tuiles */
+        /* Ombre au survol sur les tuiles et grossissement picto */
 		.item-wrapper {
 		  transition: box-shadow 0.3s ease;
 		}
@@ -396,4 +396,8 @@ header video {
 		.item-wrapper:hover {
 		  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 		}
-        
+		  
+		.item-wrapper:hover .mbr-iconfont {
+		transform: scale(1.1); /* agrandit l'icône de 20% */
+		transition: transform 0.3s ease; /* animation fluide */
+		}
