@@ -277,20 +277,24 @@ header video {
 
 
   /* remplacement du contenu */
+  
+h2.mbr-section-subtitle {
+  visibility: hidden;
+  position: relative;
+}
+
 h2.mbr-section-subtitle::after {
   content: "Vos solutions informatiques.";
-}
-
-h2.mbr-section-subtitle {
-  font-size: 0; /* masque le texte original */
-}
-
-h2.mbr-section-subtitle::after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
   font-family: 'Onest', sans-serif;
   font-size: 2.5rem;
-  line-height: 0;
-  color: white; /* reprend le style existant */
-}
+  color: white; /* même style que l’original */
+}  
+  
+
 
 
 
