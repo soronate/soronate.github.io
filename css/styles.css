@@ -275,27 +275,22 @@ header video {
   }
 
 
-
   /* remplacement du contenu */
-  
-h2.mbr-section-subtitle {
-  visibility: hidden;
-  position: relative;
-  text-align: center;
-}
-
-h2.mbr-section-subtitle::after {
-  content: "Vos solutions informatiques.";
-  visibility: visible;
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-family: 'Onest', sans-serif;
-  font-size: 2.5rem;
-  color: white; /* même style que l’original */
-}  
-  
-
+  #header17-6 h2.mbr-section-subtitle {
+    visibility: hidden;       /* masque le texte original */
+    position: relative;
+  }
+  #header17-6 h2.mbr-section-subtitle::after {
+    content: "Vos solutions informatiques."; /* nouveau texte */
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;              /* permet le centrage multi-lignes */
+    text-align: center;       /* centre le texte */
+    color: #fff; /* même couleur que l'original */
+  }
 
 
 
