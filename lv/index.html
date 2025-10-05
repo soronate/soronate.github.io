@@ -1214,7 +1214,7 @@ window.smartsupp||(function(d) {
     .then(data => {
       data.items.slice(0, 6).forEach(article => { // Limite à 6 articles
 
-    	let imageUrl = article.enclosure?.link || article.thumbnail || ""; 
+    	let imageUrl = article.enclosure?.link || article.thumbnail || "";
 
         let articleHTML = `
         <div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb animate__animated animate__delay-1s animate__fadeIn">
@@ -1222,17 +1222,32 @@ window.smartsupp||(function(d) {
                        
             <div class="item-head">
             <h5 class="item-title mbr-fonts-style mb-0 display-6">
-            <strong>${decodeHTML(article.title)}</strong>
+  
+            <strong>${(() => {
+            	  let title = decodeHTML(article.title);
+            	  return title.length > 68
+            	    ? title.substring(0, title.lastIndexOf(" ", 68)) + " ..."
+            	    : title;
+            	})()}</strong>
+            
         	</h5>
             <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><a href="https://www.01net.com" class="text-white" target="_blank">01net.com</a> / ${decodeHTML(article.categories).split(",")[0].trim()}</h6>
             </div>
             <div class="item-content">
-             
+            
             <img src="${imageUrl}" loading="lazy" alt="${decodeHTML(article.title)}" title="${decodeHTML(article.title)}">
             
             
             	<p><strong>${new Date(article.pubDate).toLocaleDateString()}</strong> - ${decodeHTML(article.author)}</p>
-                <p class="mbr-text mbr-fonts-style display-7">${decodeHTML(article.description.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 180))}(...)</p>
+            	           	
+                <p class="mbr-text mbr-fonts-style display-7">
+                ${(() => {
+              	  let description = decodeHTML(article.description.replace(/<\/?[^>]+(>|$)/g, ""));
+              	  return description.length > 180
+              	    ? description.substring(0, description.lastIndexOf(" ", 180)) + " ..."
+              	    : description;
+              	})()}
+                </p>
             </div>
             <div class="mbr-section-btn item-footer">
                 <a href="${article.link}" class="btn item-btn btn-primary display-7">Uzziniet vairāk</a>
