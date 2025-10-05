@@ -1229,9 +1229,9 @@ window.smartsupp||(function(d) {
             <div class="mbr-section-btn item-footer">
                 <a href="${article.link}" class="btn item-btn btn-primary display-7">Uzziniet vairāk</a>
             </div>
-        </div>
+        </div> 
     </div>    `;
-        newsContainer.innerHTML += articleHTML;
+        newsContainer.innerHTML += articleHTML; 
       });
     })
     .catch(error => newsContainer.innerHTML ='<div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb animate__animated animate__delay-1s animate__fadeIn"><div class="item-wrapper"><div class="item-head"><h5 class="item-title mbr-fonts-style mb-0 display-6"><strong>Nav ziņu</strong></h5><h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"></h6></div><div class="item-content"><p class="mbr-text mbr-fonts-style display-7">Šobrīd nav satura.</p></div><div class="mbr-section-btn item-footer"></div></div></div>');    
