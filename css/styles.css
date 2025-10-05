@@ -253,18 +253,15 @@ header video {
     background-color: #0A90A9;  /* Couleur plus foncée au survol */
   }
 
+ 
   /* Responsive : mobile/tablette */
-
- 
-@media (max-width: 768px),
-		(min-width: 768px) and (max-width: 1024px),
+  
+@media (min-width: 768px) and (max-width: 1024px),
        (orientation: landscape) and (max-width: 1024px) {
- 
-  /* masque le paragraphe  */
+  /* masque le paragraphe */
   #header17-6 p.mbr-text {
     visibility : hidden
   }
- 
 
   /* masque les contenus */
   /* masque le log  */
