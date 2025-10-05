@@ -387,3 +387,13 @@ header video {
             text-align: center;
         }
 
+
+        /* Ombre au survol sur les tuiles */
+		.item-wrapper {
+		  transition: box-shadow 0.3s ease;
+		}
+		
+		.item-wrapper:hover {
+		  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+		}
+        
