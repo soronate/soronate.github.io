@@ -20,7 +20,7 @@
   <meta name="keywords" content="Soronate, développement, conseil, informatique, accompagnement, solution, CMS, conception, AMOA, AMOE, audit, intégration, déploiement, maintenance, Lotus Notes, Magnolia CMS, freemarker, typescript, groovy, LotusScript, projets IT, transformation digitale, gestion de projet, expertise technique, support technique">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://soronate.github.io/" />
- 
+  
   <!-- Open Graph (Facebook, LinkedIn) -->
   <meta property="og:title" content="Soronate">
   <meta property="og:description" content="Soronate : Développement, Conseil et Études Informatiques | Expertise IT">
@@ -217,9 +217,11 @@ window.smartsupp||(function(d) {
 		  <img src="./assets/logo/LogoSoronate.png" class="img-fluid my-4" loading="lazy" alt="Soronate" style="max-width: 160px; display: block; margin-left: auto; margin-right: auto;">
         <h2 class="mbr-section-subtitle mbr-fonts-style mbr-white mb-4 display-5">Vos solutions informatiques sur mesure.</h2>
 
-
         <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-4">Soronate est spécialisé dans le développement de logiciels, le conseil et la mise en place de solutions informatiques adaptées aux besoins de ses clients. 
         Notre équipe allie expertise technique et innovation pour accompagner les personnes et les entreprises dans leur transformation digitale.</p>
+
+
+
 		<br>
 		<div class="mbr-section-btn">
 		  <div contenteditable="true" style="position: absolute; left: -100000px; opacity: 0;"></div>
@@ -1209,32 +1211,40 @@ window.smartsupp||(function(d) {
   <i class="bi bi-arrow-up"></i>
   </button>
 -->
-
+ 
   <!-- 100% privacy-first analytics -->
   <script async src="https://scripts.simpleanalyticscdn.com/latest.js" rel="preload"></script>
-  
+   
 
   <!-- Actualités -->
 <script>
-    //fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.01net.com/actualites/feed/")
     let newsContainer = document.getElementById("news-container");
-    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.lemondeinformatique.fr/flux-rss/thematique/toutes-les-actualites/rss.xml")
+//  fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.lemondeinformatique.fr/flux-rss/thematique/toutes-les-actualites/rss.xml")
+    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.01net.com/actualites/feed/")
+    
     .then(response => response.json())
     .then(data => {
       data.items.slice(0, 6).forEach(article => { // Limite à 6 articles
 
+    	let imageUrl = article.enclosure?.link || article.thumbnail || ""; 
+
         let articleHTML = `
         <div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb animate__animated animate__delay-1s animate__fadeIn">
             <div class="item-wrapper">
+                       
             <div class="item-head">
             <h5 class="item-title mbr-fonts-style mb-0 display-6">
-            <strong>${article.title}</strong>
+            <strong>${decodeHTML(article.title)}</strong>
         	</h5>
-            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"></h6>
+            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><a href="https://www.01net.com" class="text-white" target="_blank">01net.com</a> / ${decodeHTML(article.categories).split(",")[0].trim()}</h6>
             </div>
             <div class="item-content">
-            	<p><strong>${new Date(article.pubDate).toLocaleDateString()}</strong> - Le monde informatique</p>
-                <p class="mbr-text mbr-fonts-style display-7">${article.description.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 180)}</p>
+             
+            <img src="${imageUrl}" loading="lazy" alt="${decodeHTML(article.title)}" title="${decodeHTML(article.title)}">
+            
+            
+            	<p><strong>${new Date(article.pubDate).toLocaleDateString()}</strong> - ${decodeHTML(article.author)}</p>
+                <p class="mbr-text mbr-fonts-style display-7">${decodeHTML(article.description.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 180))}(...)</p>
             </div>
             <div class="mbr-section-btn item-footer">
                 <a href="${article.link}" class="btn item-btn btn-primary display-7">Lire plus</a>
@@ -1245,7 +1255,7 @@ window.smartsupp||(function(d) {
       });
     })
     .catch(error => newsContainer.innerHTML ='<div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb animate__animated animate__delay-1s animate__fadeIn"><div class="item-wrapper"><div class="item-head"><h5 class="item-title mbr-fonts-style mb-0 display-6"><strong>Pas d\'actualité</strong></h5><h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"></h6></div><div class="item-content"><p class="mbr-text mbr-fonts-style display-7">Il n\'y a pas de contenu en ce moment.</p></div><div class="mbr-section-btn item-footer"></div></div></div>');
-</script> 
+</script>
 
 
  
