@@ -274,6 +274,24 @@ header video {
     padding: 0 !important;
   }
 
+
+
+  /* remplacement du contenu */
+h2.mbr-section-subtitle::after {
+  content: "Vos solutions informatiques.";
+}
+
+h2.mbr-section-subtitle {
+  font-size: 0; /* masque le texte original */
+}
+
+h2.mbr-section-subtitle::after {
+  font-size: 1.25rem; /* adapte la taille du texte affiché */
+  color: white; /* reprend le style existant */
+}
+
+
+
   /* masque le bouton */
   #header17-6 .mbr-section-btn {
     display: none;
