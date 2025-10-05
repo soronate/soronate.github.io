@@ -1206,26 +1206,33 @@ window.smartsupp||(function(d) {
   
   <!-- Actualités -->
 <script>
-    //fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.01net.com/actualites/feed/")
     let newsContainer = document.getElementById("news-container");
-    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.lemondeinformatique.fr/flux-rss/thematique/toutes-les-actualites/rss.xml")
+//  fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.lemondeinformatique.fr/flux-rss/thematique/toutes-les-actualites/rss.xml")
+    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.01net.com/actualites/feed/")
+    
     .then(response => response.json())
     .then(data => {
       data.items.slice(0, 6).forEach(article => { // Limite à 6 articles
 
-    	  
+    	let imageUrl = article.enclosure?.link || article.thumbnail || ""; 
+
         let articleHTML = `
         <div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb animate__animated animate__delay-1s animate__fadeIn">
             <div class="item-wrapper">
+                       
             <div class="item-head">
             <h5 class="item-title mbr-fonts-style mb-0 display-6">
             <strong>${decodeHTML(article.title)}</strong>
         	</h5>
-            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"></h6>
+            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><a href="https://www.01net.com" class="text-white" target="_blank">01net.com</a> / ${decodeHTML(article.categories).split(",")[0].trim()}</h6>
             </div>
             <div class="item-content">
-            	<p><strong>${new Date(article.pubDate).toLocaleDateString()}</strong> - Le monde informatique</p>
-                <p class="mbr-text mbr-fonts-style display-7">${decodeHTML(article.description.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 180))}</p>
+             
+            <img src="${imageUrl}" loading="lazy" alt="${decodeHTML(article.title)}" title="${decodeHTML(article.title)}">
+            
+            
+            	<p><strong>${new Date(article.pubDate).toLocaleDateString()}</strong> - ${decodeHTML(article.author)}</p>
+                <p class="mbr-text mbr-fonts-style display-7">${decodeHTML(article.description.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 180))}(...)</p>
             </div>
             <div class="mbr-section-btn item-footer">
                 <a href="${article.link}" class="btn item-btn btn-primary display-7">More</a>
