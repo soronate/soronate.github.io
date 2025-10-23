@@ -127,6 +127,11 @@ header video {
             width: max-content;
             white-space: nowrap;
         }
+
+		.marquee-content:hover {
+		  animation-play-state: paused;
+		}    
+        
         .marquee-item {
             display: inline-block;
             margin-right: 50px;
