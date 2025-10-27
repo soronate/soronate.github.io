@@ -283,8 +283,8 @@ header video {
   /* remplacement du contenu */
 
   /* masque le logo */
-  #header17-6 .img-fluid {
-    display: none;
+  #header17-6 .logo-soronate {
+     display: none !important;
   }
 
 
