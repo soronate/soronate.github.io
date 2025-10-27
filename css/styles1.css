@@ -283,7 +283,7 @@ header video {
   /* remplacement du contenu */
 
   /* masque le logo */
-  #header17-6 .img-fluid my-4 {
+  #header17-6 .img-fluid {
     display: none;
   }
 
