@@ -279,21 +279,9 @@ header video {
     display: none;
   }
   .mobile-text {
-    display: inline;
-  }
-
-
-  /* masque le logo */
-  #header17-6 .img-fluid  {
-     display: none !important;
-  }
-
-
-
-  /* masque les contenus*/
-  #header17-6 .item-wrapper {
     display: none;
   }
+
 
   /* masque les balises pour mobiles */
   #header17-6 .mobile-none {
@@ -333,11 +321,6 @@ header video {
     padding: 0px 0px; /* Pleine largeur sur mobile */ 
   }
   
-  /* masque le logo */
-  #header17-6 .img-fluid  {
-     display: none !important;
-  }
-
 
   /* masque les balises pour mobiles */
   #header17-6 .mobile-none {
