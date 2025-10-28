@@ -258,46 +258,36 @@ header video {
     background-color: #0A90A9;  /* Couleur plus foncée au survol */
   }
 
+
+
+	/* Par défaut : mobile masqué, desktop visible */
+	.mobile-text {
+	  display: none;
+	}
+	
+	.desktop-text {
+	  display: inline;
+	}
  
-  /* Responsive : mobile/tablette */
+  /* Responsive : tablette */
   
 @media (min-width: 768px) and (max-width: 1024px),
        (orientation: landscape) and (max-width: 1024px) {
-  /* masque le paragraphe */
-  #header17-6 p.mbr-text {
-    visibility : hidden
+
+  /* Changement des libellés */
+  .desktop-text {
+    display: none;
+  }
+  .mobile-text {
+    display: none;
   }
 
-  /* masque les contenus */
+
+  /* masque les balises pour mobiles */
+  #header17-6 .mobile-none {
+    display: none;
+  }
   
-  #header17-6 img[alt="Soronate"] {
-    display: none !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-
-  /* remplacement du contenu */
-  #header17-6 h2.mbr-section-subtitle {
-    visibility: hidden;       /* masque le texte original */
-    position: relative;
-  }
-  #header17-6 h2.mbr-section-subtitle::after {
-    content: "Vos solutions informatiques."; /* nouveau texte */
-    visibility: visible;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;              /* permet le centrage multi-lignes */
-    text-align: center;       /* centre le texte */
-    color: #fff; /* même couleur que l'original */
-  }
-
-
 
   /* masque le bouton */
   #header17-6 .mbr-section-btn {
@@ -306,9 +296,18 @@ header video {
   
 }
   
-  
+    /* Responsive : mobile */
   @media (max-width: 768px) {
-    #news-container {
+
+  /* Changement des libellés */
+  .desktop-text {
+    display: none;
+  }
+  .mobile-text {
+    display: inline;
+  }	
+	
+	#news-container {
       flex-direction: column;
       align-items: center;
     }
@@ -320,6 +319,18 @@ header video {
     
 	#actualites {
     padding: 0px 0px; /* Pleine largeur sur mobile */ 
+  }
+  
+
+  /* masque les balises pour mobiles */
+  #header17-6 .mobile-none {
+    display: none;
+  }
+  
+
+  /* masque le bouton */
+  #header17-6 .mbr-section-btn {
+    display: none;
   }
     
   }
