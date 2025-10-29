@@ -19,6 +19,7 @@
   border: 3px solid #2C2C2C;
 }
 
+
 /* 	    Debut video    */
 
 
@@ -104,8 +105,7 @@ header video {
 	    cursor: pointer;
 	    content: "Menu";
 	
-    }
-
+    } 
  
 	.btn-dark {
 		opacity: 0.8 !important;
@@ -129,7 +129,7 @@ header video {
         
 		.marquee-content:hover {
 		  animation-play-state: paused;
-		}    
+		}        
         
         .marquee-item {
             display: inline-block;
@@ -170,7 +170,6 @@ header video {
     text-transform: uppercase; /* Ajout d'un effet sur le titre */
   }
 
-
    /* Actualité New */
 	.cid-uA2iNNK7Ug .item-content {
     padding: 1.0rem 1.0rem 0;
@@ -186,6 +185,7 @@ header video {
         font-size: 2rem;
     }
    /* Fin Actualité New */  
+  
 
   /* Grille pour afficher les articles */
   #news-container {
@@ -258,25 +258,36 @@ header video {
     background-color: #0A90A9;  /* Couleur plus foncée au survol */
   }
 
-  /* Responsive : mobile/tablette */
 
+
+	/* Par défaut : mobile masqué, desktop visible */
+	.mobile-text {
+	  display: none;
+	}
+	
+	.desktop-text {
+	  display: inline;
+	}
+ 
+  /* Responsive : tablette */
+  
 @media (min-width: 768px) and (max-width: 1024px),
        (orientation: landscape) and (max-width: 1024px) {
-  /* masque le paragraphe */
-  #header17-6 p.mbr-text {
-    visibility : hidden
+
+  /* Changement des libellés */
+  .desktop-text {
+    display: none;
+  }
+  .mobile-text {
+    display: none;
   }
 
-  /* masque les contenus */
-  
-  #header17-6 img[alt="Soronate"] {
-    display: none !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
+
+  /* masque les balises pour mobiles */
+  #header17-6 .mobile-none {
+    display: none;
   }
+  
 
   /* masque le bouton */
   #header17-6 .mbr-section-btn {
@@ -284,11 +295,19 @@ header video {
   }
   
 }
-     
-
-
+  
+    /* Responsive : mobile */
   @media (max-width: 768px) {
-    #news-container {
+
+  /* Changement des libellés */
+  .desktop-text {
+    display: none;
+  }
+  .mobile-text {
+    display: inline;
+  }	
+	
+	#news-container {
       flex-direction: column;
       align-items: center;
     }
@@ -301,6 +320,19 @@ header video {
 	#actualites {
     padding: 0px 0px; /* Pleine largeur sur mobile */ 
   }
+  
+
+  /* masque les balises pour mobiles */
+  #header17-6 .mobile-none {
+    display: none;
+  }
+  
+
+  /* masque le bouton */
+  #header17-6 .mbr-section-btn {
+    display: none;
+  }
+    
   }
    /* Fin Responsive : mobile/tablette */
    
