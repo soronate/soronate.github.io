@@ -308,7 +308,13 @@ header video {
   
   #logo-soronate {
     display: none !important;
-  }  
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  } 
   
   
   #header17-6 .mobile-none,
