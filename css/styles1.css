@@ -273,7 +273,7 @@ header video {
 
 
     /* Responsive : mobile iphone et ?? tablette */
-@media (orientation: landscape) and (max-width: 1024px) {
+@media (max-width: 767px) and (orientation: portrait) {
 
   /* Changement des libellés */
   .desktop-text {
