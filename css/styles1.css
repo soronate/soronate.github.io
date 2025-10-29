@@ -303,8 +303,13 @@ header video {
     display: none;
   }
   .mobile-text {
-    display: none; /* tu peux adapter selon besoin */
+    display: none; 
   }
+  
+  #logo-soronate {
+    display: none; 
+  }  
+  
 
   #logo-soronate,
   #header17-6 .mobile-none,
@@ -313,7 +318,7 @@ header video {
   }
 }
 
-/* --- FIN Affichage mobile paysage (cas particulier) --- */
+/* --- FIN Affichage mobile --- */
    
    
    
