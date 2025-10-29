@@ -299,7 +299,28 @@ header video {
 
 /* --- Affichage mobile paysage (cas particulier) --- */
 @media (max-width: 768px) and (orientation: landscape) {
-  .desktop-text {
+
+	
+ #header17-6 .mbr-section-subtitle {
+    position: relative;
+    color: transparent;       /* masque le texte d'origine */
+  }
+  
+/* pour le remplacement de Vos solutions informatiques sur mesure. en Vos solutions informatiques.  */
+  #header17-6 .mbr-section-subtitle::after {
+    content: "Vos solutions informatiques.";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;             /* conserve la couleur */
+    font-size: inherit;
+    font-weight: inherit;
+  }	
+/* FIN pour le remplacement de Vos solutions informatiques sur mesure. en Vos solutions informatiques.  */	
+	
+	.desktop-text {
     display: none;
   }
   .mobile-text {
