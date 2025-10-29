@@ -270,7 +270,36 @@ header video {
 	}
  
   /* Responsive : tablette */
+
+
+/* Tablettes en mode portrait */
+@media (min-width: 600px) and (max-width: 900px) and (orientation: portrait) {
+  /* Changement des libellés */
+  .desktop-text {
+    display: none;
+  }
+  .mobile-text {
+    display: none;
+  }
+
+
+  /* masque les balises pour mobiles */
+  #header17-6 .mobile-none {
+    display: none;
+  }
   
+
+  /* masque le bouton */
+  #header17-6 .mbr-section-btn {
+    display: none;
+  }
+}
+
+
+
+
+
+    /* Responsive : mobile iphone et ?? tablette */
 @media (min-width: 768px) and (max-width: 1024px),
        (orientation: landscape) and (max-width: 1024px) {
 
