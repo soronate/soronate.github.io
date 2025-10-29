@@ -260,86 +260,60 @@ header video {
 
 
 
-	/* Par défaut : mobile masqué, desktop visible */
-	.mobile-text {
-	  display: none;
-	}
-	
-	.desktop-text {
-	  display: inline;
-	}
- 
-  /* Responsive : tablette */
-  
-@media (min-width: 768px) and (max-width: 1024px),
-       (orientation: landscape) and (max-width: 1024px) {
-
-  /* Changement des libellés */
-  .desktop-text {
-    display: none;
-  }
-  .mobile-text {
-    display: none;
-  }
-
-
-  /* masque logo-soronate */
- #logo-soronate {
-    display: none;
-  }
-
-  /* masque les balises pour mobiles */
-  #header17-6 .mobile-none {
-    display: none;
-  }
-  
-
-  /* masque le bouton */
-  #header17-6 .mbr-section-btn {
-    display: none;
-  }
-  
+/* --- Par défaut : affichage desktop --- */
+.mobile-text {
+  display: none;
 }
-  
-    /* Responsive : mobile */
-  @media (max-width: 768px) {
+.desktop-text {
+  display: inline;
+}
 
-  /* Changement des libellés */
+/* --- Affichage mobile portrait --- */
+@media (max-width: 768px) and (orientation: portrait) {
   .desktop-text {
     display: none;
   }
   .mobile-text {
     display: inline;
-  }	
-	
-	#news-container {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .news-article {
-      width: 100%;
-      padding: 10px;
-    }
-    
-	#actualites {
-    padding: 0px 0px; /* Pleine largeur sur mobile */ 
   }
-  
 
-  /* masque les balises pour mobiles */
-  #header17-6 .mobile-none {
-    display: none;
+  #news-container {
+    flex-direction: column;
+    align-items: center;
   }
-  
 
-  /* masque le bouton */
+  .news-article {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #actualites {
+    padding: 0;
+  }
+
+  #header17-6 .mobile-none,
   #header17-6 .mbr-section-btn {
     display: none;
   }
-    
+}
+
+/* --- Affichage mobile paysage (cas particulier) --- */
+@media (max-width: 768px) and (orientation: landscape) {
+  .desktop-text {
+    display: none;
   }
-   /* Fin Responsive : mobile/tablette */
+  .mobile-text {
+    display: none; /* tu peux adapter selon besoin */
+  }
+
+  #logo-soronate,
+  #header17-6 .mobile-none,
+  #header17-6 .mbr-section-btn {
+    display: none;
+  }
+}
+
+/* --- FIN Affichage mobile paysage (cas particulier) --- */
    
    
    
