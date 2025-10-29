@@ -283,6 +283,11 @@ header video {
   }
 
 
+  /* masque logo-soronate */
+ #logo-soronate {
+    display: none;
+  }
+
   /* masque les balises pour mobiles */
   #header17-6 .mobile-none {
     display: none;
