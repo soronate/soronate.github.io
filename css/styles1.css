@@ -270,10 +270,9 @@ header video {
 	}
  
   /* Responsive : tablette */
-
-
-    /* Responsive : mobile iphone et ?? tablette */
-@media (max-width: 767px) and (orientation: portrait) {
+  
+@media (min-width: 768px) and (max-width: 1024px),
+       (orientation: landscape) and (max-width: 1024px) {
 
   /* Changement des libellés */
   .desktop-text {
@@ -289,10 +288,6 @@ header video {
     display: none;
   }
   
-
-  #header17-6 .tablette-none {
-    display: none;
-  }
 
   /* masque le bouton */
   #header17-6 .mbr-section-btn {
