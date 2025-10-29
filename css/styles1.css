@@ -306,15 +306,11 @@ header video {
     display: none; 
   }
   
-  #logo-soronate {
-    display: none; 
-  }  
-  
 
   #logo-soronate,
   #header17-6 .mobile-none,
   #header17-6 .mbr-section-btn {
-    display: none;
+    display: none !important;
   }
 }
 
