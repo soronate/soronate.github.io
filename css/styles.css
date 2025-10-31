@@ -271,23 +271,19 @@ header video {
 /* --- Affichage mobile portrait --- */
 @media (max-width: 768px) and (orientation: portrait) {
 
-	 #header17-6 .mbr-section-subtitle {
-    position: relative;
-    color: transparent;       /* masque le texte d'origine */
+#header17-6 .mbr-section-subtitle {
+    display: none !important; /* force le masquage complet */
   }
-  
-/* pour le remplacement de Vos solutions informatiques sur mesure. en Vos solutions informatiques.  */
-  #header17-6 .mbr-section-subtitle::after {
+
+  #header17-6 .content-wrap::after {
     content: "Vos solutions informatiques.";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    display: block;
     text-align: center;
-    color: white;             /* conserve la couleur */
-    font-size: inherit;
-    font-weight: inherit;
-  }	
+    color: white;
+    font-size: var(--bs-body-font-size, 1.25rem);
+    font-weight: 400;
+    margin-top: 1rem;
+  }
 /* FIN pour le remplacement de Vos solutions informatiques sur mesure. en Vos solutions informatiques.  */	
 	
 	.desktop-text {
