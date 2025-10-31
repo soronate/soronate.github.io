@@ -270,21 +270,6 @@ header video {
 
 /* --- Affichage mobile portrait --- */
 @media (max-width: 768px) and (orientation: portrait) {
-
-#header17-6 .mbr-section-subtitle {
-    display: none !important; /* force le masquage complet */
-  }
-
-  #header17-6 .content-wrap::after {
-    content: "Vos solutions informatiques.";
-    display: block;
-    text-align: center;
-    color: white;
-    font-size: var(--bs-body-font-size, 1.25rem);
-    font-weight: 400;
-    margin-top: 1rem;
-  }
-/* FIN pour le remplacement de Vos solutions informatiques sur mesure. en Vos solutions informatiques.  */	
 	
 	.desktop-text {
     display: none;
