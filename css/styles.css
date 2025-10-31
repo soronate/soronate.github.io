@@ -292,7 +292,6 @@ header video {
 	
 	
 	
-	
 	.desktop-text {
     display: none;
   }
@@ -322,7 +321,6 @@ header video {
 
 /* --- Affichage mobile paysage (cas particulier) --- */
 @media (max-width: 768px) and (orientation: landscape) {
-
 		
 	.desktop-text {
     display: none;
