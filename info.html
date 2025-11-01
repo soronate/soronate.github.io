@@ -180,7 +180,73 @@
         </div>
     </div>
 </section>
+<section id="tech-info" style="font-family: 'Courier New', monospace; background: #121212; color: #e0e0e0; padding: 1.5em; border-radius: 10px; max-width: 750px; margin: 2em auto; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+  <h2 style="color:#4FC3F7;">🧭 Informations techniques complètes</h2>
+  <pre id="info">Chargement des données...</pre>
+</section>
 
+<script>
+(async () => {
+  const infoEl = document.getElementById('info');
+
+  const url = window.location.href;
+  const referrer = document.referrer || "Aucun";
+  const userAgent = navigator.userAgent;
+  const language = navigator.language;
+  const online = navigator.onLine ? "Oui" : "Non";
+  const cookiesEnabled = navigator.cookieEnabled ? "Oui" : "Non";
+  const screenSize = `${screen.width} x ${screen.height}`;
+  const viewport = `${window.innerWidth} x ${window.innerHeight}`;
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const platform = navigator.platform;
+  const now = new Date().toLocaleString();
+  const connection = navigator.connection || navigator.webkitConnection || navigator.mozConnection;
+
+  let httpStatus = "Inconnu";
+  let ipPublic = "Non disponible";
+  let connType = connection ? connection.effectiveType : "Non détecté";
+  let downlink = connection ? connection.downlink + " Mb/s" : "Non détecté";
+  let rtt = connection ? connection.rtt + " ms" : "Non détecté";
+
+  // Test code HTTP
+  try {
+    const response = await fetch(url, { cache: "no-cache" });
+    httpStatus = `${response.status} ${response.statusText}`;
+  } catch {
+    httpStatus = "Erreur réseau";
+  }
+
+  // Récupération IP publique via API externe
+  try {
+    const res = await fetch("https://api.ipify.org?format=json");
+    const data = await res.json();
+    ipPublic = data.ip;
+  } catch {
+    ipPublic = "Non accessible (bloqué par navigateur ou réseau)";
+  }
+
+  infoEl.textContent = `
+📄 URL : ${url}
+↩️ Référent : ${referrer}
+🧭 Code HTTP : ${httpStatus}
+💻 Navigateur : ${userAgent}
+🪟 Plateforme : ${platform}
+🔤 Langue : ${language}
+🕒 Date / Heure locale : ${now}
+🌍 Fuseau horaire : ${timezone}
+📶 En ligne : ${online}
+🍪 Cookies activés : ${cookiesEnabled}
+🖥️ Taille écran : ${screenSize}
+📱 Viewport : ${viewport}
+
+🌐 Réseau :
+   - IP publique : ${ipPublic}
+   - Type de connexion : ${connType}
+   - Débit estimé : ${downlink}
+   - Latence estimée : ${rtt}
+`;
+})();
+</script>
 
 <section data-bs-version="5.1" class="footer2 cid-uA2iNNN5Xx" once="footers" id="footer-5-uA2iNNN5Xx">
 
