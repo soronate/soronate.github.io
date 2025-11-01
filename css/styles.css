@@ -411,50 +411,21 @@ header video {
         /* Ombre au survol sur les tuiles et grossissement picto */
 
 		.item-wrapper {
-		  transform: scale(1);
-		  filter: blur(0);
-		  box-shadow: none;
-		  transition: transform 0.6s ease, box-shadow 0.4s ease, filter 0.4s ease;
+		  transition: transform 0.4s ease, box-shadow 0.4s ease;
 		}
 		
-		/* Effet desktop */
 		.item-wrapper:hover {
 		  transform: scale(1.03);
 		  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-		  animation: blurIn 0.3s ease;
 		}
 		
-		@keyframes blurIn {
-		  0% {
-		    filter: blur(2px);
-		  }
-		  100% {
-		    filter: blur(0);
-		  }
-		}
-		
-		.item-wrapper .mbr-iconfont {
-		  transition: transform 0.3s ease;
-		}
-		
-		.item-wrapper:hover .mbr-iconfont {
-		  transform: scale(1.05);
-		}
-		
-		/* Effet mobile allégé */
+		/* Mobile */
 		@media (hover: none) and (pointer: coarse) {
-		  .item-wrapper {
-		    transition: transform 0.3s ease, box-shadow 0.3s ease;
-		  }
-		
 		  .item-wrapper:active {
 		    transform: scale(1.02);
 		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 		  }
 		}
-
-        
-       
         
         /* OLD Ombre au survol sur les tuiles et grossissement picto       
         
