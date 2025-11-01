@@ -407,32 +407,31 @@ header video {
 
         /* Ombre au survol sur les tuiles et grossissement picto */
 
-		 .item-wrapper {
+		.item-wrapper {
 		  transform: scale(1);
-		  filter: blur(0) brightness(1);
+		  filter: blur(0);
 		  box-shadow: none;
-		  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) , box-shadow 0.4s ease, filter 0.4s ease;
+		  transition: transform 0.6s ease, box-shadow 0.4s ease, filter 0.4s ease;
 		}
 		
 		/* Effet desktop */
 		.item-wrapper:hover {
 		  transform: scale(1.03);
 		  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-		  filter: blur(0) brightness(1.1);
 		  animation: blurIn 0.3s ease;
 		}
 		
 		@keyframes blurIn {
 		  0% {
-		    filter: blur(2px) brightness(1);
+		    filter: blur(2px);
 		  }
 		  100% {
-		    filter: blur(0) brightness(1.1);
+		    filter: blur(0);
 		  }
 		}
 		
 		.item-wrapper .mbr-iconfont {
-		  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+		  transition: transform 0.3s ease;
 		}
 		
 		.item-wrapper:hover .mbr-iconfont {
@@ -450,6 +449,7 @@ header video {
 		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 		  }
 		}
+
         
        
         
@@ -464,7 +464,7 @@ header video {
 		}
 		  
 		.item-wrapper:hover .mbr-iconfont {
-		transform: scale(1.1); /* agrandit l'icône de 20% */
-		transition: transform 0.3s ease; /* animation fluide */
+		transform: scale(1.1); 
+		transition: transform 0.3s ease;
 		}
 		*/  
