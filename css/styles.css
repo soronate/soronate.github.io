@@ -416,7 +416,7 @@ header video {
 		
 		.item-wrapper:hover {
 		  transform: scale(1.01);
-		  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+		  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 		}
 		
 		/* Mobile */
