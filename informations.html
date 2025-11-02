@@ -227,7 +227,7 @@
     ["📄 Site", `<a href="https://soronate.github.io" target="_blank" class="text-black text-primary">https://soronate.github.io</a>`],
     ["📄 Page", `<a href="${url}" target="_blank" class="text-black text-primary">${url}</a>`],  
     ["↩️ Origine", referrer !== "Aucun" ? `<a href="${referrer}" target="_blank" class="text-black text-primary">${referrer}</a>` : "Aucun"],
-    ["🔒 Protocole", window.location.protocol],
+    ["🔒 Protocole", window.location.protocol.slice(0, -1)],
     ["🌍 Domaine", window.location.hostname],
     ["💻 Navigateur", userAgent],
     ["🏷️ Fournisseur", vendor],
