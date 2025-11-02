@@ -190,34 +190,66 @@
 <script>
 (() => {
   const sys = document.getElementById('sys');
-  const now = new Date().toLocaleString();
   const url = window.location.href;
+  const referrer = document.referrer || "Aucun";
   const userAgent = navigator.userAgent;
+  const platform = navigator.platform;
   const language = navigator.language;
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const online = navigator.onLine ? "En ligne ✅" : "Hors ligne ❌";
+  const now = new Date().toLocaleString();
+  const online = navigator.onLine ? "✅ En ligne" : "❌ Hors ligne";
+  const cookiesEnabled = navigator.cookieEnabled ? "Oui" : "Non";
+  const cores = navigator.hardwareConcurrency || "Inconnu";
+  const ram = navigator.deviceMemory ? `${navigator.deviceMemory} Go` : "Inconnu";
+  const touch = navigator.maxTouchPoints || 0;
+  const vendor = navigator.vendor || "Non spécifié";
+
+  // Écran et affichage
   const screenSize = `${screen.width} x ${screen.height}`;
   const viewport = `${window.innerWidth} x ${window.innerHeight}`;
-  const platform = navigator.platform;
+  const pixelRatio = window.devicePixelRatio;
+  const orientation = screen.orientation ? screen.orientation.type : "Inconnue";
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches ? "Oui" : "Non";
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? "Oui" : "Non";
+
+  // Réseau
   const connection = navigator.connection || navigator.webkitConnection || navigator.mozConnection;
   const connType = connection ? connection.effectiveType : "Inconnu";
   const downlink = connection ? `${connection.downlink} Mb/s` : "Inconnu";
+  const rtt = connection ? `${connection.rtt} ms` : "Inconnu";
+
+  // Performance
+  const perf = performance.getEntriesByType('navigation')[0];
+  const loadTime = perf ? `${(perf.loadEventEnd - perf.startTime).toFixed(0)} ms` : "Inconnu";
+
 
   const infos = [
     ["📄 Site", `<a href="https://soronate.github.io" target="_blank" class="text-black text-primary">https://soronate.github.io</a>`],
-    ["📄 Page", `<a href="${url}" target="_blank" class="text-black text-primary">${url}</a>`],    
+    ["📄 Page", `<a href="${url}" target="_blank" class="text-black text-primary">${url}</a>`],  
+    ["↩️ Referrer", referrer !== "Aucun" ? `<a href="${referrer}" target="_blank" style="color:#4FC3F7;">${referrer}</a>` : "Aucun"],
     ["💻 Navigateur", userAgent],
+    ["🏷️ Fournisseur", vendor],
     ["🪟 Plateforme", platform],
     ["🔤 Langue", language],
     ["🕓 Fuseau horaire", timezone],
     ["🕒 Date", now],
     ["📶 Statut", online],
-    ["⚡ Connexion", connType],
+    ["🍪 Cookies", cookiesEnabled],
+    ["⚡ Type connexion", connType],
     ["🚀 Débit estimé", downlink],
+    ["⏱️ Latence", rtt],
+    ["🧠 Cœurs CPU", cores],
+    ["💾 Mémoire", ram],
+    ["🤚 Points tactiles", touch],
+    ["🎨 Mode sombre", prefersDark],
+    ["🚫 Mouvement réduit", prefersReducedMotion],
     ["🖥️ Taille écran", screenSize],
     ["📱 Viewport", viewport],
-    ["🌐 Hébergement", "GitHub Pages"],
-    ["🧩 Version du site", "v2.3.1"]
+    ["🔎 Densité pixels", pixelRatio],
+    ["📐 Orientation écran", orientation],
+    ["⏳ Temps de chargement", loadTime],
+    ["🌍 Hébergement", "GitHub Pages"],
+    ["🧩 Version", "v2.3.1"]
     ];
 
   infoEl.innerHTML = infos.map(([label, val]) => `<li><strong>${label} :</strong> ${val}</li>`).join('');
