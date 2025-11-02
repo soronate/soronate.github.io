@@ -164,13 +164,13 @@
   						<ul class="mbr-text mbr-fonts-style mt-0 mb-3 display-4" id="infoEl" style="list-style:none;padding:0;"></ul>
 
 						  <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
-                            <button id="copyBtn" type="submit" class="btn btn-primary display-7"><i class="bi bi-copy"></i>&nbsp;Copier les infos</button>
+                            <button id="copyBtn" type="submit" class="btn btn-primary display-7"><i class="bi bi-copy"></i>&nbsp;Copier les informations</button>
                         </div>
 						  <span id="copyMsg" style="color:#4FC3F7;margin-top:0.5em;"></span>
 						</p>
 
                     </div>
-                </div>     
+                </div>      
                 
                 
                <div class="item features-without-image col-12">
@@ -257,14 +257,14 @@
   infoEl.innerHTML = infos.map(([label, val]) => `<li><strong>${label} :</strong> ${val}</li>`).join('');
 
   copyBtn.addEventListener('click', () => {
-    const text = infos.map(([label, val]) => `${label} : ${val.replace(/<[^>]*>?/gm, '')}`).join('\n');
+	const text = infos.map(([label, val]) => `${label} : ${val.replace(/<[^>]*>?/gm, '')}`).join('\n');
     navigator.clipboard.writeText(text)
       .then(() => {
         copyMsg.textContent = "✅ Informations copiées dans le presse-papier.";
         setTimeout(() => (copyMsg.textContent = ""), 3000);
       })
       .catch(() => {
-        copyMsg.textContent = "❌ Erreur lors de la copie.";
+        copyMsg.textContent = "❌ Erreur.";
       });
   });
 })();
