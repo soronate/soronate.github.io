@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <title>Soronate - Information</title>
+  <title>Soronate - Informations techniques</title>
   <meta name="author" content="Soronate">
   <meta name="publisher" content="Soronate">
   <meta name="robots" content="noindex">
@@ -137,57 +137,60 @@
     <div class="container">
         <div class="col-12 mb-5 content-head">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                <strong>Information</strong>
+                <strong>Informations techniques</strong>
             </h3>
 			<h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7"></h5>            
         </div>
         <div class="row justify-content-center ">
             <div class="col-12 col-lg-9">
-                <div class="item features-without-image col-12 active">
-                    <div class="item-wrapper">
-                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
-                            <strong>Informations</strong></h5>
-                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">
-						non stocké sir le serveur ou utilise ailleurs</p>
-                    </div>
-                </div>
-                
-                
-                <div class="item features-without-image col-12 active">
-                    <div class="item-wrapper">
-                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
-                            <strong>Utilisateur</strong></h5>
-                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">
-						Le site Soronate a été mis en ligne récemment. À ce jour, il n'est pas encore conforme au Référentiel Général d'Amélioration de l'Accessibilité (RGAA).
-						<br>Toutefois, nous accordons une attention particulière à la qualité de sa réalisation.
-						</p>
-                    </div>
-                </div>                
 
                 <div class="item features-without-image col-12 active">
                     <div class="item-wrapper">
                         <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
-                            <strong>Retour d'information et contact</strong></h5>
-                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">
-						Si vous rencontrez des difficultés ou des anomalies, n'hésitez pas à nous en faire part. Nous nous engageons à améliorer en permanence l'accessibilité de nos contenus, afin de garantir un accès équitable à l'information pour tous les utilisateurs, quels que soient leurs besoins physiques, cognitifs ou matériels.
-						<br>Vos retours sont essentiels : si l’accès à un contenu ou à un service pose problème, contactez-nous. Nous serons heureux de vous aider à trouver une alternative accessible ou à vous fournir le contenu sous un autre format.
-						<br><br>Pour toute demande, contactez-nous à : <a href="mailto:contactsoronate@gmail.com" class="text-black">ContactSoronate@gmail.com</a>.
+                            <strong>Données techniques</strong></h5>
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Cette page (comme l'ensemble des pages du site Soronate) ne collecte, n'enregistre ni ne partage aucune donnée personnelle ou statistique.<br>
 						</p>
                     </div>
-                </div>  
+                </div>
+
+
+                
+                <div class="item features-without-image col-12 active">
+                    <div class="item-wrapper">
+                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                            <strong>Informations</strong></h5>
+
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">
+						  <ul class="mbr-text mbr-fonts-style mt-0 mb-3 display-7" id="info"></ul>
+						  <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                            <button id="copyBtn" type="submit" class="btn btn-primary display-7"><i class="bi bi-copy"></i>&nbsp;Copier les infos</button>
+                        </div>
+						  <span id="copyMsg" style="color:#4FC3F7;margin-top:0.5em;"></span>
+						</p>
+
+                    </div>
+                </div>     
+                
+                
+               <div class="item features-without-image col-12">
+                  <div class="item-wrapper">
+                      <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                          <strong>Contact</strong></h5>
+                      <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Pour toute question, vous pouvez nous contacter à <a href="mailto:contactsoronate@gmail.com" class="text-black text-primary">ContactSoronate@gmail.com</a>.</p>
+                  </div>
+              </div> 
+                        
                 
             </div>
         </div>
     </div>
 </section>
-<section id="tech-info" style="font-family: 'Courier New', monospace; background: #121212; color: #e0e0e0; padding: 1.5em; border-radius: 10px; max-width: 750px; margin: 2em auto; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
-  <h2 style="color:#4FC3F7;">🧭 Informations techniques complètes</h2>
-  <pre id="info">Chargement des données...</pre>
-</section>
 
 <script>
 (async () => {
   const infoEl = document.getElementById('info');
+  const copyBtn = document.getElementById('copyBtn');
+  const copyMsg = document.getElementById('copyMsg');
 
   const url = window.location.href;
   const referrer = document.referrer || "Aucun";
@@ -208,7 +211,6 @@
   let downlink = connection ? connection.downlink + " Mb/s" : "Non détecté";
   let rtt = connection ? connection.rtt + " ms" : "Non détecté";
 
-  // Test code HTTP
   try {
     const response = await fetch(url, { cache: "no-cache" });
     httpStatus = `${response.status} ${response.statusText}`;
@@ -216,35 +218,46 @@
     httpStatus = "Erreur réseau";
   }
 
-  // Récupération IP publique via API externe
   try {
     const res = await fetch("https://api.ipify.org?format=json");
     const data = await res.json();
     ipPublic = data.ip;
   } catch {
-    ipPublic = "Non accessible (bloqué par navigateur ou réseau)";
+    ipPublic = "Non accessible";
   }
 
-  infoEl.textContent = `
-📄 URL : ${url}
-↩️ Référent : ${referrer}
-🧭 Code HTTP : ${httpStatus}
-💻 Navigateur : ${userAgent}
-🪟 Plateforme : ${platform}
-🔤 Langue : ${language}
-🕒 Date / Heure locale : ${now}
-🌍 Fuseau horaire : ${timezone}
-📶 En ligne : ${online}
-🍪 Cookies activés : ${cookiesEnabled}
-🖥️ Taille écran : ${screenSize}
-📱 Viewport : ${viewport}
+  const infos = [
+    ["📄 URL", `<a href='${url}' target='_blank' style='color:#4FC3F7;'>${url}</a>`],
+    ["↩️ Référent", referrer !== "Aucun" ? `<a href='${referrer}' target='_blank' style='color:#4FC3F7;'>${referrer}</a>` : "Aucun"],
+    ["🧭 Code HTTP", httpStatus],
+    ["💻 Navigateur", userAgent],
+    ["🪟 Plateforme", platform],
+    ["🔤 Langue", language],
+    ["🕒 Date / Heure", now],
+    ["🌍 Fuseau horaire", timezone],
+    ["📶 En ligne", online],
+    ["🍪 Cookies activés", cookiesEnabled],
+    ["🖥️ Taille écran", screenSize],
+    ["📱 Viewport", viewport],
+    ["🌐 IP publique", ipPublic],
+    ["⚡ Type connexion", connType],
+    ["🚀 Débit estimé", downlink],
+    ["⏱️ Latence", rtt],
+  ];
 
-🌐 Réseau :
-   - IP publique : ${ipPublic}
-   - Type de connexion : ${connType}
-   - Débit estimé : ${downlink}
-   - Latence estimée : ${rtt}
-`;
+  infoEl.innerHTML = infos.map(([label, val]) => `<li><strong>${label} :</strong> ${val}</li>`).join('');
+
+  copyBtn.addEventListener('click', () => {
+    const text = infos.map(([label, val]) => `${label} : ${val.replace(/<[^>]*>?/gm, '')}`).join('\n');
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        copyMsg.textContent = "✅ Informations copiées dans le presse-papier.";
+        setTimeout(() => (copyMsg.textContent = ""), 3000);
+      })
+      .catch(() => {
+        copyMsg.textContent = "❌ Erreur lors de la copie.";
+      });
+  });
 })();
 </script>
 
