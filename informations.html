@@ -161,7 +161,8 @@
                             <strong>Informations</strong></h5>
 
                         <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">
-						  <ul class="mbr-text mbr-fonts-style mt-0 mb-3 display-7" id="info"></ul>
+
+						  <ul class="mbr-text mbr-fonts-style mt-0 mb-3 display-7" id="infoEl"></ul>
 						  <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
                             <button id="copyBtn" type="submit" class="btn btn-primary display-7"><i class="bi bi-copy"></i>&nbsp;Copier les infos</button>
                         </div>
@@ -187,64 +188,37 @@
 </section>
 
 <script>
-(async () => {
-  const infoEl = document.getElementById('info');
-  const copyBtn = document.getElementById('copyBtn');
-  const copyMsg = document.getElementById('copyMsg');
-
+(() => {
+  const sys = document.getElementById('sys');
+  const now = new Date().toLocaleString();
   const url = window.location.href;
-  const referrer = document.referrer || "Aucun";
   const userAgent = navigator.userAgent;
   const language = navigator.language;
-  const online = navigator.onLine ? "Oui" : "Non";
-  const cookiesEnabled = navigator.cookieEnabled ? "Oui" : "Non";
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const online = navigator.onLine ? "En ligne ✅" : "Hors ligne ❌";
   const screenSize = `${screen.width} x ${screen.height}`;
   const viewport = `${window.innerWidth} x ${window.innerHeight}`;
-  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const platform = navigator.platform;
-  const now = new Date().toLocaleString();
   const connection = navigator.connection || navigator.webkitConnection || navigator.mozConnection;
-
-  let httpStatus = "Inconnu";
-  let ipPublic = "Non disponible";
-  let connType = connection ? connection.effectiveType : "Non détecté";
-  let downlink = connection ? connection.downlink + " Mb/s" : "Non détecté";
-  let rtt = connection ? connection.rtt + " ms" : "Non détecté";
-
-  try {
-    const response = await fetch(url, { cache: "no-cache" });
-    httpStatus = `${response.status} ${response.statusText}`;
-  } catch {
-    httpStatus = "Erreur réseau";
-  }
-
-  try {
-    const res = await fetch("https://api.ipify.org?format=json");
-    const data = await res.json();
-    ipPublic = data.ip;
-  } catch {
-    ipPublic = "Non accessible";
-  }
+  const connType = connection ? connection.effectiveType : "Inconnu";
+  const downlink = connection ? `${connection.downlink} Mb/s` : "Inconnu";
 
   const infos = [
-    ["📄 URL site", `<a href='https://soronate.github.io' target='_blank' style='color:#4FC3F7;'>https://soronate.github.io</a>`],
-    ["📄 URL page", `<a href='${url}' target='_blank' style='color:#4FC3F7;'>${url}</a>`],    
-    ["↩️ Référent", referrer !== "Aucun" ? `<a href='${referrer}' target='_blank' style='color:#4FC3F7;'>${referrer}</a>` : "Aucun"],
-    ["🧭 Code HTTP", httpStatus],
+    ["📄 Site", `<a href="https://soronate.github.io/" target="_blank" class="text-black text-primary">https://soronate.github.io/</a>`],
+    ["📄 Page", `<a href="${url}" target="_blank" class="text-black text-primary">${url}</a>`],    
     ["💻 Navigateur", userAgent],
     ["🪟 Plateforme", platform],
     ["🔤 Langue", language],
+    ["🕓 Fuseau horaire", timezone],
     ["🕒 Date", now],
-    ["🌍 Fuseau horaire", timezone],
-    ["📶 En ligne", online],
-    ["🍪 Cookies activés", cookiesEnabled],
+    ["📶 Statut", online],
+    ["⚡ Connexion", connType],
+    ["🚀 Débit estimé", downlink],
     ["🖥️ Taille écran", screenSize],
     ["📱 Viewport", viewport],
-    ["🌐 IP publique", ipPublic],
-    ["⚡ Type connexion", connType],
-    ["🚀 Débit estimé", downlink],
-    ["⏱️ Latence", rtt],
-  ];
+    ["🌐 Hébergement", "GitHub Pages"],
+    ["🧩 Version du site", "v1.0.0"]
+    ];
 
   infoEl.innerHTML = infos.map(([label, val]) => `<li><strong>${label} :</strong> ${val}</li>`).join('');
 
