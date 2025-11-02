@@ -227,13 +227,14 @@
   }
 
   const infos = [
-    ["📄 URL", `<a href='${url}' target='_blank' style='color:#4FC3F7;'>${url}</a>`],
+    ["📄 URL site", `<a href='https://soronate.github.io' target='_blank' style='color:#4FC3F7;'>https://soronate.github.io</a>`],
+    ["📄 URL page", `<a href='${url}' target='_blank' style='color:#4FC3F7;'>${url}</a>`],    
     ["↩️ Référent", referrer !== "Aucun" ? `<a href='${referrer}' target='_blank' style='color:#4FC3F7;'>${referrer}</a>` : "Aucun"],
     ["🧭 Code HTTP", httpStatus],
     ["💻 Navigateur", userAgent],
     ["🪟 Plateforme", platform],
     ["🔤 Langue", language],
-    ["🕒 Date / Heure", now],
+    ["🕒 Date", now],
     ["🌍 Fuseau horaire", timezone],
     ["📶 En ligne", online],
     ["🍪 Cookies activés", cookiesEnabled],
