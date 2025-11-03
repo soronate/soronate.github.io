@@ -164,7 +164,7 @@
   						<ul class="mbr-text mbr-fonts-style mt-0 mb-3 display-4" id="infoEl" style="list-style:none;padding:0;"></ul>
 
 						  <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
-                            <button id="copyBtn" type="submit" class="btn btn-primary display-7"><i class="bi bi-copy"></i>&nbsp;Copier les informations</button>
+                            <button id="copyBtn" type="button" class="btn btn-primary display-7"><i class="bi bi-copy"></i>&nbsp;Copier les informations</button>
                         </div>
 						  <span id="copyMsg" style="color:#4FC3F7;margin-top:0.5em;"></span>
 						</p>
@@ -189,7 +189,10 @@
 
 <script>
 (() => {
-  const sys = document.getElementById('sys');
+  const infoEl = document.getElementById('infoEl');
+  const copyBtn = document.getElementById('copyBtn');
+  const copyMsg = document.getElementById('copyMsg');
+
   const url = window.location.href;
   const referrer = document.referrer || "Aucun";
   const userAgent = navigator.userAgent;
@@ -203,34 +206,24 @@
   const ram = navigator.deviceMemory ? `${navigator.deviceMemory} Go` : "Inconnu";
   const touch = navigator.maxTouchPoints || 0;
   const vendor = navigator.vendor || "Non spécifié";
-
-  // Écran et affichage
   const screenSize = `${screen.width} x ${screen.height}`;
   const viewport = `${window.innerWidth} x ${window.innerHeight}`;
   const pixelRatio = window.devicePixelRatio;
   const orientation = screen.orientation ? screen.orientation.type : "Inconnue";
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches ? "Oui" : "Non";
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? "Oui" : "Non";
-
-  // Réseau
   const connection = navigator.connection || navigator.webkitConnection || navigator.mozConnection;
   const connType = connection ? connection.effectiveType : "Inconnu";
   const downlink = connection ? `${connection.downlink} Mb/s` : "Inconnu";
   const rtt = connection ? `${connection.rtt} ms` : "Inconnu";
-
-  // Performance
   const perf = performance.getEntriesByType('navigation')[0];
   const loadTime = perf ? `${(perf.loadEventEnd - perf.startTime).toFixed(0)} ms` : "Inconnu";
 
-
   const infos = [
-    ["📄 Site", `<a href="https://soronate.github.io" target="_blank" class="text-black text-primary">https://soronate.github.io</a>`],
-    ["📄 Page", `<a href="${url}" target="_blank" class="text-black text-primary">${url}</a>`],  
-    ["↩️ Origine", referrer !== "Aucun" ? `<a href="${referrer}" target="_blank" class="text-black text-primary">${referrer}</a>` : "Aucun"],
-    ["🔒 Protocole", window.location.protocol.slice(0, -1)],
-    ["🌍 Domaine", window.location.hostname],
+    ["📄 Site", `<a href="https://soronate.github.io" target="_blank">https://soronate.github.io</a>`],
+    ["📄 Page", `<a href="${url}" target="_blank">${url}</a>`],
+    ["↩️ Origine", referrer !== "Aucun" ? `<a href="${referrer}" target="_blank">${referrer}</a>` : "Aucun"],
     ["💻 Navigateur", userAgent],
-    ["🏷️ Fournisseur", vendor],
     ["🪟 Plateforme", platform],
     ["🔤 Langue", language],
     ["🕓 Fuseau horaire", timezone],
@@ -250,21 +243,29 @@
     ["📐 Orientation écran", orientation],
     ["⏳ Temps de chargement", loadTime],
     ["🌍 Hébergement", "GitHub Pages"],
-   
     ["🧩 Version", "v2.3.1"]
-    ];
+  ];
 
-  infoEl.innerHTML = infos.map(([label, val]) => `<li><strong>${label} :</strong> ${val}</li>`).join('');
+  // affichage HTML
+  infoEl.innerHTML = infos
+    .map(([label, val]) => `<li><strong>${label} :</strong> ${val}</li>`)
+    .join('');
 
-  copyBtn.addEventListener('click', () => {
-	const text = infos.map(([label, val]) => `${label} : ${val.replace(/<[^>]*>?/gm, '')}`).join('\n');
+  // copie presse-papier
+  copyBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const text = infos
+      .map(([label, val]) => `${label} : ${String(val).replace(/<[^>]*>?/gm, '')}`)
+      .join('\n');
+
     navigator.clipboard.writeText(text)
       .then(() => {
         copyMsg.textContent = "✅ Informations copiées dans le presse-papier.";
         setTimeout(() => (copyMsg.textContent = ""), 3000);
       })
-      .catch(() => {
-        copyMsg.textContent = "❌ Erreur.";
+      .catch((err) => {
+        console.error(err);
+        copyMsg.textContent = "❌ Erreur lors de la copie dans le presse-papier.";
       });
   });
 })();
