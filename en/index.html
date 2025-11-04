@@ -914,54 +914,86 @@ Our team combines technical expertise and innovation to support individuals and 
 </section>
 
 
-
 <section data-bs-version="5.1" class="features10 cid-uA2iNNHWK3" id="metrics-2-uA2iNNHWK3">
-  
-
-  
-  
   <div class="container">
-    
     <div class="row justify-content-center">
       <div class="item features-without-image col-12 col-md-6 col-lg-4">
         <div class="item-wrapper">
           <div class="card-box align-left">
-            
             <p class="card-title mbr-fonts-style mb-3 display-1">
-              <strong>150+</strong>
+              <strong class="counter" data-target="150">0</strong>+
             </p>
             <p class="card-text mbr-fonts-style mb-3 display-7">Successful projects</p>
-            
           </div>
         </div>
       </div>
+
       <div class="item features-without-image col-12 col-md-6 col-lg-4">
         <div class="item-wrapper">
           <div class="card-box align-left">
-            
             <p class="card-title mbr-fonts-style mb-3 display-1">
-              <strong>99%</strong>
+              <strong class="counter" data-target="99">0</strong>%
             </p>
             <p class="card-text mbr-fonts-style mb-3 display-7">Customer satisfaction</p>
-            
           </div>
         </div>
       </div>
+
       <div class="item features-without-image col-12 col-md-6 col-lg-4">
         <div class="item-wrapper">
           <div class="card-box align-left">
-            
             <p class="card-title mbr-fonts-style mb-3 display-1">
-              <strong>20+</strong>
+              <strong class="counter" data-target="20">0</strong>+
             </p>
             <p class="card-text mbr-fonts-style mb-3 display-7">Years of experience</p>
-            
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll('.counter');
+  let animated = false;
+
+  function animateCounters() {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const duration = 1500;
+      let start = 0;
+      const increment = target / (duration / 16);
+
+      function updateCounter() {
+        start += increment;
+        if (start < target) {
+          counter.textContent = Math.floor(start);
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = target;
+        }
+      }
+
+      updateCounter();
+    });
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animated) {
+        animateCounters();
+        animated = true;
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(document.querySelector('#metrics-2-uA2iNNHWK3'));
+});
+</script>
+
+
 
 <section data-bs-version="5.1" class="slider4 mbr-embla cid-uA2iNNL0ak" id="gallery-13-uA2iNNL0ak">
   
