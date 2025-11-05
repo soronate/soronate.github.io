@@ -408,25 +408,6 @@ header video {
         /* Ombre au survol sur les tuiles et grossissement picto */
 
 		.item-wrapper {
-		  transition: transform 0.4s ease, box-shadow 0.4s ease;
-		}
-		
-		.item-wrapper:hover {
-		  transform: scale(1.01);
-		  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-		}
-		
-		/* Mobile */
-		@media (hover: none) and (pointer: coarse) {
-		  .item-wrapper:active {
-		  transform: scale(1.01);
-		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-		  }
-		}
-        
-        /* OLD Ombre au survol sur les tuiles et grossissement picto       
-        
-		.item-wrapper {
 		  transition: box-shadow 0.3s ease;
 		}
 		
@@ -438,4 +419,22 @@ header video {
 		transform: scale(1.1); 
 		transition: transform 0.3s ease;
 		}
+        
+        /* OLD Ombre au survol sur les tuiles et grossissement picto       
+		.item-wrapper {
+		  transition: transform 0.4s ease, box-shadow 0.4s ease;
+		}
+		
+		.item-wrapper:hover {
+		  transform: scale(1.01);
+		  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+		}
+		
+		@media (hover: none) and (pointer: coarse) {
+		  .item-wrapper:active {
+		  transform: scale(1.01);
+		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+		  }
+		}
+		
 		*/  
