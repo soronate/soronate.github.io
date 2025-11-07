@@ -468,3 +468,18 @@ header video {
 	    box-shadow: 0 0 0px rgba(4, 102, 115, 0.6);
 	  }
 	}
+	
+	
+	
+	/* Animation du liseret sous les titres*/
+	.title-underline {
+	  width: 0;
+	  height: 3px;
+	  background-color: #9FE870; /* couleur du filet */
+	  margin: 10px auto 0;
+	  transition: width 1s ease-out;
+	}
+	
+	.title-underline.active {
+	  width: 300px; /* longueur finale du filet */
+	}	

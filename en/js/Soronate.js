@@ -44,3 +44,21 @@
 	    txt.innerHTML = html;
 	    return txt.value;
 	  }
+	  
+
+	  //*Animation du liseret sous les titres
+	  document.addEventListener("DOMContentLoaded", function() {
+	    const underlines = document.querySelectorAll('.title-underline');
+	    const options = { threshold: 0.6 };
+
+	    const observer = new IntersectionObserver((entries, obs) => {
+	      entries.forEach(entry => {
+	        if (entry.isIntersecting) {
+	          entry.target.classList.add('active');
+	          obs.unobserve(entry.target); // pour ne le déclencher qu'une fois
+	        }
+	      });
+	    }, options);
+
+	    underlines.forEach(underline => observer.observe(underline));
+	  });
