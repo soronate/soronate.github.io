@@ -451,7 +451,7 @@ header video {
   
 /* Animation du logo */
 .halo-logo {
-  border-radius: 50%;
+  border-radius: 50% !important;
   animation: pulseHalo 2s infinite;
   width: 160px;
   height: 160px;
