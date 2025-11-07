@@ -2,27 +2,37 @@
 <html>
 <head>
   <style>
-    .logo {
-      width: 100px;
-      height: 100px;
+    /* Conteneur pour le halo (rond) */
+    .logo-container {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      background: #333; /* Fond sombre pour mieux voir le halo */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
       box-shadow: 0 0 20px 10px rgba(0, 150, 255, 0.7);
       animation: pulse 2s infinite alternate;
+      overflow: hidden; /* Masque les coins carrés de l'image */
     }
+
+    /* Animation du halo */
     @keyframes pulse {
       from { box-shadow: 0 0 20px 10px rgba(0, 150, 255, 0.7); }
       to { box-shadow: 0 0 30px 15px rgba(0, 150, 255, 0); }
     }
+
+    /* Style de l'image (sans bordure supplémentaire) */
+    .logo {
+      max-width: 100%;
+      display: block;
+    }
   </style>
 </head>
 <body>
-  
-		  <img src="./assets/logo/LogoSoronate.png" class="img-fluid my-4 logo" loading="lazy" id="logo-soronate" alt="Soronate" style="max-width: 160px; display: block; margin-left: auto; margin-right: auto;">
-		  
+  <!-- Conteneur rond avec le halo -->
+  <div class="logo-container">
+    <img src="./assets/logo/LogoSoronate.png" class="logo" loading="lazy" alt="Soronate">
+  </div>
 </body>
 </html>
-
-
-
-
