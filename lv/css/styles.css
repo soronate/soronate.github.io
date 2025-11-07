@@ -451,12 +451,12 @@ header video {
 	
 	@keyframes pulseHalo {
 	  0% {
-	    box-shadow: 0 0 0px rgba(0, 123, 255, 0.6);
+	    box-shadow: 0 0 0px rgba(4, 102, 115, 0.6);
 	  }
 	  50% {
-	    box-shadow: 0 0 45px rgba(0, 123, 255, 0.9);
+	    box-shadow: 0 0 45px rgba(4, 102, 115, 0.9);
 	  }
 	  100% {
-	    box-shadow: 0 0 0px rgba(0, 123, 255, 0.6);
+	    box-shadow: 0 0 0px rgba(4, 102, 115, 0.6);
 	  }
-	}		
+	}
