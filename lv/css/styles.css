@@ -439,3 +439,24 @@ header video {
 		}
 		
 		*/  
+		
+	/* Animation du logo */
+	.halo-logo {
+	  border-radius: 50% !important;
+	  animation: pulseHalo 2s infinite;
+	  width: 160px;
+	  height: 160px;
+	  object-fit: cover;
+	}
+	
+	@keyframes pulseHalo {
+	  0% {
+	    box-shadow: 0 0 0px rgba(0, 123, 255, 0.6);
+	  }
+	  50% {
+	    box-shadow: 0 0 45px rgba(0, 123, 255, 0.9);
+	  }
+	  100% {
+	    box-shadow: 0 0 0px rgba(0, 123, 255, 0.6);
+	  }
+	}		
