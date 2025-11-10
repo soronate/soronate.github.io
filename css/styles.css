@@ -483,3 +483,33 @@ header video {
 	.title-underline.active {
 	  width: 300px; /* longueur finale du filet */
 	}	
+
+
+
+  /* --- Bannière --- */
+  .info-banner {
+    position: relative;
+    background: #0055a5;
+    color: #fff;
+    text-align: center;
+    padding: 10px 40px;
+    font-size: 16px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+  .info-banner.show {
+    max-height: 80px;
+    opacity: 1;
+  }
+  .info-banner button {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
