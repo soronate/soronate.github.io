@@ -64,3 +64,26 @@
 
 	    underlines.forEach(underline => observer.observe(underline));
 	  });
+
+	  
+	  
+	  
+
+	  //*Banniere du site
+	    document.addEventListener("DOMContentLoaded", () => {
+	      const showBanner = true;               // 🔧 Flag principal
+	      const bannerId = "soronate-banner-v3"; // 🆔 Change quand le message change
+	      const banner = document.getElementById("info-banner");
+	      const closed = localStorage.getItem(bannerId) === "closed";
+
+	      if (showBanner && !closed) {
+	        document.body.classList.add("with-banner");
+	        requestAnimationFrame(() => banner.classList.add("show"));
+	      }
+
+	      document.getElementById("close-banner").addEventListener("click", () => {
+	        banner.classList.remove("show");
+	        document.body.classList.remove("with-banner");
+	        localStorage.setItem(bannerId, "closed");
+	      });
+	    });

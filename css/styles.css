@@ -488,19 +488,24 @@ header video {
 
   /* --- Bannière --- */
   .info-banner {
-    position: relative;
-    background: #0055a5;
+    position: fixed; /* reste visible au scroll */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #076779;
     color: #fff;
     text-align: center;
     padding: 10px 40px;
     font-size: 16px;
     overflow: hidden;
-    max-height: 0;
+    transform: translateY(-100%);
     opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
   .info-banner.show {
-    max-height: 80px;
+    transform: translateY(0);
     opacity: 1;
   }
   .info-banner button {
@@ -512,4 +517,7 @@ header video {
     color: #fff;
     font-size: 24px;
     cursor: pointer;
+  }
+  body.with-banner {
+    padding-top: 50px; /* décale le contenu sous la bannière */
   }
