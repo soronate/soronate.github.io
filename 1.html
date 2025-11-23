@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Demo A2HS</title>
+
+<!-- Icône iOS -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Manifest (Android) -->
+<link rel="manifest" href="/site.webmanifest">
+
+<meta name="theme-color" content="#1a73e8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Demo">
+
+<style>
+/* Bouton flottant */
+#a2hs-btn {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border-radius: 999px;
+  padding: 10px 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  cursor: pointer;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+#a2hs-btn svg {
+  width: 32px;
+  height: 32px;
+}
+
+#a2hs-label {
+  font-size: 14px;
+  color: #111;
+}
+
+/* Tip iOS */
+#a2hs-ios-tip {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 86px;
+  z-index: 10000;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.18);
+  display: none;
+  font-size: 13px;
+}
+
+#a2hs-ios-tip .close {
+  float: right;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Démo : Ajouter à l’écran d’accueil</h1>
+<p>Scrollez ou testez sur votre mobile pour voir le pictogramme.</p>
+
+<!-- Bouton flottant -->
+<div id="a2hs-btn">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 11.5L12 4l9 7.5"/>
+    <path d="M5 11.5v6A2.5 2.5 0 0 0 7.5 20h9A2.5 2.5 0 0 0 19 17.5v-6"/>
+  </svg>
+  <div id="a2hs-label">Ajouter à l’écran d’accueil</div>
+</div>
+
+<!-- Tip iOS -->
+<div id="a2hs-ios-tip">
+  <span class="close" id="a2hs-ios-close">✕</span>
+  <strong>Ajouter sur l’écran d’accueil</strong>
+  <p>1) Appuyez sur le bouton <em>Partager</em> dans Safari<br>
+     2) Choisissez <em>Sur l’écran d’accueil</em></p>
+</div>
+
+<script>
+// --- Détection ---
+const isIos = () => /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isSafari = () => /safari/i.test(navigator.userAgent) && !/chrome/i.test(navigator.userAgent);
+const isStandalone = () => (window.navigator.standalone === true) ||
+  window.matchMedia('(display-mode: standalone)').matches;
+
+// --- Éléments ---
+const btn = document.getElementById('a2hs-btn');
+const iosTip = document.getElementById('a2hs-ios-tip');
+const iosClose = document.getElementById('a2hs-ios-close');
+
+let deferredPrompt = null;
+
+// --- Android : capture beforeinstallprompt ---
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  if (!isStandalone()) btn.style.display = 'flex';
+});
+
+// --- iOS ---
+if (isIos() && isSafari() && !isStandalone()) {
+  btn.style.display = 'flex';
+  btn.dataset.platform = 'ios';
+}
+
+// --- Action bouton ---
+btn.addEventListener('click', async () => {
+  const platform = btn.dataset.platform;
+
+  if (platform === 'ios') {
+    iosTip.style.display = 'block';
+    return;
+  }
+
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    btn.style.display = 'none';
+  }
+});
+
+// Fermer tip iOS
+iosClose.addEventListener('click', () => {
+  iosTip.style.display = 'none';
+});
+
+// Cacher bouton si déjà installé
+window.matchMedia('(display-mode: standalone)').addEventListener('change', (e) => {
+  if (e.matches) btn.style.display = 'none';
+});
+</script>
+
+</body>
+</html>
