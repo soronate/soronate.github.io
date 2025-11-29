@@ -534,10 +534,11 @@ header video {
   right: -6px;
   font-size:1.6rem;
   transform: rotate(15deg);
-  animation: wiggle 2s infinite ease-in-out;
+  animation: wiggle 1s infinite ease-in-out;
 }
 @keyframes wiggle {
   0%,100% { transform: rotate(15deg); }
   50% { transform: rotate(25deg); }
 } 
+
 
