@@ -503,7 +503,15 @@ header video {
     transition: transform 0.4s ease, opacity 0.4s ease;
     z-index: 9999;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: flashBanner 1.5s infinite alternate;
   }
+  
+@keyframes flashBanner {
+  0% { background-color: #076779; }
+  50% { background-color: #00c4cc; }
+  100% { background-color: #076779; }
+}
+  
   .info-banner.show {
     transform: translateY(0);
     opacity: 1;
@@ -540,5 +548,4 @@ header video {
   0%,100% { transform: rotate(15deg); }
   50% { transform: rotate(25deg); }
 } 
-
 

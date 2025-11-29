@@ -71,8 +71,8 @@
 
 	  //*Banniere du site
 	    document.addEventListener("DOMContentLoaded", () => {
-	      const showBanner = false;               // 🔧 Flag principal
-	      const bannerId = "soronate-banner-v3"; // 🆔 Change quand le message change
+	      const showBanner = true;               // 🔧 Flag principal
+	      const bannerId = "soronate-banner-v4"; // 🆔 Change quand le message change
 	      const banner = document.getElementById("info-banner");
 	      const closed = localStorage.getItem(bannerId) === "closed";
 
