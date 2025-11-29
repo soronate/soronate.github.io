@@ -503,7 +503,7 @@ header video {
     transition: transform 0.4s ease, opacity 0.4s ease;
     z-index: 9999;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    animation: flashBanner 1.5s infinite alternate;
+/*     animation: flashBanner 1.5s infinite alternate; */  /* A remettre si effet flash */
   }
   
 @keyframes flashBanner {
