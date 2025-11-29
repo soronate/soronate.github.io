@@ -473,4 +473,27 @@ header video {
 	
 	.title-underline.active {
 	  width: 300px; /* longueur finale du filet */
-	}		
+	}	
+	
+	
+	
+
+
+
+  /* --- Effet NOEL --- */
+.navbar-logo a { position: relative; display: inline-block; }
+.navbar-logo a::after {
+  content: "🎅";
+  position: absolute;
+  top: -18px;
+  right: -6px;
+  font-size:1.6rem;
+  transform: rotate(15deg);
+  animation: wiggle 2s infinite ease-in-out;
+}
+@keyframes wiggle {
+  0%,100% { transform: rotate(15deg); }
+  50% { transform: rotate(25deg); }
+} 
+
+		

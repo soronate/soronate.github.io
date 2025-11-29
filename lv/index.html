@@ -1427,6 +1427,22 @@ document.addEventListener("DOMContentLoaded", () => {
 	  document.getElementById('langMenu').style.display = 'none';
 	});
 	</script>  
+
+
+<script>
+// Effet NOEL
+const s=document.createElement("style");
+s.textContent=`#snow{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}`;
+document.head.appendChild(s);
+const c=document.createElement("canvas");c.id="snow";document.body.appendChild(c);
+const x=c.getContext("2d");c.width=innerWidth;c.height=innerHeight;
+const n=120,f=Array.from({length:n},()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*3+1,v:Math.random()*1.5+1}));
+(function d(){x.clearRect(0,0,c.width,c.height);x.fillStyle="white";
+f.forEach(a=>{x.beginPath();x.arc(a.x,a.y,a.r,0,Math.PI*2);x.fill();a.y+=a.v;if(a.y>c.height){a.y=-5;a.x=Math.random()*c.width}});
+requestAnimationFrame(d)})();
+
+</script>
+
 	 
   </body>
 
