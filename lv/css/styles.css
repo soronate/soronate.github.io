@@ -480,7 +480,7 @@ header video {
 
 
 
-  /* --- Effet NOEL --- */
+  /* --- Effet NOEL
 .navbar-logo a { position: relative; display: inline-block; }
 .navbar-logo a::after {
   content: "🎅";
@@ -496,4 +496,4 @@ header video {
   50% { transform: rotate(25deg); }
 } 
 
-	
+	 --- */
