@@ -228,7 +228,7 @@ window.smartsupp||(function(d) {
 		  
         <h2 class="mbr-section-subtitle mbr-fonts-style mbr-white mb-4 display-5">Vos solutions informatiques.</h2>
         
-        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-4 mobile-text">Soronate est spécialisé dans le développement de logiciels, le conseil et la mise en place de solutions informatiques adaptées aux besoins des <span class="soro-type"></span> 
+        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-4 mobile-text">Soronate est spécialisé dans le développement de logiciels, le conseil et la mise en place de solutions informatiques adaptées aux besoins des <span class="soro-type-mobile"></span> 
         Notre équipe allie expertise technique et innovation pour accompagner les personnes et les entreprises dans leur transformation digitale.</p>
 
 		<div class="container-fluid desktop-text">
@@ -1477,7 +1477,7 @@ requestAnimationFrame(d)})();
 
 
 <script>
-// Effet text HP
+// Effet text HP Desktop
 		(function() {
 
 		  const words = [
@@ -1533,7 +1533,62 @@ requestAnimationFrame(d)})();
 		})();
 		</script>
 
+<script>
+// Effet text HP Mobile
+		(function() {
 
+		  const words = [
+			  "clients.",
+			  "TPE / PME / ETI / GE.",
+			  "startups.",
+			  "entreprises innovantes.",
+			  "entrepreneurs individuels.",
+			  "collectivités locales.",
+			  "administrations publiques.",
+			  "organismes gouvernementaux.",
+			  "institutions de recherche.",
+			  "centres de formation.",
+			  "commerçants.",
+			  "réseaux de franchise.",
+			  "associations.",
+			  "ONG.",
+			  "coopératives.",
+			  "professionnels indépendants.",
+			  "particuliers."
+		  ];
+
+		  const el = document.querySelector(".soro-type-mobile");
+		  if (!el) return;
+
+		  let wordIndex = 0;
+		  let charIndex = 0;
+		  let deleting = false;
+
+		  function loop() {
+		    const word = words[wordIndex];
+
+		    if (!deleting) {
+		      el.textContent = word.slice(0, ++charIndex);
+		      if (charIndex === word.length) {
+		        deleting = true;
+		        setTimeout(loop, 1000);
+		        return;
+		      }
+		    } else {
+		      el.textContent = word.slice(0, --charIndex);
+		      if (charIndex === 0) {
+		        deleting = false;
+		        wordIndex = (wordIndex + 1) % words.length;
+		      }
+		    }
+
+		    setTimeout(loop, deleting ? 60 : 90);
+		  }
+
+		  loop();
+
+		})();
+		</script>
 	  
   </body>
 
