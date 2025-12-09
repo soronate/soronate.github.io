@@ -549,3 +549,16 @@ header video {
   50% { transform: rotate(25deg); }
 } 
 --- */
+
+
+.soro-type {
+  display: inline-block;
+  white-space: nowrap;
+  border-right: 2px solid #333;
+  padding-right: 4px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}

@@ -240,7 +240,7 @@ window.smartsupp||(function(d) {
 		                <div class="item features-without-image col-12 animate__animated animate__delay-1s animate__fadeIn">
 		                  <div class="item-wrapper" style="background: rgba(255, 255, 255, 0.7) !important;padding: 1rem 15px; text-align: left;">
 		                      <h2 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5"></h2>
-		                      <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7"><b>Soronate</b> est spécialisée dans le développement de logiciels, le conseil technologique et la mise en œuvre de solutions informatiques sur mesure répondant aux besoins spécifiques de ses clients.<br>
+		                      <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7"><b>Soronate</b> est spécialisée dans le développement de logiciels, le conseil technologique et la mise en œuvre de solutions informatiques sur mesure répondant aux besoins spécifiques des <span class="soro-type"></span><br>
 								Notre équipe allie expertise technique et innovation pour accompagner particuliers et entreprises dans leur transformation digitale, à travers la conception d’applications, l’intégration de systèmes interconnectés, l’automatisation des processus métiers et l’amélioration de l’expérience utilisateur.</p>
 
 		                  </div>
@@ -1474,6 +1474,66 @@ f.forEach(a=>{x.beginPath();x.arc(a.x,a.y,a.r,0,Math.PI*2);x.fill();a.y+=a.v;if(
 requestAnimationFrame(d)})();
 
 </script>
+
+
+<script>
+// Effet text HP
+		(function() {
+
+		  const words = [
+			  "clients.",
+			  "TPE / PME / ETI / GE.",
+			  "startups.",
+			  "entreprises innovantes.",
+			  "entrepreneurs individuels.",
+			  "collectivités locales.",
+			  "administrations publiques.",
+			  "organismes gouvernementaux.",
+			  "institutions de recherche.",
+			  "centres de formation.",
+			  "commerçants.",
+			  "réseaux de franchise.",
+			  "associations.",
+			  "ONG.",
+			  "coopératives.",
+			  "professionnels indépendants.",
+			  "particuliers."
+		  ];
+
+		  const el = document.querySelector(".soro-type");
+		  if (!el) return;
+
+		  let wordIndex = 0;
+		  let charIndex = 0;
+		  let deleting = false;
+
+		  function loop() {
+		    const word = words[wordIndex];
+
+		    if (!deleting) {
+		      el.textContent = word.slice(0, ++charIndex);
+		      if (charIndex === word.length) {
+		        deleting = true;
+		        setTimeout(loop, 1000);
+		        return;
+		      }
+		    } else {
+		      el.textContent = word.slice(0, --charIndex);
+		      if (charIndex === 0) {
+		        deleting = false;
+		        wordIndex = (wordIndex + 1) % words.length;
+		      }
+		    }
+
+		    setTimeout(loop, deleting ? 60 : 90);
+		  }
+
+		  loop();
+
+		})();
+		</script>
+
+
 	  
   </body>
 
