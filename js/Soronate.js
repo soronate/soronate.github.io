@@ -81,9 +81,12 @@
 	        requestAnimationFrame(() => banner.classList.add("show"));
 	      }
 
+		  if (document.getElementById("close-banner")) {
 	      document.getElementById("close-banner").addEventListener("click", () => {
 	        banner.classList.remove("show");
 	        document.body.classList.remove("with-banner");
 	        localStorage.setItem(bannerId, "closed");
 	      });
+		  }
+		  
 	    });
