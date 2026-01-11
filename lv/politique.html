@@ -319,62 +319,8 @@
         </button>
     </div>
 
-    <script>
-        document.getElementById("toggleMenu").addEventListener("click", function() {
-            let menuContainer = document.getElementById("menuContainer");
-            let icon = this.querySelector("i");
 
-            menuContainer.classList.toggle("show");
-
-            if (menuContainer.classList.contains("show")) {
-                icon.classList.replace("bi-three-dots-vertical", "bi-x-lg");
-            } else {
-                icon.classList.replace("bi-x-lg", "bi-three-dots-vertical");
-            }
-        });
-    </script>
-    <script>
-    // Theme
-	  const link = document.getElementById('theme-link');
-	  const toggle = document.getElementById('theme-toggle');
-	  const html = document.documentElement;
-	
-	  // Appliquer le thème au chargement
-	  if (localStorage.getItem('theme') === 'dark') {
-	    link.href = './css/dark.css';
-	    html.setAttribute('data-theme', 'dark');
-	    toggle.textContent = '☀️';
-	  }
-	
-	  toggle.addEventListener('click', (e) => {
-	    e.preventDefault();
-	    const isDark = link.href.includes('dark.css');
-	    if (isDark) {
-	      link.href = './css/light.css';
-	      html.setAttribute('data-theme', 'light');
-	      localStorage.setItem('theme', 'light');
-	      toggle.textContent = '🌙';
-	    } else {
-	      link.href = './css/dark.css';
-	      html.setAttribute('data-theme', 'dark');
-	      localStorage.setItem('theme', 'dark');
-	      toggle.textContent = '☀️';
-	    }
-	  });
-	</script>  
-	
-	
- 	<script>
-	document.getElementById('langToggle').addEventListener('click', function(event) {
-	  event.stopPropagation();
-	  const menu = document.getElementById('langMenu');
-	  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-	});
-	document.addEventListener('click', function() {
-	  document.getElementById('langMenu').style.display = 'none';
-	});
-	</script>  
-	
+  <script type="text/javascript" src="./js/Soronate_Body.js" rel="preload"></script>	
   </body>
 
 </html>
