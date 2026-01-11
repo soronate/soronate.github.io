@@ -1,10 +1,9 @@
-
-	// Fonction pour remonter en haut de la page
-	function UpPage() {
+// Fonction pour remonter en haut de la page
+function UpPage() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-	}
-	/*
+}
+/*
 	// Affiche le bouton de scroll up dans la page
 	  window.addEventListener('scroll', function () {
 		const backToTopButton = document.getElementById('backToTop');
@@ -14,79 +13,50 @@
 		  backToTopButton.style.display = 'none';
 		}
 	  });
-	  */	
-	  
-	  // Affiche la barre de progression	  
-	   	  window.onload = () => {
-	      // Ecouteur d'évènement sur scroll
-	      window.addEventListener("scroll", () => {
-	          // Calcul de la hauteur "utile" du document
-	          let hauteur = document.documentElement.scrollHeight - window.innerHeight
+	  */
 
-	          // Récupération de la position verticale
-	          let position = window.scrollY
+// Affiche la barre de progression
+window.onload = () => {
+    // Ecouteur d'évènement sur scroll
+    window.addEventListener("scroll", () => {
+        // Calcul de la hauteur "utile" du document
+        let hauteur =
+            document.documentElement.scrollHeight - window.innerHeight;
 
-	          // Récupération de la largeur de la fenêtre
-	          let largeur = document.documentElement.clientWidth
+        // Récupération de la position verticale
+        let position = window.scrollY;
 
-	          // Calcul de la largeur de la barre
-	          let barre = position / hauteur * largeur
+        // Récupération de la largeur de la fenêtre
+        let largeur = document.documentElement.clientWidth;
 
-	          // Modification du CSS de la barre
-	          document.getElementById("progress").style.width = barre+"px"
-	      })
-	  }
+        // Calcul de la largeur de la barre
+        let barre = (position / hauteur) * largeur;
 
-	  
-	  // Decodage caracteres pour actualités	  
-	  function decodeHTML(html) {
-	    let txt = document.createElement("textarea");
-	    txt.innerHTML = html;
-	    return txt.value;
-	  }
-	  
-	  
-	  
-	  
-	  //*Animation du liseret sous les titres
-	  document.addEventListener("DOMContentLoaded", function() {
-	    const underlines = document.querySelectorAll('.title-underline');
-	    const options = { threshold: 0.6 };
+        // Modification du CSS de la barre
+        document.getElementById("progress").style.width = barre + "px";
+    });
+};
 
-	    const observer = new IntersectionObserver((entries, obs) => {
-	      entries.forEach(entry => {
-	        if (entry.isIntersecting) {
-	          entry.target.classList.add('active');
-	          obs.unobserve(entry.target); // pour ne le déclencher qu'une fois
-	        }
-	      });
-	    }, options);
+// Decodage caracteres pour actualités
+function decodeHTML(html) {
+    let txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
 
-	    underlines.forEach(underline => observer.observe(underline));
-	  });
+//*Animation du liseret sous les titres
+document.addEventListener("DOMContentLoaded", function () {
+    const underlines = document.querySelectorAll(".title-underline");
+    const options = { threshold: 0.6 };
 
-	  
-	  
-	  
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                obs.unobserve(entry.target); // pour ne le déclencher qu'une fois
+            }
+        });
+    }, options);
 
-	  //*Banniere du site
-	    document.addEventListener("DOMContentLoaded", () => {
-	      const showBanner = false;               // 🔧 Flag principal
-	      const bannerId = "soronate-banner-v3"; // 🆔 Change quand le message change
-	      const banner = document.getElementById("info-banner");
-	      const closed = localStorage.getItem(bannerId) === "closed";
-
-	      if (showBanner && !closed) {
-	        document.body.classList.add("with-banner");
-	        requestAnimationFrame(() => banner.classList.add("show"));
-	      }
-
-		  if (document.getElementById("close-banner")) {
-	        document.getElementById("close-banner").addEventListener("click", () => {
-	        banner.classList.remove("show");
-	        document.body.classList.remove("with-banner");
-	        localStorage.setItem(bannerId, "closed");
-	      });
-		  }
-		  
-	    });
+    underlines.forEach((underline) => observer.observe(underline));
+});
