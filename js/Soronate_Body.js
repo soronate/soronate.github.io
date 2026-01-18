@@ -163,7 +163,7 @@ toggle.addEventListener("click", (e) => {
 // Effet animation Noel, pluir, autone suivant un flag ou rien pour ne pas activer
 // ===== Flag saison =====
 // "" | winter | spring | summer | autumn | rain
-const SEASON = "winter"; // changez selon la saison
+const SEASON = ""; // changez selon la saison
 
 // ===== Config saisons =====
 const SEASONS = {
