@@ -22,7 +22,7 @@
  const form=document.getElementById("contactForm");
  form.addEventListener("submit",e=>{
    e.preventDefault();
-   const recipient=""; // À renseigner avant publication : adresse e-mail de contact Sorobalte.
+   const recipient="contactsoronate@gmail.com"; // À renseigner avant publication : adresse e-mail de contact Sorobalte.
    if(!recipient){alert("Le formulaire est prêt, mais l'adresse e-mail de réception doit être renseignée dans js/main.js (const recipient).");return;}
    const data=new FormData(form);
    const subject=encodeURIComponent("Demande Sorobalte — "+data.get("subject"));
