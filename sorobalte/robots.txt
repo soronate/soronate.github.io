@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://VOTRE-COMPTE.github.io/sorobalte/sitemap.xml
+Sitemap: https://soronate.github.io/sorobalte/sitemap.xml
