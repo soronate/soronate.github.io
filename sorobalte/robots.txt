@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://VOTRE-COMPTE.github.io/sorobalte/sitemap.xml
