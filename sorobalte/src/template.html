@@ -2,7 +2,7 @@
 <html lang="{{lang}}">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{{title}}</title>
 <meta name="description" content="{{desc}}">
 <link rel="canonical" href="{{url}}">
@@ -31,11 +31,7 @@
 <article class="card"><div><img src="{{img_gauja}}" alt="{{lv1_t}}" width="800" height="533" loading="lazy"></div><h3>{{lv1_t}}</h3><p>{{lv1_d}}</p></article>
 <article class="card"><div><img src="{{img_jurmala}}" alt="{{lv2_t}}" width="800" height="533" loading="lazy"></div><h3>{{lv2_t}}</h3><p>{{lv2_d}}</p></article>
 <article class="card"><div><img src="{{img_kuldiga}}" alt="{{lv3_t}}" width="800" height="533" loading="lazy"></div><h3>{{lv3_t}}</h3><p>{{lv3_d}}</p></article></div></div></section>
-<section id="exp" class="wrap"><h2>{{exp_h}}</h2><div class="grid g4">
-<article class="card"><div><img src="{{img_old}}" alt="{{exp1_t}}" width="800" height="533" loading="lazy"></div><h3>{{exp1_t}}</h3><p>{{exp1_d}}</p></article>
-<article class="card"><div><img src="{{img_nouveau}}" alt="{{exp2_t}}" width="800" height="533" loading="lazy"></div><h3>{{exp2_t}}</h3><p>{{exp2_d}}</p></article>
-<article class="card"><div><img src="{{img_market}}" alt="{{exp3_t}}" width="800" height="533" loading="lazy"></div><h3>{{exp3_t}}</h3><p>{{exp3_d}}</p></article>
-<article class="card"><div><img src="{{img_rundale}}" alt="{{exp4_t}}" width="800" height="533" loading="lazy"></div><h3>{{exp4_t}}</h3><p>{{exp4_d}}</p></article></div></section>
+{{sec_map}}{{sec_exp}}{{sec_itin}}{{sec_gal}}
 <section id="stay" class="band"><div class="wrap"><h2>{{stay_h}}</h2><p class="lead">{{stay_p}}</p><div class="grid">
 <article class="card"><div><img src="{{img_hall}}" alt="{{stay1_t}}" width="800" height="533" loading="lazy"></div><h3>{{stay1_t}}</h3><p>{{stay1_d}}</p></article>
 <article class="card"><div><img src="{{img_jurmala}}" alt="{{stay2_t}}" width="800" height="533" loading="lazy"></div><h3>{{stay2_t}}</h3><p>{{stay2_d}}</p></article>
@@ -44,10 +40,12 @@
 <article class="note"><h3>{{food1_t}}</h3><p>{{food1_d}}</p></article><article class="note"><h3>{{food2_t}}</h3><p>{{food2_d}}</p></article><article class="note"><h3>{{food3_t}}</h3><p>{{food3_d}}</p></article></div></section>
 <section id="services" class="band"><div class="wrap"><h2>{{srv_h}}</h2><div class="grid">
 <article class="note"><h3>{{srv1_t}}</h3><p>{{srv1_d}}</p></article><article class="note"><h3>{{srv2_t}}</h3><p>{{srv2_d}}</p></article><article class="note"><h3>{{srv3_t}}</h3><p>{{srv3_d}}</p></article></div></div></section>
-<section id="faq" class="band"><div class="wrap narrow"><h2>{{faq_h}}</h2><details><summary>{{faq1_q}}</summary><p>{{faq1_a}}</p></details><details><summary>{{faq2_q}}</summary><p>{{faq2_a}}</p></details><details><summary>{{faq3_q}}</summary><p>{{faq3_a}}</p></details><details><summary>{{faq4_q}}</summary><p>{{faq4_a}}</p></details></div></section>
+{{sec_seasons}}<section id="faq" class="band"><div class="wrap narrow"><h2>{{faq_h}}</h2><details><summary>{{faq1_q}}</summary><p>{{faq1_a}}</p></details><details><summary>{{faq2_q}}</summary><p>{{faq2_a}}</p></details><details><summary>{{faq3_q}}</summary><p>{{faq3_a}}</p></details><details><summary>{{faq4_q}}</summary><p>{{faq4_a}}</p></details></div></section>
 <section id="contact" class="wrap narrow"><h2>{{ct_h}}</h2><p>{{ct_p}}</p>
 <form id="cf" data-to="{{email}}"><label>{{f_name}}<input name="n" required autocomplete="name"></label><label>{{f_email}}<input name="e" type="email" required autocomplete="email"></label><label>{{f_msg}}<textarea name="m" rows="5" required></textarea></label><button class="btn" type="submit">{{f_send}}</button></form></section>
 </main>
+<div class="prog" aria-hidden="true"></div><button type="button" class="totop" aria-label="{{totop}}">↑</button>
+<div class="lb" hidden role="dialog" aria-modal="true"><button type="button" class="lbb lbx" data-a="x" aria-label="{{lb_close}}">×</button><button type="button" class="lbb lbp" data-a="p" aria-label="{{lb_prev}}">‹</button><figure><img alt=""><figcaption></figcaption></figure><button type="button" class="lbb lbn" data-a="n" aria-label="{{lb_next}}">›</button></div>
 <footer>© {{year}} SOROBALTE – {{foot}}<p class="credits">{{cred}} : {{credits}}</p></footer>
 <script>{{js}}</script>
 </body></html>

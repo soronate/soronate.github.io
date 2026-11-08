@@ -7,3 +7,7 @@ Photos : Wikimedia Commons (liens directs, crédits en bas de page). Les licence
 ## Modifier (optionnel)
 Textes : `src/i18n/*.json` · gabarit : `src/template.html` · style : `src/style.css`
 Puis `python3 tools/build.py`. Remplacer `SITE` et `EMAIL` dans `tools/build.py`, puis relancer.
+
+## Interactivité et compatibilité
+Carte cliquable, filtres, onglets (itinéraire, saisons), galerie avec visionneuse (balayage tactile, clavier), mode sombre, barre de progression.
+Compatibilité Safari/iOS : `100svh` avec repli, zones sûres (encoche), pas de `background-attachment:fixed` sur tactile, champs à 16 px (pas de zoom iOS), cibles tactiles ≥ 44 px.
