@@ -13,13 +13,6 @@ Carte cliquable, filtres, onglets (itinéraire, saisons), galerie avec visionneu
 Compatibilité Safari/iOS : `100svh` avec repli, zones sûres (encoche), pas de `background-attachment:fixed` sur tactile, champs à 16 px (pas de zoom iOS), cibles tactiles ≥ 44 px.
 
 ## Contact
-
+Adresse : ContactSoronate@gmail.com (modifiable dans `tools/build.py`, variable `EMAIL`). Le formulaire ouvre la messagerie ou Gmail avec le message prêt à envoyer.
 URL du site : `SITE` dans `tools/build.py` (par défaut https://soronate.github.io/sorobalte).
-
-
-## Axeptio, légal et contact
-- Axeptio : coller votre script à l'emplacement `<!-- Axeptio -->` de `src/template.html` et `src/legal.html`, puis relancer `python3 tools/build.py`.
-- Pages légales : `src/legal_fr.json` et `src/legal_en.json` (les pages lettones renvoient vers les pages anglaises). SIRET : variable `SIRET`.
-- L'adresse email est encodée (`EMAIL_B64`) et n'apparaît jamais en clair dans les pages.
-
-Météo de Riga : API gratuite Open-Meteo (usage non commercial), appelée par le navigateur du visiteur.
+Météo de Riga : API gratuite Open-Meteo (usage non commercial).
