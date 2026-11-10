@@ -11,9 +11,10 @@
 <meta property="og:image" content="{{og}}"><meta property="og:type" content="website">
 <meta name="theme-color" content="#9E3039">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2048%2048%22%3E%3Cdefs%3E%3CclipPath%20id=%22c%22%3E%3Ccircle%20cx=%2224%22%20cy=%2224%22%20r=%2223%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path=%22url%28%23c%29%22%3E%3Crect%20width=%2248%22%20height=%2248%22%20fill=%22%239E3039%22/%3E%3Cpath%20d=%22M0%2028Q6%2024%2012%2028T24%2028T36%2028T48%2028V34Q42%2038%2036%2034T24%2034T12%2034T0%2034Z%22%20fill=%22%23fff%22/%3E%3Cpath%20d=%22M24%204l1.6%2016h-3.2z%22%20fill=%22%23fff%22/%3E%3Crect%20x=%2219.5%22%20y=%2220%22%20width=%229%22%20height=%228%22%20fill=%22%23fff%22/%3E%3Cpath%20d=%22M9%2028v-6l3.5-3.5L16%2022v6zM32%2028v-6l3.5-3.5L39%2022v6z%22%20fill=%22%23E0A33B%22/%3E%3Cpath%20d=%22M0%2042Q6%2038.5%2012%2042T24%2042T36%2042T48%2042%22%20fill=%22none%22%20stroke=%22%23E0A33B%22%20stroke-width=%221.6%22/%3E%3C/g%3E%3C/svg%3E">
+<script>function imgFix(i){if(!i.dataset.r){i.dataset.r=1;var u=i.getAttribute("src")||i.currentSrc;i.removeAttribute("srcset");i.src=u.split("?")[0]}else{i.style.visibility="hidden";if(i.parentNode)i.parentNode.classList.add("nof")}}</script><!-- Axeptio : coller ici votre script -->
 <style>{{css}}</style>
 <script>try{document.documentElement.dataset.theme=localStorage.t||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")}catch(e){}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"SOROBALTE","url":"{{url}}","email":"{{email}}","areaServed":["Riga","Latvia"],"inLanguage":"{{lang}}"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"SOROBALTE","url":"{{url}}","areaServed":["Riga","Latvia"],"inLanguage":"{{lang}}"}</script>
 </head>
 <body>
 <a class="skip" href="#main">{{skip}}</a>
@@ -22,33 +23,38 @@
 <nav id="nav"><a href="#riga">{{nav_riga}}</a><a href="#latvia">{{nav_latvia}}</a><a href="#exp">{{nav_exp}}</a><a href="#stay">{{nav_stay}}</a><a href="#food">{{nav_food}}</a><a href="#services">{{nav_services}}</a><a href="#contact">{{nav_contact}}</a>
 <span class="langs">{{langnav}}</span><button class="theme" type="button" aria-label="{{theme}}">🌙</button></nav></header>
 <main id="main">
-<section class="hero"><img class="on" src="{{img_hero}}" alt="" width="2000" height="1333" fetchpriority="high">{{hero_extra}}<div class="dots" role="group"></div><div class="wrap"><p class="now" hidden></p><h1>{{hero_h}}</h1><p>{{hero_p}}</p><a class="btn" href="#contact">{{hero_cta}}</a></div></section>
+<section class="hero"><img class="on" src="{{img_hero}}" srcset="{{img_hero_set}}" sizes="100vw" alt="" width="1280" height="853" fetchpriority="high" onerror="imgFix(this)">{{hero_extra}}<div class="dots" role="group"></div><div class="wrap"><p class="now" hidden></p><h1>{{hero_h}}</h1><p>{{hero_p}}</p><a class="btn" href="#contact">{{hero_cta}}</a></div></section>
 <div class="marq" aria-hidden="true"><div>Rīga · Sigulda · Jūrmala · Kuldīga · Rundāle · Cēsis · Liepāja · Ventspils · Rīga · Sigulda · Jūrmala · Kuldīga · Rundāle · Cēsis · Liepāja · Ventspils · Rīga · Sigulda · Jūrmala · Kuldīga · Rundāle · Cēsis · Liepāja · Ventspils · Rīga · Sigulda · Jūrmala · Kuldīga · Rundāle · Cēsis · Liepāja · Ventspils · </div></div>
-<section id="riga" class="wrap split"><div><h2>{{riga_h}}</h2><p>{{riga_p1}}</p><p>{{riga_p2}}</p></div><img src="{{img_riga}}" alt="{{riga_h}}" width="1000" height="667" loading="lazy"></section>
+<section id="riga" class="wrap split"><div><h2>{{riga_h}}</h2><p>{{riga_p1}}</p><p>{{riga_p2}}</p></div><img onerror="imgFix(this)" src="{{img_riga}}" alt="{{riga_h}}" width="1000" height="667" loading="lazy"></section>
 <section class="stats"><div class="wrap"><div class="rv"><b data-n="800" data-s="+">800+</b><span>{{stat1}}</span></div><div class="rv"><b data-n="3" data-s="">3</b><span>{{stat2}}</span></div><div class="rv"><b data-n="50" data-s="%+">50%+</b><span>{{stat3}}</span></div></div></section>
 <div class="pano" role="img" aria-label="Riga" style="background-image:url({{img_pano}})"></div>
 <section id="latvia" class="band"><div class="wrap"><h2>{{lv_h}}</h2><p class="lead">{{lv_p}}</p><div class="grid">
-<article class="card"><div><img src="{{img_gauja}}" alt="{{lv1_t}}" width="800" height="533" loading="lazy"></div><h3>{{lv1_t}}</h3><p>{{lv1_d}}</p></article>
-<article class="card"><div><img src="{{img_jurmala}}" alt="{{lv2_t}}" width="800" height="533" loading="lazy"></div><h3>{{lv2_t}}</h3><p>{{lv2_d}}</p></article>
-<article class="card"><div><img src="{{img_kuldiga}}" alt="{{lv3_t}}" width="800" height="533" loading="lazy"></div><h3>{{lv3_t}}</h3><p>{{lv3_d}}</p></article></div></div></section>
-{{sec_map}}{{sec_exp}}{{sec_itin}}{{sec_gal}}
+<article class="card"><div><img onerror="imgFix(this)" src="{{img_gauja}}" alt="{{lv1_t}}" width="800" height="533" loading="lazy"></div><h3>{{lv1_t}}</h3><p>{{lv1_d}}</p></article>
+<article class="card"><div><img onerror="imgFix(this)" src="{{img_jurmala}}" alt="{{lv2_t}}" width="800" height="533" loading="lazy"></div><h3>{{lv2_t}}</h3><p>{{lv2_d}}</p></article>
+<article class="card"><div><img onerror="imgFix(this)" src="{{img_kuldiga}}" alt="{{lv3_t}}" width="800" height="533" loading="lazy"></div><h3>{{lv3_t}}</h3><p>{{lv3_d}}</p></article></div></div></section>
+{{sec_map}}{{sec_regions}}{{sec_exp}}{{sec_itin}}{{sec_gal}}
 <section id="stay" class="band"><div class="wrap"><h2>{{stay_h}}</h2><p class="lead">{{stay_p}}</p><div class="grid">
-<article class="card"><div><img src="{{img_hall}}" alt="{{stay1_t}}" width="800" height="533" loading="lazy"></div><h3>{{stay1_t}}</h3><p>{{stay1_d}}</p></article>
-<article class="card"><div><img src="{{img_jurmala}}" alt="{{stay2_t}}" width="800" height="533" loading="lazy"></div><h3>{{stay2_t}}</h3><p>{{stay2_d}}</p></article>
-<article class="card"><div><img src="{{img_turaida}}" alt="{{stay3_t}}" width="800" height="533" loading="lazy"></div><h3>{{stay3_t}}</h3><p>{{stay3_d}}</p></article></div></div></section>
+<article class="card"><div><img onerror="imgFix(this)" src="{{img_hall}}" alt="{{stay1_t}}" width="800" height="533" loading="lazy"></div><h3>{{stay1_t}}</h3><p>{{stay1_d}}</p></article>
+<article class="card"><div><img onerror="imgFix(this)" src="{{img_jurmala}}" alt="{{stay2_t}}" width="800" height="533" loading="lazy"></div><h3>{{stay2_t}}</h3><p>{{stay2_d}}</p></article>
+<article class="card"><div><img onerror="imgFix(this)" src="{{img_turaida}}" alt="{{stay3_t}}" width="800" height="533" loading="lazy"></div><h3>{{stay3_t}}</h3><p>{{stay3_d}}</p></article></div></div></section>
 <section id="food" class="wrap"><h2>{{food_h}}</h2><div class="grid">
 <article class="note"><img class="fimg" src="{{img_rye}}" alt="{{food1_t}}" width="600" height="400" loading="lazy"><h3>{{food1_t}}</h3><p>{{food1_d}}</p></article><article class="note"><h3>{{food2_t}}</h3><p>{{food2_d}}</p></article><article class="note"><h3>{{food3_t}}</h3><p>{{food3_d}}</p></article><article class="note"><h3>{{food4_t}}</h3><p>{{food4_d}}</p></article><article class="note"><h3>{{food5_t}}</h3><p>{{food5_d}}</p></article></div></section>
-{{sec_song}}{{sec_hist}}<section id="services" class="band"><div class="wrap"><h2>{{srv_h}}</h2><div class="grid">
+{{sec_song}}{{sec_hist}}<section id="services" class="band"><div class="wrap"><h2>{{srv_h}}</h2><p class="lead">{{srv_p}}</p><div class="grid">
 <article class="note"><h3>{{srv1_t}}</h3><p>{{srv1_d}}</p></article><article class="note"><h3>{{srv2_t}}</h3><p>{{srv2_d}}</p></article><article class="note"><h3>{{srv3_t}}</h3><p>{{srv3_d}}</p></article></div></div></section>
-{{sec_seasons}}<section id="faq" class="band"><div class="wrap narrow"><h2>{{faq_h}}</h2><details><summary>{{faq1_q}}</summary><p>{{faq1_a}}</p></details><details><summary>{{faq2_q}}</summary><p>{{faq2_a}}</p></details><details><summary>{{faq3_q}}</summary><p>{{faq3_a}}</p></details><details><summary>{{faq4_q}}</summary><p>{{faq4_a}}</p></details><details><summary>{{faq5_q}}</summary><p>{{faq5_a}}</p></details></div></section>
-<section id="contact" class="wrap narrow"><h2>{{ct_h}}</h2><p>{{ct_p}}</p><p><a class="mail" href="mailto:{{email}}">{{email}}</a></p>
-<form id="cf" data-to="{{email}}" data-int="{{interested}}"><label>{{f_name}}<input name="n" required autocomplete="name"></label><label>{{f_email}}<input name="e" type="email" required autocomplete="email" inputmode="email"></label>
+{{sec_steps}}{{sec_seasons}}{{sec_tips}}<section id="faq" class="band"><div class="wrap narrow"><h2>{{faq_h}}</h2><details><summary>{{faq1_q}}</summary><p>{{faq1_a}}</p></details><details><summary>{{faq2_q}}</summary><p>{{faq2_a}}</p></details><details><summary>{{faq3_q}}</summary><p>{{faq3_a}}</p></details><details><summary>{{faq4_q}}</summary><p>{{faq4_a}}</p></details><details><summary>{{faq5_q}}</summary><p>{{faq5_a}}</p></details><details><summary>{{faq6_q}}</summary><p>{{faq6_a}}</p></details><details><summary>{{faq7_q}}</summary><p>{{faq7_a}}</p></details></div></section>
+<section id="contact" class="wrap narrow"><h2>{{ct_h}}</h2><p>{{ct_p}}</p><p><button type="button" class="btn alt mx">{{ft_mail}}</button></p>
+<form id="cf" data-int="{{interested}}"><label>{{f_name}}<input name="n" required autocomplete="name"></label><label>{{f_email}}<input name="e" type="email" required autocomplete="email" inputmode="email"></label>
 <div class="row"><label>{{f_days}}<select name="dy"><option>{{dwk}}</option><option>{{dmid}}</option><option>{{dlong}}</option></select></label><label>{{f_pax}}<input name="px" type="number" min="1" max="30" value="2" inputmode="numeric"></label></div>
 <p class="chosen" hidden></p><label>{{f_msg}}<textarea name="m" rows="5" required></textarea></label>
 <div class="row"><button class="btn" type="submit">{{f_send}}</button><button class="btn alt" type="button" id="gm">{{f_gmail}}</button></div></form></section>
 </main>
 <div class="prog" aria-hidden="true"></div><button type="button" class="selpill" hidden>★ <b>0</b> {{sel_l}}</button><button type="button" class="totop" aria-label="{{totop}}">↑</button>
 <div class="lb" hidden role="dialog" aria-modal="true"><button type="button" class="lbb lbx" data-a="x" aria-label="{{lb_close}}">×</button><button type="button" class="lbb lbp" data-a="p" aria-label="{{lb_prev}}">‹</button><figure><img alt=""><figcaption></figcaption></figure><button type="button" class="lbb lbn" data-a="n" aria-label="{{lb_next}}">›</button></div>
-<footer>© {{year}} SOROBALTE – {{foot}}<p><a href="mailto:{{email}}" style="color:#fff">{{email}}</a></p><p class="credits">{{cred}} : {{credits}}</p></footer>
+<footer class="ft"><div class="wrap fgrid">
+<div><a class="logo flogo" href="./">{{mark}}<span>SOROBALTE<small>Rīga · Latvija</small></span></a><p>{{ft_tag}}</p><p>{{ft_by}} <a href="https://soronate.github.io/" rel="noopener">Soronate</a></p></div>
+<div><h4>{{ft_nav}}</h4><ul><li><a href="#riga">{{nav_riga}}</a></li><li><a href="#latvia">{{nav_latvia}}</a></li><li><a href="#exp">{{nav_exp}}</a></li><li><a href="#stay">{{nav_stay}}</a></li><li><a href="#food">{{nav_food}}</a></li></ul></div>
+<div><h4>{{ft_contact}}</h4><ul><li><a href="#contact">{{ct_h}}</a></li><li><button type="button" class="linkbtn mx">{{ft_mail}}</button></li><li><a href="https://soronate.github.io/" rel="noopener">Soronate</a></li></ul></div>
+<div><h4>{{ft_legal}}</h4><ul><li><a href="{{lgd}}mentions.html">{{lg_mentions}}</a></li><li><a href="{{lgd}}politique.html">{{lg_privacy}}</a></li><li><a href="{{lgd}}accessibilite.html">{{lg_access}}</a></li></ul></div></div>
+<div class="wrap fbot"><p>© {{year}} SOROBALTE – {{foot}}</p><p class="credits">{{cred}} : {{credits}}</p></div></footer>
 <script>{{js}}</script>
 </body></html>
