@@ -8,11 +8,22 @@ sc();window.addEventListener('scroll',sc,{passive:true});
 tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
 function ic(){th.textContent=h.dataset.theme==='dark'?'☀️':'🌙'}ic();
 th.addEventListener('click',function(){var t=h.dataset.theme==='dark'?'light':'dark';h.dataset.theme=t;try{localStorage.t=t}catch(e){}ic()});
+// images : si un fichier est en erreur (404...), repli sur la photo d'en-tête de l'article Wikipédia, puis sur une illustration locale
+var I=window.__I||{},WP={};
+function ph(k){var l=((I[k]&&I[k].n)||'Latvija').replace(/&/g,'&amp;').replace(/</g,'&lt;');return 'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 533"><rect width="800" height="533" fill="#1F4E6B"/><path d="M0 330Q100 290 200 330T400 330T600 330T800 330V533H0Z" fill="#9E3039"/><path d="M0 380Q100 340 200 380T400 380T600 380T800 380" fill="none" stroke="#E0A33B" stroke-width="6"/><text x="400" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="40" font-weight="800" fill="#fff" letter-spacing="2">'+l+'</text><text x="400" y="282" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#E0A33B" letter-spacing="4">SOROBALTE</text></svg>')}
+function wp(k){if(!WP[k]){var L=I[k]&&I[k].a;L=L?[].concat(L):[];WP[k]=L.reduce(function(p,t){return p.then(function(u){return u||fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(t)).then(function(r){return r.json()}).then(function(j){var o=j.originalimage,h=j.thumbnail;return o&&h&&o.width>960?h.source.replace(/\/\d+px-/,'/960px-'):(o&&o.source)||(h&&h.source)||''}).catch(function(){return''})})},Promise.resolve(''))}return WP[k]}
+function fb(img){var k=img.dataset.k;if(!k||!I[k])return;var s=+img.dataset.s||0;img.dataset.s=s+1;if(s===0)wp(k).then(function(u){img.src=u||ph(k)});else if(s===1)img.src=ph(k)}
+$$('img[data-w]').forEach(function(i){wp(i.dataset.k).then(function(u){if(u)i.src=u})});
+d.addEventListener('error',function(e){if(e.target&&e.target.tagName==='IMG')fb(e.target)},true);
+$$('img[data-k]').forEach(function(i){if(i.complete&&i.currentSrc&&!i.naturalWidth)fb(i)});
+var bgE=$('.pano');if(bgE){var bgI=new Image(),bgS=0,bgK=bgE.dataset.k;bgI.onload=function(){bgE.style.backgroundImage='url("'+bgI.src+'")'};bgI.onerror=function(){bgS++;if(bgS===1)wp(bgK).then(function(u){bgI.src=u||ph(bgK)});else if(bgS===2)bgI.src=ph(bgK)};bgI.src=bgE.dataset.u}
 // diaporama d'accueil
 var hs=$$('.hero>img'),hi=0,dots=$('.dots'),tm;
-function go(i){hi=(i+hs.length)%hs.length;hs.forEach(function(x,j){x.classList.toggle('on',j===hi)});$$('button',dots).forEach(function(x,j){x.style.opacity=j===hi?1:.5})}
-function rs(){clearInterval(tm);if(!red)tm=setInterval(function(){go(hi+1)},7000)}
+function go(i){hi=(i+hs.length)%hs.length;hs.forEach(function(x,j){x.classList.toggle('on',j===hi)});$$('button:not(.pz)',dots).forEach(function(x,j){x.style.opacity=j===hi?1:.5})}
+var paused=false;function rs(){clearInterval(tm);if(!paused)tm=setInterval(function(){go(hi+1)},6000)}
 hs.forEach(function(x,i){var bt=d.createElement('button');bt.type='button';bt.setAttribute('aria-label',String(i+1));bt.addEventListener('click',function(){go(i);rs()});dots.appendChild(bt)});go(0);rs();
+var pz=d.createElement('button');pz.type='button';pz.className='pz';function pu(){pz.textContent=paused?'▶':'⏸';pz.setAttribute('aria-label',paused?dots.dataset.pl:dots.dataset.p)}pu();pz.addEventListener('click',function(){paused=!paused;pu();rs()});dots.appendChild(pz);
+$$('[data-em]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();location.href='mailto:'+atob(a.dataset.em)})});
 // heure et météo à Riga
 var now=$('.now'),wx='';function wi(c){return c===0?'☀️':c<4?'⛅':c<50?'🌫️':c<70?'🌧️':c<80?'❄️':c<90?'🌦️':'⛈️'}
 function tick(){try{var t=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Riga'});now.textContent='🕑 '+t+(wx?' · '+wx:'')+' · Riga';now.hidden=false}catch(e){}}
@@ -35,12 +46,12 @@ pill.addEventListener('click',function(){$('#contact').scrollIntoView({behavior:
 // onglets
 $$('[data-tabs]').forEach(function(t){var bs=$$('[role=tab]',t),ps=$$('[role=tabpanel]',t);bs.forEach(function(x,i){x.addEventListener('click',function(){bs.forEach(function(y,j){y.setAttribute('aria-selected',j===i);ps[j].hidden=j!==i;if(j===i)ps[j].classList.add('in')})})})});
 // carte
-var pins=$$('.pin'),mi=$('.mapinfo'),mg=$('img',mi);function pk(p){pins.forEach(function(x){x.classList.toggle('on',x===p)});mg.src=p.dataset.i;mg.alt=p.dataset.t;$('h3',mi).textContent=p.dataset.t;$('p',mi).textContent=p.dataset.d}
+var pins=$$('.pin'),mi=$('.mapinfo'),mg=$('img',mi);function pk(p){pins.forEach(function(x){x.classList.toggle('on',x===p)});mg.dataset.k=p.dataset.k;mg.dataset.s=0;mg.src=p.dataset.i;mg.alt=p.dataset.t;$('h3',mi).textContent=p.dataset.t;$('p',mi).textContent=p.dataset.d}
 pins.forEach(function(p){p.addEventListener('click',function(){pk(p)})});if(pins[0])pk(pins[0]);
 // galerie + visionneuse
 var gal=$('.gal'),gi=$$('.gi'),lb=$('.lb'),li=$('img',lb),lc=$('figcaption',lb),cur=0;
 $$('.ga').forEach(function(a){a.addEventListener('click',function(){gal.scrollBy({left:+a.dataset.g*gal.clientWidth*.8,behavior:'smooth'})})});
-function show(i){cur=(i+gi.length)%gi.length;li.src=gi[cur].dataset.full;li.alt=gi[cur].dataset.cap;lc.textContent=gi[cur].dataset.cap}
+function show(i){cur=(i+gi.length)%gi.length;li.dataset.k=gi[cur].dataset.k;li.dataset.s=0;li.src=gi[cur].dataset.full;li.alt=gi[cur].dataset.cap;lc.textContent=gi[cur].dataset.cap}
 function open(i){show(i);lb.hidden=false;h.style.overflow='hidden';$('.lbx',lb).focus()}
 function close(){lb.hidden=true;h.style.overflow='';gi[cur].focus()}
 gi.forEach(function(g,i){g.addEventListener('click',function(){open(i)})});
@@ -50,6 +61,6 @@ var sx=0;lb.addEventListener('touchstart',function(e){sx=e.changedTouches[0].cli
 lb.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1))},{passive:true});
 // contact : mailto + Gmail
 var f=$('#cf');function msg(){var q=new FormData(f),L=[q.get('m')];if(sel.length)L.push('',f.dataset.int+' '+sel.join(', '));L.push('',q.get('dy')+' · 👥 '+q.get('px'),q.get('n')+' <'+q.get('e')+'>');return{s:'SOROBALTE – '+q.get('n'),b:L.join('\n')}}
-f.addEventListener('submit',function(e){e.preventDefault();var m=msg();location.href='mailto:'+f.dataset.to+'?subject='+encodeURIComponent(m.s)+'&body='+encodeURIComponent(m.b)});
-$('#gm').addEventListener('click',function(){if(f.reportValidity&&!f.reportValidity())return;var m=msg();window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(f.dataset.to)+'&su='+encodeURIComponent(m.s)+'&body='+encodeURIComponent(m.b),'_blank','noopener')});
+f.addEventListener('submit',function(e){e.preventDefault();var m=msg();location.href='mailto:'+atob(f.dataset.to)+'?subject='+encodeURIComponent(m.s)+'&body='+encodeURIComponent(m.b)});
+$('#gm').addEventListener('click',function(){if(f.reportValidity&&!f.reportValidity())return;var m=msg();window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(atob(f.dataset.to))+'&su='+encodeURIComponent(m.s)+'&body='+encodeURIComponent(m.b),'_blank','noopener')});
 })();
