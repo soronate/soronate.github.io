@@ -19,7 +19,6 @@ Météo de Riga : API gratuite Open-Meteo (usage non commercial).
 
 ## Pages légales et pied de page
 Pied de page commun : `src/partials/footer.html` (adresse, navigation, liens légaux, réseaux). Les textes légaux sont dans `src/i18n/legal-fr|en|lv.json`.
-**À compléter** : forme juridique, SIRET et directeur de la publication (repérés par `data-todo` dans `body_legal`). Le build indique combien il en reste.
 Fichiers générés : `fr/mentions-legales.html`, `fr/politique-de-confidentialite.html`, `fr/accessibilite.html` (et équivalents `en/`, `lv/`).
 
 ## Images
